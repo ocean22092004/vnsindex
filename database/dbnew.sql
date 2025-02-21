@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 02, 2024 at 06:59 AM
--- Server version: 8.2.0
--- PHP Version: 8.1.27
+-- Host: 127.0.0.1:3308
+-- Generation Time: Feb 21, 2025 at 10:54 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,12 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -43,7 +43,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$12$0bxVX1vqFVqtne4jkVs4SOnznkpUwEMl2hECrbGmBUbTFiFfJJio6', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
+(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$/SU/4XOVhYugd91n.VJqKOI7vB8GO7Qz1y2SzJWqkBhUf2VL3R.5C', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
 
 -- --------------------------------------------------------
 
@@ -52,11 +52,11 @@ INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `crea
 --
 
 CREATE TABLE `call_to_actions` (
-  `id` bigint UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `text` text DEFAULT NULL,
+  `icon` text DEFAULT NULL,
+  `phone` text DEFAULT NULL,
+  `email` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -75,9 +75,9 @@ INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_
 --
 
 CREATE TABLE `clients` (
-  `id` bigint UNSIGNED NOT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -87,11 +87,13 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'client_1705167020.png', '#', '2024-01-13 11:09:02', '2024-01-13 11:31:23'),
-(2, 'client_1705167033.png', NULL, '2024-01-13 11:09:31', '2024-01-13 11:30:33'),
-(3, 'client_1705167041.png', NULL, '2024-01-13 11:09:40', '2024-01-13 11:30:41'),
-(4, 'client_1705167049.png', NULL, '2024-01-13 11:09:46', '2024-01-13 11:30:49'),
-(5, 'client_1705167062.png', NULL, '2024-01-13 11:09:53', '2024-01-13 11:31:02');
+(1, 'client_1740129978.png', '#', '2024-01-13 11:09:02', '2025-02-21 02:26:18'),
+(2, 'client_1740130081.png', NULL, '2024-01-13 11:09:31', '2025-02-21 02:28:01'),
+(3, 'client_1740130329.png', NULL, '2024-01-13 11:09:40', '2025-02-21 02:32:09'),
+(4, 'client_1740130357.png', NULL, '2024-01-13 11:09:46', '2025-02-21 02:32:37'),
+(5, 'client_1740130414.png', NULL, '2024-01-13 11:09:53', '2025-02-21 02:33:34'),
+(7, 'client_1740130605.png', NULL, '2025-02-21 02:36:45', '2025-02-21 02:36:45'),
+(8, 'client_1740130859.png', NULL, '2025-02-21 02:40:59', '2025-02-21 02:40:59');
 
 -- --------------------------------------------------------
 
@@ -100,12 +102,12 @@ INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `custom_pages` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -125,13 +127,13 @@ INSERT INTO `custom_pages` (`id`, `name`, `slug`, `content`, `seo_title`, `seo_m
 --
 
 CREATE TABLE `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `failed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) DEFAULT NULL,
+  `connection` text DEFAULT NULL,
+  `queue` text DEFAULT NULL,
+  `payload` longtext DEFAULT NULL,
+  `exception` longtext DEFAULT NULL,
+  `failed_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -141,9 +143,9 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `faqs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `answer` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -166,9 +168,9 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALU
 --
 
 CREATE TABLE `feature_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `text` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -187,10 +189,10 @@ INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_a
 --
 
 CREATE TABLE `feature_one_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -211,11 +213,11 @@ INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 --
 
 CREATE TABLE `feature_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `subheading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -234,8 +236,8 @@ INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`,
 --
 
 CREATE TABLE `feature_two_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -256,8 +258,8 @@ INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at
 --
 
 CREATE TABLE `flat_icons` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon_code` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -299,10 +301,10 @@ INSERT INTO `flat_icons` (`id`, `icon_code`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `fun_facts` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -321,10 +323,10 @@ INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `u
 --
 
 CREATE TABLE `fun_fact_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `number` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `number` text DEFAULT NULL,
+  `name` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -345,11 +347,11 @@ INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `
 --
 
 CREATE TABLE `home_contact_photos` (
-  `id` bigint UNSIGNED NOT NULL,
-  `home_1_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_2_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_3_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_4_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `home_1_contact_photo` varchar(255) DEFAULT NULL,
+  `home_2_contact_photo` varchar(255) DEFAULT NULL,
+  `home_3_contact_photo` varchar(255) DEFAULT NULL,
+  `home_4_contact_photo` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -368,35 +370,35 @@ INSERT INTO `home_contact_photos` (`id`, `home_1_contact_photo`, `home_2_contact
 --
 
 CREATE TABLE `home_four_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `marquee_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `map_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_heading` text DEFAULT NULL,
+  `service_subheading` text DEFAULT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `marquee_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `why_choose_status` text DEFAULT NULL,
+  `testimonial_heading` text DEFAULT NULL,
+  `testimonial_subheading` text DEFAULT NULL,
+  `testimonial_text` text DEFAULT NULL,
+  `testimonial_status` text DEFAULT NULL,
+  `team_member_heading` text DEFAULT NULL,
+  `team_member_subheading` text DEFAULT NULL,
+  `team_member_how_many` text DEFAULT NULL,
+  `team_member_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
+  `blog_heading` text DEFAULT NULL,
+  `blog_subheading` text DEFAULT NULL,
+  `blog_how_many` text DEFAULT NULL,
+  `blog_status` text DEFAULT NULL,
+  `map_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -415,35 +417,35 @@ INSERT INTO `home_four_page_items` (`id`, `service_heading`, `service_subheading
 --
 
 CREATE TABLE `home_one_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_on_slider_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_on_slider_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_one_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `fun_fact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_two_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `feature_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_on_slider_how_many` text DEFAULT NULL,
+  `service_on_slider_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `service_heading` text DEFAULT NULL,
+  `service_subheading` text DEFAULT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `video_one_status` text DEFAULT NULL,
+  `fun_fact_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
+  `blog_heading` text DEFAULT NULL,
+  `blog_subheading` text DEFAULT NULL,
+  `blog_how_many` text DEFAULT NULL,
+  `blog_status` text DEFAULT NULL,
+  `video_two_status` text DEFAULT NULL,
+  `feature_status` text DEFAULT NULL,
+  `testimonial_heading` text DEFAULT NULL,
+  `testimonial_subheading` text DEFAULT NULL,
+  `testimonial_text` text DEFAULT NULL,
+  `testimonial_status` text DEFAULT NULL,
+  `why_choose_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -462,27 +464,27 @@ INSERT INTO `home_one_page_items` (`id`, `service_on_slider_how_many`, `service_
 --
 
 CREATE TABLE `home_three_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `offer_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `feature_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `call_to_action_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `offer_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_text` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `video_status` text DEFAULT NULL,
+  `feature_status` text DEFAULT NULL,
+  `call_to_action_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
+  `team_member_heading` text DEFAULT NULL,
+  `team_member_subheading` text DEFAULT NULL,
+  `team_member_how_many` text DEFAULT NULL,
+  `team_member_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -501,35 +503,35 @@ INSERT INTO `home_three_page_items` (`id`, `service_how_many`, `service_status`,
 --
 
 CREATE TABLE `home_two_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `marquee_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `map_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_heading` text DEFAULT NULL,
+  `service_subheading` text DEFAULT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `marquee_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `why_choose_status` text DEFAULT NULL,
+  `testimonial_heading` text DEFAULT NULL,
+  `testimonial_subheading` text DEFAULT NULL,
+  `testimonial_text` text DEFAULT NULL,
+  `testimonial_status` text DEFAULT NULL,
+  `team_member_heading` text DEFAULT NULL,
+  `team_member_subheading` text DEFAULT NULL,
+  `team_member_how_many` text DEFAULT NULL,
+  `team_member_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
+  `blog_heading` text DEFAULT NULL,
+  `blog_subheading` text DEFAULT NULL,
+  `blog_how_many` text DEFAULT NULL,
+  `blog_status` text DEFAULT NULL,
+  `map_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -548,11 +550,11 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 --
 
 CREATE TABLE `languages` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `direction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `default` tinyint(1) DEFAULT '1',
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `direction` varchar(255) DEFAULT NULL,
+  `default` tinyint(1) DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -573,8 +575,8 @@ INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_
 --
 
 CREATE TABLE `marquees` (
-  `id` bigint UNSIGNED NOT NULL,
-  `item` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `item` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -597,9 +599,9 @@ INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `menus` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -626,9 +628,9 @@ INSERT INTO `menus` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `migrations` (
-  `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `batch` int DEFAULT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) DEFAULT NULL,
+  `batch` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -695,14 +697,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `offers` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `icon` text DEFAULT NULL,
+  `tagline` text DEFAULT NULL,
+  `youtube_video_id` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -721,8 +723,8 @@ INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, 
 --
 
 CREATE TABLE `offer_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `item` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `item` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -743,67 +745,67 @@ INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `other_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `page_about_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_team_members_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_team_members_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_team_members_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_pricing_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_pricing_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_pricing_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_faq_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_faq_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_faq_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_services_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_services_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_services_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_blog_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_blog_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_blog_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_send_mail_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_send_mail_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_phone_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_phone_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_email_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_email_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_address_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_address_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_search_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_search_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_tag_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_tag_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_about_title` text DEFAULT NULL,
+  `page_about_welcome_status` text DEFAULT NULL,
+  `page_about_service_heading` text DEFAULT NULL,
+  `page_about_service_subheading` text DEFAULT NULL,
+  `page_about_service_text` text DEFAULT NULL,
+  `page_about_service_how_many` text DEFAULT NULL,
+  `page_about_service_status` text DEFAULT NULL,
+  `page_about_team_members_heading` text DEFAULT NULL,
+  `page_about_team_members_subheading` text DEFAULT NULL,
+  `page_about_team_members_how_many` text DEFAULT NULL,
+  `page_about_team_members_status` text DEFAULT NULL,
+  `page_about_seo_title` text DEFAULT NULL,
+  `page_about_seo_meta_description` text DEFAULT NULL,
+  `page_team_members_title` text DEFAULT NULL,
+  `page_team_members_seo_title` text DEFAULT NULL,
+  `page_team_members_seo_meta_description` text DEFAULT NULL,
+  `page_testimonials_title` text DEFAULT NULL,
+  `page_testimonials_seo_title` text DEFAULT NULL,
+  `page_testimonials_seo_meta_description` text DEFAULT NULL,
+  `page_pricing_title` text DEFAULT NULL,
+  `page_pricing_seo_title` text DEFAULT NULL,
+  `page_pricing_seo_meta_description` text DEFAULT NULL,
+  `page_faq_title` text DEFAULT NULL,
+  `page_faq_seo_title` text DEFAULT NULL,
+  `page_faq_seo_meta_description` text DEFAULT NULL,
+  `page_services_title` text DEFAULT NULL,
+  `page_services_seo_title` text DEFAULT NULL,
+  `page_services_seo_meta_description` text DEFAULT NULL,
+  `page_portfolios_title` text DEFAULT NULL,
+  `page_portfolios_seo_title` text DEFAULT NULL,
+  `page_portfolios_seo_meta_description` text DEFAULT NULL,
+  `page_blog_title` text DEFAULT NULL,
+  `page_blog_seo_title` text DEFAULT NULL,
+  `page_blog_seo_meta_description` text DEFAULT NULL,
+  `page_contact_title` text DEFAULT NULL,
+  `page_contact_send_mail_heading` text DEFAULT NULL,
+  `page_contact_send_mail_subheading` text DEFAULT NULL,
+  `page_contact_info_heading` text DEFAULT NULL,
+  `page_contact_info_subheading` text DEFAULT NULL,
+  `page_contact_info_text` text DEFAULT NULL,
+  `page_contact_info_phone_title` text DEFAULT NULL,
+  `page_contact_info_phone_value` text DEFAULT NULL,
+  `page_contact_info_email_title` text DEFAULT NULL,
+  `page_contact_info_email_value` text DEFAULT NULL,
+  `page_contact_info_address_title` text DEFAULT NULL,
+  `page_contact_info_address_value` text DEFAULT NULL,
+  `page_contact_seo_title` text DEFAULT NULL,
+  `page_contact_seo_meta_description` text DEFAULT NULL,
+  `page_terms_title` text DEFAULT NULL,
+  `page_terms_content` text DEFAULT NULL,
+  `page_terms_seo_title` text DEFAULT NULL,
+  `page_terms_seo_meta_description` text DEFAULT NULL,
+  `page_privacy_title` text DEFAULT NULL,
+  `page_privacy_content` text DEFAULT NULL,
+  `page_privacy_seo_title` text DEFAULT NULL,
+  `page_privacy_seo_meta_description` text DEFAULT NULL,
+  `page_search_seo_title` text DEFAULT NULL,
+  `page_search_seo_meta_description` text DEFAULT NULL,
+  `page_tag_seo_title` text DEFAULT NULL,
+  `page_tag_seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -822,8 +824,8 @@ INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_st
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -834,12 +836,12 @@ CREATE TABLE `password_reset_tokens` (
 --
 
 CREATE TABLE `personal_access_tokens` (
-  `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tokenable_id` bigint UNSIGNED DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) DEFAULT NULL,
+  `tokenable_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `token` varchar(64) DEFAULT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -853,18 +855,18 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `portfolios` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `client` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `client` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `banner` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -888,15 +890,15 @@ INSERT INTO `portfolios` (`id`, `name`, `slug`, `description`, `date`, `client`,
 --
 
 CREATE TABLE `posts` (
-  `id` bigint UNSIGNED NOT NULL,
-  `post_category_id` int DEFAULT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tags` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `post_category_id` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `tags` text DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -917,11 +919,11 @@ INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `
 --
 
 CREATE TABLE `post_categories` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -944,13 +946,13 @@ INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_desc
 --
 
 CREATE TABLE `pricing_plans` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `period` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `period` varchar(255) DEFAULT NULL,
+  `button_text` varchar(255) DEFAULT NULL,
+  `button_url` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -971,9 +973,9 @@ INSERT INTO `pricing_plans` (`id`, `name`, `price`, `period`, `button_text`, `bu
 --
 
 CREATE TABLE `pricing_plan_options` (
-  `id` bigint UNSIGNED NOT NULL,
-  `pricing_plan_id` int DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `pricing_plan_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1003,18 +1005,18 @@ INSERT INTO `pricing_plan_options` (`id`, `pricing_plan_id`, `name`, `created_at
 --
 
 CREATE TABLE `services` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `short_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pdf` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `short_description` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `icon` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `banner` varchar(255) DEFAULT NULL,
+  `pdf` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1040,10 +1042,10 @@ INSERT INTO `services` (`id`, `name`, `slug`, `short_description`, `description`
 --
 
 CREATE TABLE `service_faqs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_id` int DEFAULT NULL,
-  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_id` int(11) DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `answer` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1107,52 +1109,52 @@ INSERT INTO `service_faqs` (`id`, `service_id`, `question`, `answer`, `created_a
 --
 
 CREATE TABLE `settings` (
-  `id` bigint UNSIGNED NOT NULL,
-  `logo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `logo_sticky` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `favicon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `home_show` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `image_404` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `banner` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `login_page_photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `facebook` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `twitter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `linkedin` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `instagram` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `pinterest` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `top_bar_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `top_bar_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `top_bar_phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `map` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_copyright` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_links_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_subscriber_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_subscriber_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `sticky_header` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `preloader` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `layout_direction` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `theme_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `currency_symbol` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_text_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_bg_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_text_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_bg_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `tawk_live_chat_property_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `tawk_live_chat_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_analytic_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_analytic_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_recaptcha_site_key` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_recaptcha_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `home_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `home_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `logo` text DEFAULT NULL,
+  `logo_sticky` text DEFAULT NULL,
+  `favicon` text DEFAULT NULL,
+  `home_show` text DEFAULT NULL,
+  `image_404` text DEFAULT NULL,
+  `banner` text DEFAULT NULL,
+  `login_page_photo` text DEFAULT NULL,
+  `facebook` text DEFAULT NULL,
+  `twitter` text DEFAULT NULL,
+  `linkedin` text DEFAULT NULL,
+  `instagram` text DEFAULT NULL,
+  `youtube` text DEFAULT NULL,
+  `pinterest` text DEFAULT NULL,
+  `top_bar_email` text DEFAULT NULL,
+  `top_bar_address` text DEFAULT NULL,
+  `top_bar_phone` text DEFAULT NULL,
+  `map` text DEFAULT NULL,
+  `footer_email` text DEFAULT NULL,
+  `footer_phone` text DEFAULT NULL,
+  `footer_address` text DEFAULT NULL,
+  `footer_copyright` text DEFAULT NULL,
+  `footer_text` text DEFAULT NULL,
+  `footer_links_heading` text DEFAULT NULL,
+  `footer_subscriber_heading` text DEFAULT NULL,
+  `footer_subscriber_text` text DEFAULT NULL,
+  `sticky_header` text DEFAULT NULL,
+  `preloader` text DEFAULT NULL,
+  `layout_direction` text DEFAULT NULL,
+  `theme_color` text DEFAULT NULL,
+  `currency_symbol` text DEFAULT NULL,
+  `cookie_consent_message` text DEFAULT NULL,
+  `cookie_consent_button_text` text DEFAULT NULL,
+  `cookie_consent_text_color` text DEFAULT NULL,
+  `cookie_consent_bg_color` text DEFAULT NULL,
+  `cookie_consent_button_text_color` text DEFAULT NULL,
+  `cookie_consent_button_bg_color` text DEFAULT NULL,
+  `cookie_consent_status` text DEFAULT NULL,
+  `tawk_live_chat_property_id` text DEFAULT NULL,
+  `tawk_live_chat_status` text DEFAULT NULL,
+  `google_analytic_id` text DEFAULT NULL,
+  `google_analytic_status` text DEFAULT NULL,
+  `google_recaptcha_site_key` text DEFAULT NULL,
+  `google_recaptcha_status` text DEFAULT NULL,
+  `home_seo_title` text DEFAULT NULL,
+  `home_seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1171,11 +1173,11 @@ INSERT INTO `settings` (`id`, `logo`, `logo_sticky`, `favicon`, `home_show`, `im
 --
 
 CREATE TABLE `sliders` (
-  `id` bigint UNSIGNED NOT NULL,
-  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `button_text` varchar(255) DEFAULT NULL,
+  `button_url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1195,10 +1197,10 @@ INSERT INTO `sliders` (`id`, `text`, `photo`, `button_text`, `button_url`, `crea
 --
 
 CREATE TABLE `subscribers` (
-  `id` bigint UNSIGNED NOT NULL,
-  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `status` int DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` text DEFAULT NULL,
+  `token` text DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1222,24 +1224,24 @@ INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `upda
 --
 
 CREATE TABLE `team_members` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `linkedin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pinterest` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `experience_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `tagline` text DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `linkedin` varchar(255) DEFAULT NULL,
+  `instagram` varchar(255) DEFAULT NULL,
+  `youtube` varchar(255) DEFAULT NULL,
+  `pinterest` varchar(255) DEFAULT NULL,
+  `experience_text` text DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1260,10 +1262,10 @@ INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `tagline`, `pho
 --
 
 CREATE TABLE `team_member_experiences` (
-  `id` bigint UNSIGNED NOT NULL,
-  `team_member_id` int DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `percentage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `team_member_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `percentage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1290,12 +1292,12 @@ INSERT INTO `team_member_experiences` (`id`, `team_member_id`, `name`, `percenta
 --
 
 CREATE TABLE `testimonials` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `rating` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `rating` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `comment` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1317,19 +1319,19 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `rating`, `photo`, `com
 --
 
 CREATE TABLE `users` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `state` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `zip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '0' COMMENT '0=pending, 1=active, 2=suspended',
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `zip` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT '0' COMMENT '0=pending, 1=active, 2=suspended',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1341,10 +1343,10 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `video_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `youtube_video_id` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1363,9 +1365,9 @@ INSERT INTO `video_one_items` (`id`, `heading`, `youtube_video_id`, `photo`, `cr
 --
 
 CREATE TABLE `video_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `youtube_video_id` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1384,18 +1386,18 @@ INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`
 --
 
 CREATE TABLE `welcome_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `experience_year` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `person_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `person_designation` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `person_photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `button_text` text DEFAULT NULL,
+  `button_url` text DEFAULT NULL,
+  `experience_year` text DEFAULT NULL,
+  `person_name` text DEFAULT NULL,
+  `person_designation` text DEFAULT NULL,
+  `person_photo` text DEFAULT NULL,
+  `photo1` text DEFAULT NULL,
+  `photo2` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1414,10 +1416,10 @@ INSERT INTO `welcome_one_items` (`id`, `subheading`, `heading`, `text`, `button_
 --
 
 CREATE TABLE `welcome_one_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` varchar(255) DEFAULT NULL,
+  `heading` varchar(255) DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1437,15 +1439,15 @@ INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 --
 
 CREATE TABLE `welcome_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `experience_year` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `button_text` text DEFAULT NULL,
+  `button_url` text DEFAULT NULL,
+  `experience_year` text DEFAULT NULL,
+  `photo1` text DEFAULT NULL,
+  `photo2` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1464,9 +1466,9 @@ INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_
 --
 
 CREATE TABLE `welcome_two_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` varchar(255) DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1486,9 +1488,9 @@ INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, 
 --
 
 CREATE TABLE `welcome_two_item_skills` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `percentage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `percentage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1507,11 +1509,11 @@ INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`,
 --
 
 CREATE TABLE `why_choose_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `subheading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1530,9 +1532,9 @@ INSERT INTO `why_choose_one_items` (`id`, `heading`, `subheading`, `text`, `phot
 --
 
 CREATE TABLE `why_choose_one_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1552,12 +1554,12 @@ INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at
 --
 
 CREATE TABLE `why_choose_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_over_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_over_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `subheading` text DEFAULT NULL,
+  `photo_over_text` text DEFAULT NULL,
+  `photo_over_heading` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1576,9 +1578,9 @@ INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_t
 --
 
 CREATE TABLE `why_choose_two_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1922,307 +1924,307 @@ ALTER TABLE `why_choose_two_item_elements`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `call_to_actions`
 --
 ALTER TABLE `call_to_actions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `custom_pages`
 --
 ALTER TABLE `custom_pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `feature_one_items`
 --
 ALTER TABLE `feature_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feature_one_item_elements`
 --
 ALTER TABLE `feature_one_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `feature_two_items`
 --
 ALTER TABLE `feature_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feature_two_item_elements`
 --
 ALTER TABLE `feature_two_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `flat_icons`
 --
 ALTER TABLE `flat_icons`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `fun_facts`
 --
 ALTER TABLE `fun_facts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fun_fact_elements`
 --
 ALTER TABLE `fun_fact_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `home_contact_photos`
 --
 ALTER TABLE `home_contact_photos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_four_page_items`
 --
 ALTER TABLE `home_four_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_three_page_items`
 --
 ALTER TABLE `home_three_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_two_page_items`
 --
 ALTER TABLE `home_two_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `marquees`
 --
 ALTER TABLE `marquees`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `offer_elements`
 --
 ALTER TABLE `offer_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `other_page_items`
 --
 ALTER TABLE `other_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `post_categories`
 --
 ALTER TABLE `post_categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pricing_plans`
 --
 ALTER TABLE `pricing_plans`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pricing_plan_options`
 --
 ALTER TABLE `pricing_plan_options`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `service_faqs`
 --
 ALTER TABLE `service_faqs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `team_members`
 --
 ALTER TABLE `team_members`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `team_member_experiences`
 --
 ALTER TABLE `team_member_experiences`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `video_one_items`
 --
 ALTER TABLE `video_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `video_two_items`
 --
 ALTER TABLE `video_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `welcome_one_items`
 --
 ALTER TABLE `welcome_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `welcome_one_item_elements`
 --
 ALTER TABLE `welcome_one_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `welcome_two_items`
 --
 ALTER TABLE `welcome_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `welcome_two_item_elements`
 --
 ALTER TABLE `welcome_two_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `why_choose_one_items`
 --
 ALTER TABLE `why_choose_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `why_choose_one_item_elements`
 --
 ALTER TABLE `why_choose_one_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `why_choose_two_items`
 --
 ALTER TABLE `why_choose_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `why_choose_two_item_elements`
 --
 ALTER TABLE `why_choose_two_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

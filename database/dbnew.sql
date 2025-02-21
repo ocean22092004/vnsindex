@@ -1,9 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
+
 -- Generation Time: Feb 21, 2025 at 09:17 AM
+
 -- Server version: 8.0.30
 -- PHP Version: 8.2.27
 
@@ -43,7 +45,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$12$0bxVX1vqFVqtne4jkVs4SOnznkpUwEMl2hECrbGmBUbTFiFfJJio6', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
+(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$p6bwLMtkJuIBWCLFxmZgZ.XTzU2K2A1xUixRszQ.MbeGwZEZbyvxO', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,9 @@ CREATE TABLE `call_to_actions` (
 --
 
 INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_at`, `updated_at`) VALUES
+
 (1, 'Nhận tư vấn MIỄN PHÍ \r\nNgay hôm nay', 'flaticon-phone-call', '0999999999', 'vnsindex@company.com', NULL, '2025-02-21 01:37:30');
+
 
 -- --------------------------------------------------------
 
@@ -566,6 +570,7 @@ INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_
 (9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2024-05-01 21:51:52'),
 (10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2024-05-01 21:52:51'),
 (11, 'Vietnamese', 'vi', 'Left to Right (LTR)', 0, '2025-02-21 00:12:26', '2025-02-21 00:12:26');
+
 
 -- --------------------------------------------------------
 

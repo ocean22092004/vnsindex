@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 02, 2024 at 06:59 AM
--- Server version: 8.2.0
--- PHP Version: 8.1.27
+-- Host: localhost:3306
+-- Generation Time: Feb 21, 2025 at 09:17 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `desix`
+-- Database: `vnstech_vnsindex`
 --
 
 -- --------------------------------------------------------
@@ -66,7 +66,7 @@ CREATE TABLE `call_to_actions` (
 --
 
 INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Get your FREE\r\nBusiness Consultation', 'flaticon-phone-call', '+1 (266) 456-7895', 'support@company.com', NULL, '2024-01-10 03:27:14');
+(1, 'Nhận tư vấn MIỄN PHÍ \r\nNgay hôm nay', 'flaticon-phone-call', '0999999999', 'vnsindex@company.com', NULL, '2025-02-21 01:37:30');
 
 -- --------------------------------------------------------
 
@@ -178,7 +178,7 @@ CREATE TABLE `feature_one_items` (
 --
 
 INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Let’s Discuss How \r\nto Make your \r\nBusiness Better.', 'feature_one_photo_1704876660.jpg', NULL, '2024-01-10 02:55:13');
+(1, 'Hãy cùng thảo luận cách nâng cao doanh nghiệp của bạn.', 'feature_one_photo_1704876660.jpg', NULL, '2025-02-21 02:01:30');
 
 -- --------------------------------------------------------
 
@@ -200,9 +200,9 @@ CREATE TABLE `feature_one_item_elements` (
 --
 
 INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `created_at`, `updated_at`) VALUES
-(1, 'flaticon-learning', 'IT Management', 'Lorem ipsu dolor sit am adipi we help you ensure everyone', '2024-01-10 02:56:33', '2024-01-10 02:56:33'),
-(2, 'flaticon-settings', 'Cyber Security', 'Lorem ipsu dolor sit am adipi we help you ensure everyone', '2024-01-10 02:56:52', '2024-01-10 02:56:52'),
-(3, 'flaticon-cloud', 'Cloud Computing', 'Lorem ipsu dolor sit am adipi we help you ensure everyone', '2024-01-10 02:57:09', '2024-01-10 02:57:09');
+(1, 'flaticon-learning', 'Quản lý công nghệ', 'Chúng tôi cung cấp giải pháp quản lý công nghệ thông tin giúp tối ưu hóa quy trình và tăng hiệu suất doanh nghiệp của bạn.', '2024-01-10 02:56:33', '2025-02-21 02:02:02'),
+(2, 'flaticon-settings', 'An ninh mạng', 'Bảo vệ dữ liệu doanh nghiệp với các giải pháp an ninh mạng tiên tiến, giúp ngăn chặn các cuộc tấn công và rủi ro bảo mật.', '2024-01-10 02:56:52', '2025-02-21 02:02:19'),
+(3, 'flaticon-cloud', 'Điện toán đám mây', 'Triển khai các giải pháp điện toán đám mây linh hoạt, giúp doanh nghiệp vận hành an toàn và hiệu quả hơn.', '2024-01-10 02:57:09', '2025-02-21 02:02:36');
 
 -- --------------------------------------------------------
 
@@ -225,7 +225,7 @@ CREATE TABLE `feature_two_items` (
 --
 
 INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'We Shape the Perfect Solution', 'Corporate Features', 'There are many variations of passages of available but majority alteration in some form, by humou or randomised words.', 'feature_two_photo_1704877679.jpg', NULL, '2024-01-10 03:07:59');
+(1, 'Chúng tôi tạo ra giải pháp hoàn hảo', 'Tính năng doanh nghiệp', 'Có nhiều cách tiếp cận khác nhau, nhưng chúng tôi luôn đổi mới để tối ưu hiệu suất và mang lại giải pháp công nghệ phù hợp nhất cho doanh nghiệp của bạn.', 'feature_two_photo_1704877679.jpg', NULL, '2025-02-21 02:08:06');
 
 -- --------------------------------------------------------
 
@@ -245,9 +245,9 @@ CREATE TABLE `feature_two_item_elements` (
 --
 
 INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'We promise to respect your time', '2024-01-10 03:08:10', '2024-01-10 03:08:10'),
-(2, 'We hire only professionals you can trust', '2024-01-10 03:08:17', '2024-01-10 03:08:17'),
-(3, 'We promise to provide up front pricing', '2024-01-10 03:08:23', '2024-01-10 03:08:23');
+(1, 'Chúng tôi cam kết tôn trọng thời gian của bạn', '2024-01-10 03:08:10', '2025-02-21 02:08:13'),
+(2, 'Chúng tôi chỉ tuyển dụng những chuyên gia đáng tin cậy', '2024-01-10 03:08:17', '2025-02-21 02:08:22'),
+(3, 'Chúng tôi cam kết cung cấp giá minh bạch ngay từ đầu', '2024-01-10 03:08:23', '2025-02-21 02:08:33');
 
 -- --------------------------------------------------------
 
@@ -312,7 +312,7 @@ CREATE TABLE `fun_facts` (
 --
 
 INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `updated_at`) VALUES
-(1, 'FUNFACT', 'We\'re standout experts in the business', 'There are many variations of passages of available but majority alteration in some form, by humou or randomised words', NULL, '2024-01-09 22:32:39');
+(1, 'CHỨC NĂNG', 'Chúng tôi là những chuyên gia trong lĩnh vực công nghệ', 'Chúng tôi cung cấp các giải pháp công nghệ tiên tiến nhằm tối ưu hóa quy trình vận hành và nâng cao hiệu suất doanh nghiệp. Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi cam kết mang đến những sản phẩm và dịch vụ chất lượng cao, giúp khách hàng đạt được mục tiêu kinh doanh một cách hiệu quả.', NULL, '2025-02-21 01:22:29');
 
 -- --------------------------------------------------------
 
@@ -334,9 +334,9 @@ CREATE TABLE `fun_fact_elements` (
 --
 
 INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'flaticon-job-promotion', '6420', 'Projects Completed', '2024-01-09 22:25:19', '2024-01-09 22:25:19'),
-(2, 'flaticon-recommend', '9280', 'Satisfied Clients', '2024-01-09 22:26:13', '2024-01-09 22:26:13'),
-(3, 'flaticon-teaching', '380', 'Expert Teams', '2024-01-09 22:27:05', '2024-01-09 22:27:05');
+(1, 'flaticon-job-promotion', '6420', 'Dự án đã hoàn thành', '2024-01-09 22:25:19', '2025-02-21 01:22:50'),
+(2, 'flaticon-recommend', '9280', 'Khách hàng', '2024-01-09 22:26:13', '2025-02-21 01:23:08'),
+(3, 'flaticon-teaching', '380', 'Đội ngũ chuyên gia', '2024-01-09 22:27:05', '2025-02-21 01:23:27');
 
 -- --------------------------------------------------------
 
@@ -549,9 +549,9 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 
 CREATE TABLE `languages` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `direction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `direction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `default` tinyint(1) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -564,7 +564,8 @@ CREATE TABLE `languages` (
 INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_at`, `updated_at`) VALUES
 (1, 'English', 'en', 'Left to Right (LTR)', 1, NULL, '2024-04-29 01:17:18'),
 (9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2024-05-01 21:51:52'),
-(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2024-05-01 21:52:51');
+(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2024-05-01 21:52:51'),
+(11, 'Vietnamese', 'vi', 'Left to Right (LTR)', 0, '2025-02-21 00:12:26', '2025-02-21 00:12:26');
 
 -- --------------------------------------------------------
 
@@ -584,11 +585,11 @@ CREATE TABLE `marquees` (
 --
 
 INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
-(1, '* Transofrm ideas into reality', '2024-01-10 08:50:14', '2024-01-10 08:50:14'),
-(2, '* Inspired with Creativity', '2024-01-10 08:50:24', '2024-01-10 08:52:23'),
-(3, '* Design & development craft', '2024-01-10 08:50:53', '2024-01-10 08:51:55'),
-(4, '* Unlock the potential', '2024-01-10 08:51:01', '2024-01-10 08:52:00'),
-(5, '* Innovate with Great Passion', '2024-01-10 08:51:50', '2024-01-10 08:52:03');
+(1, '* Biến ý tưởng thành hiện thực', '2024-01-10 08:50:14', '2025-02-21 01:24:05'),
+(2, '* Lấy cảm hứng từ sự sáng tạo', '2024-01-10 08:50:24', '2025-02-21 01:26:26'),
+(3, '* Tinh hoa thiết kế & phát triển', '2024-01-10 08:50:53', '2025-02-21 01:27:39'),
+(4, '* Khai phá tiềm năng', '2024-01-10 08:51:01', '2025-02-21 01:28:30'),
+(5, '* Đột phá với lòng nhiệt huyết', '2024-01-10 08:51:50', '2025-02-21 01:29:33');
 
 -- --------------------------------------------------------
 
@@ -712,7 +713,7 @@ CREATE TABLE `offers` (
 --
 
 INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'TECH MANAGEMENT', 'The Best Source for IT Solutions', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu convenient scheduling, account fugiat pariatur', 'flaticon-rating', 'We’re doing the right thing.\r\nThe right way.', 'EWEDUrd1i5g', 'offer_photo_1704901634.jpg', NULL, '2024-01-10 09:47:14');
+(1, 'QUẢN LÝ CÔNG NGHỆ', 'Nguồn tốt nhất cho giải pháp CNTT', 'Chúng tôi cung cấp các giải pháp IT tối ưu với lịch trình linh hoạt, đảm bảo hiệu suất và bảo mật cao cho doanh nghiệp của bạn.', 'flaticon-rating', 'Chúng tôi làm những điều đúng đắn\r\nĐúng cách', 'EWEDUrd1i5g', 'offer_photo_1704901634.jpg', NULL, '2025-02-21 01:33:20');
 
 -- --------------------------------------------------------
 
@@ -732,9 +733,9 @@ CREATE TABLE `offer_elements` (
 --
 
 INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem Ipsum is not simply random text', '2024-01-10 09:45:41', '2024-01-10 09:45:41'),
-(2, 'Making this the first true generator on the Internet', '2024-01-10 09:45:47', '2024-01-10 09:45:47'),
-(3, 'Various versions have evolved over the years', '2024-01-10 09:45:53', '2024-01-10 09:45:53');
+(1, 'Tích hợp hệ thống thông minh', '2024-01-10 09:45:41', '2025-02-21 01:34:58'),
+(2, 'Tối ưu hóa quy trình vận hành', '2024-01-10 09:45:47', '2025-02-21 01:35:11'),
+(3, 'Hỗ trợ kỹ thuật 24/7', '2024-01-10 09:45:53', '2025-02-21 01:35:37');
 
 -- --------------------------------------------------------
 
@@ -813,7 +814,7 @@ CREATE TABLE `other_page_items` (
 --
 
 INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_status`, `page_about_service_heading`, `page_about_service_subheading`, `page_about_service_text`, `page_about_service_how_many`, `page_about_service_status`, `page_about_team_members_heading`, `page_about_team_members_subheading`, `page_about_team_members_how_many`, `page_about_team_members_status`, `page_about_seo_title`, `page_about_seo_meta_description`, `page_team_members_title`, `page_team_members_seo_title`, `page_team_members_seo_meta_description`, `page_testimonials_title`, `page_testimonials_seo_title`, `page_testimonials_seo_meta_description`, `page_pricing_title`, `page_pricing_seo_title`, `page_pricing_seo_meta_description`, `page_faq_title`, `page_faq_seo_title`, `page_faq_seo_meta_description`, `page_services_title`, `page_services_seo_title`, `page_services_seo_meta_description`, `page_portfolios_title`, `page_portfolios_seo_title`, `page_portfolios_seo_meta_description`, `page_blog_title`, `page_blog_seo_title`, `page_blog_seo_meta_description`, `page_contact_title`, `page_contact_send_mail_heading`, `page_contact_send_mail_subheading`, `page_contact_info_heading`, `page_contact_info_subheading`, `page_contact_info_text`, `page_contact_info_phone_title`, `page_contact_info_phone_value`, `page_contact_info_email_title`, `page_contact_info_email_value`, `page_contact_info_address_title`, `page_contact_info_address_value`, `page_contact_seo_title`, `page_contact_seo_meta_description`, `page_terms_title`, `page_terms_content`, `page_terms_seo_title`, `page_terms_seo_meta_description`, `page_privacy_title`, `page_privacy_content`, `page_privacy_seo_title`, `page_privacy_seo_meta_description`, `page_search_seo_title`, `page_search_seo_meta_description`, `page_tag_seo_title`, `page_tag_seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'About Us', 'Show', 'Explore what services\r\nwe\'re offering', 'OUR SERVICES', 'There are many variations of passages of available but majority alteration in some form, by humou or randomised words.', '4', 'Show', 'Meet the professional team\r\nbehind the success', 'MEET OUR TEAM MEMBERS', '3', 'Show', 'About Us', 'About Us', 'Team Members', 'Team Members', 'Team Members', 'Testimonials', 'Testimonials', 'Testimonials', 'Pricing Plans', 'Pricing Plans', 'Pricing Plans', 'FAQ', 'FAQ', 'FAQ', 'Services', 'Services', 'Services', 'Portfolios', 'Portfolios', 'Portfolios', 'Blog', 'Blog', 'Blog', 'Contact', 'Feel free to write', 'Send us email', 'Get in touch with us', 'Need any help?', 'Lorem ipsum is simply free text available dolor sit amet consectetur notted adipisicing elit sed do eiusmod tempor incididunt simply dolore magna.', 'Have Any Question?', 'Free +92 (020)-9850', 'Write Email', 'needhelp@company.com', 'Visit Anytime', '66 broklyn golden street. New York', 'Contact', 'Contact', 'Terms of Use', '<h1>Heading 1</h1>\r\n<p>Lorem ipsum dolor sit amet, sit liber elitr ei, elaboraret adversarium nam at. Ne vim tamquam lucilius pericula. Regione adipisci splendide id qui, ex justo harum neglegentur quo. Choro putent ex sea. Unum illud blandit ea has. Ornatus voluptua efficiantur te mei, ius eius regione legimus an, sit illud essent meliore ex.</p>\r\n<h2>Heading 2</h2>\r\n<p>Viderer accusata volutpat in sit. Vel everti placerat gubergren id. Facer verterem inimicus qui eu, his delectus appetere te, doming iriure ex sit. Cum at hinc ipsum quodsi, ei pro erant perfecto.</p>\r\n<h3>Heading 3</h3>\r\n<p>Suas homero nostro an sea, ea hinc evertitur has. Ius semper dolorum epicuri id, ea nam volumus definitiones, id vix eruditi appareat postulant. Te his elitr invenire persequeris. Homero eripuit te nec, omittam nominavi senserit nam id. Te eum consulatu assentior contentiones, suas aliquam verterem mea in, quod nibh mutat eam no. Ea has harum legere maluisset, sit cu summo sapientem. Labitur mandamus consectetuer nam ea, no fierent scribentur neglegentur ius.</p>\r\n<h4>Heading 4</h4>\r\n<p>Utamur gubergren ea mel, at nibh veri temporibus pro. Vis hinc recteque definitionem in. Ius dicit pertinacia no. Te vel adhuc iriure reprehendunt, ei pri exerci essent virtute. Eam elit munere veritus in, ne quas scripta oblique mea, cu sea dolor saepe voluptatum.</p>\r\n<h5>Heading 5</h5>\r\n<p>Nihil impetus quo cu, ne vix movet lucilius mediocritatem. Decore regione in nam, ne mei volumus albucius assueverit. Cu sea purto rationibus, usu an epicuri definitiones. Porro clita hendrerit usu ne. Et cum saepe insolens.</p>\r\n<h6>Heading 6</h6>\r\n<p>Sed omnis lucilius repudiare ut. Vis ut putent volumus philosophia, in est brute tractatos concludaturque. Vim ad erant propriae maiestatis. In ius vidisse voluptaria, veri graece intellegat usu ex, veritus inimicus liberavisse ad mea.</p>', 'Terms of Use', 'Terms of Use', 'Nice', '<p><a href=\"h1 onload=\'alert(1)\'Nice/h1\">h1 onload=\'alert(1)\'Nice/h1</a></p>', 'Privacy Policy', 'Privacy Policy', 'Search', 'Search', 'Tag', 'Tag', NULL, '2024-05-01 21:20:34');
+(1, 'Về chúng tôi', 'Show', 'Khám phá những dịch vụ chúng tôi đang cung cấp', 'DỊCH VỤ CỦA CHÚNG TÔI', 'Chúng tôi cung cấp các dịch vụ chất lượng cao được thiết kế để nâng cao trải nghiệm của bạn.', '4', 'Show', 'Gặp gỡ đội ngũ chuyên nghiệp', 'GẶP GỠ CHUYÊN GIA CỦA CHÚNG TÔI', '3', 'Show', 'Về chúng tôi', 'Về chúng tôi', 'Đội ngũ của chúng tôi', 'Đội ngũ của chúng tôi', 'Đội ngũ của chúng tôi', 'Lời chứng thực', 'Lời chứng thực', 'Lời chứng thực', 'Bảng giá', 'Bảng giá', 'Bảng giá', 'Câu hỏi thường gặp', 'Câu hỏi thường gặp', 'Câu hỏi thường gặp', 'Dịch vụ', 'Dịch vụ', 'Dịch vụ', 'Dự án đã thực hiện', 'Dự án đã thực hiện', 'Dự án đã thực hiện', 'Bài viết', 'Bài viết', 'Bài viết', 'Liên hệ', 'Cho chúng tôi biết bạn cần gì', 'Gửi email cho chúng tôi', 'Liên hệ với chúng tôi', 'Bạn đang cần giúp đỡ', 'Các thông tin liên hệ của chúng tôi', 'Bạn có thắc mắc gì không?', 'Hotline: 0999999999', 'Viết email', 'vnsindex@company.com', 'Ghé thăm bất cứ lúc nào', '102 Trung Hòa, Cầu Giấy, Hà Nội', 'Liên hệ', 'Liên hệ', 'Điều khoản sử dụng', '<h1>ĐIỀU KHOẢN SỬ DỤNG</h1>\r\n<h2>1. Giới Thiệu</h2>\r\n<p>Ch&agrave;o mừng bạn đến với VnsIndex! Bằng c&aacute;ch truy cập v&agrave; sử dụng trang web, nền tảng hoặc dịch vụ của ch&uacute;ng t&ocirc;i, bạn đồng &yacute; với c&aacute;c điều khoản v&agrave; điều kiện được n&ecirc;u trong t&agrave;i liệu n&agrave;y. Nếu bạn kh&ocirc;ng đồng &yacute; với bất kỳ điều khoản n&agrave;o, vui l&ograve;ng ngừng sử dụng dịch vụ của ch&uacute;ng t&ocirc;i ngay lập tức.</p>\r\n<h2>2. Chấp Nhận Điều Khoản</h2>\r\n<p>Khi sử dụng c&aacute;c dịch vụ của VnsIndex, bạn x&aacute;c nhận rằng bạn đ&atilde; đọc, hiểu v&agrave; đồng &yacute; với c&aacute;c điều khoản n&agrave;y. Ch&uacute;ng t&ocirc;i c&oacute; thể cập nhật điều khoản theo thời gian, v&agrave; bạn c&oacute; tr&aacute;ch nhiệm kiểm tra thường xuy&ecirc;n để cập nhật c&aacute;c thay đổi.</p>\r\n<h2>3. Quyền v&agrave; Nghĩa Vụ của Người D&ugrave;ng</h2>\r\n<h3>3.1. Quyền Lợi</h3>\r\n<ul>\r\n<li>Truy cập v&agrave; sử dụng c&aacute;c dịch vụ của VnsIndex theo đ&uacute;ng phạm vi cho ph&eacute;p.</li>\r\n<li>Nhận th&ocirc;ng tin, hỗ trợ kỹ thuật v&agrave; c&aacute;c dịch vụ li&ecirc;n quan.</li>\r\n<li>Bảo vệ quyền ri&ecirc;ng tư theo Ch&iacute;nh S&aacute;ch Bảo Mật của ch&uacute;ng t&ocirc;i.</li>\r\n</ul>\r\n<h3>3.2. Nghĩa Vụ</h3>\r\n<ul>\r\n<li>Kh&ocirc;ng sử dụng dịch vụ cho mục đ&iacute;ch bất hợp ph&aacute;p hoặc vi phạm quyền lợi của b&ecirc;n thứ ba.</li>\r\n<li>Kh&ocirc;ng can thiệp, l&agrave;m gi&aacute;n đoạn hoạt động của hệ thống hoặc khai th&aacute;c lỗ hổng bảo mật.</li>\r\n<li>Cung cấp th&ocirc;ng tin ch&iacute;nh x&aacute;c khi đăng k&yacute; t&agrave;i khoản hoặc sử dụng dịch vụ.</li>\r\n</ul>\r\n<h2>4. Sử Dụng Dịch Vụ</h2>\r\n<ul>\r\n<li>VnsIndex cung cấp c&aacute;c sản phẩm, dịch vụ c&ocirc;ng nghệ bao gồm nhưng kh&ocirc;ng giới hạn ở phần mềm, nền tảng số v&agrave; giải ph&aacute;p dữ liệu.</li>\r\n<li>Người d&ugrave;ng chịu tr&aacute;ch nhiệm về c&aacute;ch họ sử dụng dịch vụ v&agrave; mọi dữ liệu được tải l&ecirc;n nền tảng của ch&uacute;ng t&ocirc;i.</li>\r\n<li>Ch&uacute;ng t&ocirc;i c&oacute; quyền từ chối cung cấp dịch vụ nếu ph&aacute;t hiện bất kỳ h&agrave;nh vi vi phạm điều khoản n&agrave;o.</li>\r\n</ul>\r\n<h2>5. Giới Hạn Tr&aacute;ch Nhiệm</h2>\r\n<ul>\r\n<li>VnsIndex kh&ocirc;ng chịu tr&aacute;ch nhiệm cho bất kỳ tổn thất n&agrave;o ph&aacute;t sinh do việc sử dụng sai dịch vụ hoặc lỗi hệ thống nằm ngo&agrave;i khả năng kiểm so&aacute;t của ch&uacute;ng t&ocirc;i.</li>\r\n<li>Dữ liệu v&agrave; nội dung tr&ecirc;n nền tảng c&oacute; thể thay đổi m&agrave; kh&ocirc;ng cần b&aacute;o trước.</li>\r\n</ul>\r\n<h2>6. Sở Hữu Tr&iacute; Tuệ</h2>\r\n<ul>\r\n<li>Tất cả nội dung, thiết kế, thương hiệu v&agrave; c&ocirc;ng nghệ tr&ecirc;n VnsIndex đều thuộc quyền sở hữu của ch&uacute;ng t&ocirc;i hoặc b&ecirc;n li&ecirc;n quan.</li>\r\n<li>Người d&ugrave;ng kh&ocirc;ng được ph&eacute;p sao ch&eacute;p, ph&acirc;n phối hoặc sử dụng bất kỳ phần n&agrave;o của nền tảng nếu kh&ocirc;ng c&oacute; sự đồng &yacute; bằng văn bản từ VnsIndex.</li>\r\n</ul>\r\n<h2>7. Chấm Dứt Dịch Vụ</h2>\r\n<ul>\r\n<li>Ch&uacute;ng t&ocirc;i c&oacute; quyền tạm ngừng hoặc chấm dứt t&agrave;i khoản của bạn nếu ph&aacute;t hiện h&agrave;nh vi vi phạm điều khoản.</li>\r\n<li>Người d&ugrave;ng c&oacute; thể ngừng sử dụng dịch vụ bất kỳ l&uacute;c n&agrave;o nhưng kh&ocirc;ng được ho&agrave;n trả ph&iacute; đ&atilde; thanh to&aacute;n (nếu c&oacute;).</li>\r\n</ul>\r\n<h2>8. Luật &Aacute;p Dụng</h2>\r\n<ul>\r\n<li>C&aacute;c điều khoản n&agrave;y được điều chỉnh bởi luật ph&aacute;p Việt Nam.</li>\r\n<li>Mọi tranh chấp ph&aacute;t sinh sẽ được giải quyết th&ocirc;ng qua thương lượng hoặc theo quy định của t&ograve;a &aacute;n c&oacute; thẩm quyền.</li>\r\n</ul>\r\n<h2>9. Li&ecirc;n Hệ</h2>\r\n<p>Nếu bạn c&oacute; bất kỳ c&acirc;u hỏi n&agrave;o về Điều Khoản Sử Dụng, vui l&ograve;ng li&ecirc;n hệ với ch&uacute;ng t&ocirc;i qua:</p>\r\n<ul>\r\n<li><strong>Website:</strong> <a href=\"https://chatgpt.com/c/67b76289-4c3c-8012-ae23-515d33811c8c\">VnsIndex.com</a></li>\r\n<li><strong>Email:</strong> <a href=\"mailto:support@vnsindex.com\">support@vnsindex.com</a></li>\r\n<li><strong>Hotline:</strong> 0123 456 789</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>Cảm ơn bạn đ&atilde; sử dụng dịch vụ của VnsIndex!</p>', 'Điều khoản sử dụng', 'Điều khoản sử dụng', 'Chính sách bảo mật', '<h1 data-pm-slice=\"1 1 []\">CH&Iacute;NH S&Aacute;CH BẢO MẬT</h1>\r\n<h2>1. Giới Thiệu</h2>\r\n<p>VnsIndex cam kết bảo vệ quyền ri&ecirc;ng tư v&agrave; th&ocirc;ng tin c&aacute; nh&acirc;n của bạn. Ch&iacute;nh s&aacute;ch bảo mật n&agrave;y giải th&iacute;ch c&aacute;ch ch&uacute;ng t&ocirc;i thu thập, sử dụng v&agrave; bảo vệ dữ liệu c&aacute; nh&acirc;n của bạn khi sử dụng dịch vụ của ch&uacute;ng t&ocirc;i.</p>\r\n<h2>2. Th&ocirc;ng Tin Ch&uacute;ng T&ocirc;i Thu Thập</h2>\r\n<p>Khi sử dụng dịch vụ của VnsIndex, ch&uacute;ng t&ocirc;i c&oacute; thể thu thập c&aacute;c loại th&ocirc;ng tin sau:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Th&ocirc;ng tin c&aacute; nh&acirc;n</strong>: Họ t&ecirc;n, địa chỉ email, số điện thoại, địa chỉ, v&agrave; th&ocirc;ng tin thanh to&aacute;n.</p>\r\n</li>\r\n<li>\r\n<p><strong>Th&ocirc;ng tin kỹ thuật</strong>: Địa chỉ IP, loại tr&igrave;nh duyệt, hệ điều h&agrave;nh, thiết bị sử dụng.</p>\r\n</li>\r\n<li>\r\n<p><strong>Th&ocirc;ng tin hoạt động</strong>: Lịch sử sử dụng dịch vụ, lượt truy cập, tương t&aacute;c với nội dung tr&ecirc;n nền tảng.</p>\r\n</li>\r\n</ul>\r\n<h2>3. Mục Đ&iacute;ch Sử Dụng Th&ocirc;ng Tin</h2>\r\n<p>Ch&uacute;ng t&ocirc;i sử dụng th&ocirc;ng tin thu thập để:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p>Cung cấp v&agrave; cải thiện dịch vụ.</p>\r\n</li>\r\n<li>\r\n<p>Hỗ trợ kh&aacute;ch h&agrave;ng, xử l&yacute; y&ecirc;u cầu v&agrave; phản hồi.</p>\r\n</li>\r\n<li>\r\n<p>Cải thiện trải nghiệm người d&ugrave;ng v&agrave; c&aacute; nh&acirc;n h&oacute;a nội dung hiển thị.</p>\r\n</li>\r\n<li>\r\n<p>Gửi th&ocirc;ng b&aacute;o, khuyến m&atilde;i v&agrave; c&aacute;c th&ocirc;ng tin quan trọng về dịch vụ.</p>\r\n</li>\r\n<li>\r\n<p>Đảm bảo t&iacute;nh bảo mật v&agrave; ngăn chặn h&agrave;nh vi gian lận.</p>\r\n</li>\r\n</ul>\r\n<h2>4. Chia Sẻ Th&ocirc;ng Tin</h2>\r\n<p>Ch&uacute;ng t&ocirc;i kh&ocirc;ng b&aacute;n, trao đổi hoặc cho thu&ecirc; th&ocirc;ng tin c&aacute; nh&acirc;n của bạn. Tuy nhi&ecirc;n, ch&uacute;ng t&ocirc;i c&oacute; thể chia sẻ th&ocirc;ng tin với:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Đối t&aacute;c v&agrave; nh&agrave; cung cấp dịch vụ</strong>: Hỗ trợ vận h&agrave;nh, bảo tr&igrave;, thanh to&aacute;n v&agrave; ph&acirc;n t&iacute;ch dữ liệu.</p>\r\n</li>\r\n<li>\r\n<p><strong>Cơ quan ph&aacute;p luật</strong>: Khi c&oacute; y&ecirc;u cầu hợp ph&aacute;p hoặc để bảo vệ quyền lợi của VnsIndex.</p>\r\n</li>\r\n</ul>\r\n<h2>5. Lưu Trữ v&agrave; Bảo Mật Dữ Liệu</h2>\r\n<p>Ch&uacute;ng t&ocirc;i &aacute;p dụng c&aacute;c biện ph&aacute;p bảo mật nghi&ecirc;m ngặt để bảo vệ dữ liệu c&aacute; nh&acirc;n của bạn khỏi truy cập tr&aacute;i ph&eacute;p, mất m&aacute;t hoặc lạm dụng. Th&ocirc;ng tin của bạn được lưu trữ tr&ecirc;n hệ thống bảo mật cao v&agrave; chỉ những nh&acirc;n vi&ecirc;n c&oacute; thẩm quyền mới được truy cập.</p>\r\n<h2>6. Quyền Lợi của Người D&ugrave;ng</h2>\r\n<p>Bạn c&oacute; quyền:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p>Truy cập, cập nhật hoặc x&oacute;a th&ocirc;ng tin c&aacute; nh&acirc;n.</p>\r\n</li>\r\n<li>\r\n<p>Y&ecirc;u cầu ngừng sử dụng hoặc x&oacute;a t&agrave;i khoản.</p>\r\n</li>\r\n<li>\r\n<p>R&uacute;t lại sự đồng &yacute; cho việc sử dụng dữ liệu c&aacute; nh&acirc;n.</p>\r\n</li>\r\n</ul>\r\n<h2>7. Cookie v&agrave; C&ocirc;ng Nghệ Theo D&otilde;i</h2>\r\n<p>Ch&uacute;ng t&ocirc;i sử dụng cookie để:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p>Lưu trữ t&ugrave;y chỉnh của người d&ugrave;ng.</p>\r\n</li>\r\n<li>\r\n<p>Cải thiện hiệu suất v&agrave; trải nghiệm sử dụng.</p>\r\n</li>\r\n<li>\r\n<p>Ph&acirc;n t&iacute;ch h&agrave;nh vi người d&ugrave;ng để n&acirc;ng cao dịch vụ. Bạn c&oacute; thể thay đổi c&agrave;i đặt tr&igrave;nh duyệt để từ chối cookie, nhưng điều n&agrave;y c&oacute; thể ảnh hưởng đến trải nghiệm sử dụng dịch vụ.</p>\r\n</li>\r\n</ul>\r\n<h2>8. Thay Đổi Ch&iacute;nh S&aacute;ch Bảo Mật</h2>\r\n<p>VnsIndex c&oacute; thể cập nhật ch&iacute;nh s&aacute;ch bảo mật n&agrave;y theo thời gian. Nếu c&oacute; thay đổi quan trọng, ch&uacute;ng t&ocirc;i sẽ th&ocirc;ng b&aacute;o qua email hoặc tr&ecirc;n trang web.</p>\r\n<h2>9. Li&ecirc;n Hệ</h2>\r\n<p>Nếu bạn c&oacute; bất kỳ c&acirc;u hỏi n&agrave;o về Ch&iacute;nh S&aacute;ch Bảo Mật, vui l&ograve;ng li&ecirc;n hệ với ch&uacute;ng t&ocirc;i qua:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Website:</strong> <a>VnsIndex.com</a></p>\r\n</li>\r\n<li>\r\n<p><strong>Email:</strong> <a>support@vnsindex.com</a></p>\r\n</li>\r\n<li>\r\n<p><strong>Hotline:</strong> 0123 456 789</p>\r\n</li>\r\n</ul>\r\n<p>Cảm ơn bạn đ&atilde; tin tưởng v&agrave; sử dụng dịch vụ của VnsIndex!</p>', 'Chính sách bảo mật', 'Chính sách bảo mật', 'Tìm kiếm', 'Tìm kiếm', 'Tag', 'Tag', NULL, '2025-02-21 01:06:55');
 
 -- --------------------------------------------------------
 
@@ -1354,7 +1355,7 @@ CREATE TABLE `video_one_items` (
 --
 
 INSERT INTO `video_one_items` (`id`, `heading`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Most Trusted Agency', 'EWEDUrd1i5g', 'video_one_photo_1704852598.jpg', NULL, '2024-01-09 20:09:58');
+(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1704852598.jpg', NULL, '2025-02-21 01:53:15');
 
 -- --------------------------------------------------------
 
@@ -1375,7 +1376,7 @@ CREATE TABLE `video_two_items` (
 --
 
 INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`, `updated_at`) VALUES
-(1, 'Digital agency services built specifically\r\nfor your business', 'EWEDUrd1i5g', NULL, '2024-01-09 20:57:28');
+(1, 'Dịch vụ kỹ thuật số được xây dựng\r\nDành riêng cho doanh nghiệp của bạn', 'EWEDUrd1i5g', NULL, '2025-02-21 01:54:02');
 
 -- --------------------------------------------------------
 
@@ -1405,7 +1406,7 @@ CREATE TABLE `welcome_one_items` (
 --
 
 INSERT INTO `welcome_one_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `person_name`, `person_designation`, `person_photo`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
-(1, 'Get to Know Us', 'The best digital marketing solutions', 'There are many variations of passages of available but the majority have suffered alteration in some form, by injected hum randomised words which don\'t slightly.', 'Discover More', '#', '38+', 'David Cooper', 'CEO and Co-Founder', 'welcome_one_person_photo_1704848548.jpg', 'welcome_one_photo1_1704823739.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2024-01-09 19:09:35');
+(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1704848548.jpg', 'welcome_one_photo1_1704823739.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2025-02-21 01:41:53');
 
 -- --------------------------------------------------------
 
@@ -1427,8 +1428,8 @@ CREATE TABLE `welcome_one_item_elements` (
 --
 
 INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `created_at`, `updated_at`) VALUES
-(1, 'flaticon-targeted-marketing', 'Leading in marketing', 'Knowledge of technologies rules better than anyone which we apply in our daily work', '2024-01-09 12:36:58', '2024-01-09 12:47:30'),
-(2, 'flaticon-digital-services', 'Expert developers', 'Knowledge of technologies rules better than anyone which we apply in our daily work', '2024-01-09 12:49:34', '2024-01-09 12:49:34');
+(1, 'flaticon-targeted-marketing', 'Dẫn đầu trong lĩnh vực giải pháp công nghệ', 'Chúng tôi hiểu rõ các nguyên tắc công nghệ hơn ai hết và ứng dụng chúng vào công việc hàng ngày để tạo ra giải pháp tối ưu.', '2024-01-09 12:36:58', '2025-02-21 01:43:07'),
+(2, 'flaticon-digital-services', 'Những nhà phát triển chuyên nghiệp', 'Chúng tôi có đội ngũ nhà phát triển chuyên nghiệp để giải quyết tất cả vấn đề của bạn.', '2024-01-09 12:49:34', '2025-02-21 01:44:12');
 
 -- --------------------------------------------------------
 
@@ -1455,7 +1456,7 @@ CREATE TABLE `welcome_two_items` (
 --
 
 INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
-(1, 'Welcome to Agency', 'Leading the best digital agency in town', 'There are many variations of simply free text passages of available but the majority have suffered alteration in some form, by injected hum randomised words which don\'t slightly.', 'Discover More', '#', '38+', 'welcome_two_photo1_1704850420.jpg', 'welcome_two_photo2_1704850420.jpg', NULL, '2024-01-09 19:48:46');
+(1, 'Chào mừng đến với VnsTech', 'Dẫn đầu trong lĩnh vực công nghệ và marketing', 'Có nhiều phương pháp tiếp thị khác nhau, nhưng chúng tôi luôn đổi mới để tối ưu hiệu quả, áp dụng công nghệ tiên tiến và chiến lược sáng tạo.', 'Tìm hiểu thêm', '#', '38+', 'welcome_two_photo1_1704850420.jpg', 'welcome_two_photo2_1704850420.jpg', NULL, '2025-02-21 01:52:29');
 
 -- --------------------------------------------------------
 
@@ -1476,8 +1477,8 @@ CREATE TABLE `welcome_two_item_elements` (
 --
 
 INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, `updated_at`) VALUES
-(1, 'Digital marketing', 'Knowledge of technologies rules better than anyone', '2024-01-09 19:33:58', '2024-01-09 19:34:30'),
-(2, 'Quality results', 'Knowledge of technologies rules better than anyone', '2024-01-09 19:34:10', '2024-01-09 19:34:26');
+(1, 'Giải pháp công nghệ', 'Hiểu rõ và áp dụng công nghệ tốt nhất hiện nay', '2024-01-09 19:33:58', '2025-02-21 01:49:41'),
+(2, 'Kết quả chất lượng', 'Mang lại kết quả tối ưu bằng các chiến lược hiệu quả và công nghệ tiên tiến', '2024-01-09 19:34:10', '2025-02-21 01:50:02');
 
 -- --------------------------------------------------------
 
@@ -1498,7 +1499,8 @@ CREATE TABLE `welcome_two_item_skills` (
 --
 
 INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`, `updated_at`) VALUES
-(1, 'Marketing', '77', '2024-01-09 19:35:58', '2024-01-09 19:35:58');
+(1, 'Marketing', '77', '2024-01-09 19:35:58', '2024-01-09 19:35:58'),
+(3, 'Giải pháp công nghệ', '79', '2025-02-21 01:51:04', '2025-02-21 01:51:04');
 
 -- --------------------------------------------------------
 
@@ -1521,7 +1523,7 @@ CREATE TABLE `why_choose_one_items` (
 --
 
 INSERT INTO `why_choose_one_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'We made things easier for your business', 'Why Choose us?', 'Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore et simply free text dolore magna aliqua lonm andhn.', 'why_choose_one_photo_1704886453.jpg', NULL, '2024-01-10 05:34:13');
+(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1704886453.jpg', NULL, '2025-02-21 02:12:13');
 
 -- --------------------------------------------------------
 
@@ -1542,8 +1544,8 @@ CREATE TABLE `why_choose_one_item_elements` (
 --
 
 INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at`, `updated_at`) VALUES
-(1, 'flaticon-laptop', 'Business\r\nGrowth', '2024-01-10 05:34:41', '2024-01-10 06:25:24'),
-(2, 'flaticon-teaching', 'Marketing\r\nSolution', '2024-01-10 05:34:55', '2024-01-10 06:25:31');
+(1, 'flaticon-laptop', 'Tăng trưởng doanh nghiệp', '2024-01-10 05:34:41', '2025-02-21 02:12:30'),
+(2, 'flaticon-teaching', 'Giải pháp tiếp thị hiệu quả', '2024-01-10 05:34:55', '2025-02-21 02:12:40');
 
 -- --------------------------------------------------------
 
@@ -1567,7 +1569,7 @@ CREATE TABLE `why_choose_two_items` (
 --
 
 INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_text`, `photo_over_heading`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Building a design easy for business', 'Why choose us', 'We’re bringing latest business innovation in to the digital world', 'Top quality marketing solutions', 'why_choose_two_photo_1704886719.jpg', NULL, '2024-01-10 05:38:39');
+(1, 'Thiết kế tối ưu, dễ dàng cho doanh nghiệp', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến những đổi mới kinh doanh tiên tiến trong thế giới số', 'Giải pháp công nghệ chất lượng hàng đầu', 'why_choose_two_photo_1704886719.jpg', NULL, '2025-02-21 02:14:46');
 
 -- --------------------------------------------------------
 
@@ -1588,10 +1590,10 @@ CREATE TABLE `why_choose_two_item_elements` (
 --
 
 INSERT INTO `why_choose_two_item_elements` (`id`, `icon`, `heading`, `created_at`, `updated_at`) VALUES
-(1, 'flaticon-laptop', 'Web Growths', '2024-01-10 06:02:14', '2024-01-10 06:29:49'),
-(2, 'flaticon-graphic-design', 'Digital solutions', '2024-01-10 06:02:27', '2024-01-10 06:02:27'),
-(3, 'flaticon-health-check', 'Best consultancy', '2024-01-10 06:02:45', '2024-01-10 06:02:45'),
-(4, 'flaticon-teaching', 'Expert developers', '2024-01-10 06:02:59', '2024-01-10 06:02:59');
+(1, 'flaticon-laptop', 'Tăng trưởng website', '2024-01-10 06:02:14', '2025-02-21 02:14:56'),
+(2, 'flaticon-graphic-design', 'Giải pháp kỹ thuật số', '2024-01-10 06:02:27', '2025-02-21 02:15:09'),
+(3, 'flaticon-health-check', 'Tư vấn chiến lược tốt nhất', '2024-01-10 06:02:45', '2025-02-21 02:15:20'),
+(4, 'flaticon-teaching', 'Đội ngũ kỹ thuật chuyên nghiệp', '2024-01-10 06:02:59', '2025-02-21 02:15:40');
 
 --
 -- Indexes for dumped tables
@@ -2030,7 +2032,7 @@ ALTER TABLE `home_two_page_items`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `marquees`
@@ -2198,7 +2200,7 @@ ALTER TABLE `welcome_two_item_elements`
 -- AUTO_INCREMENT for table `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `why_choose_one_items`

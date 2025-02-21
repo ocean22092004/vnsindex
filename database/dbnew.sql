@@ -2,12 +2,11 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
+-- Host: 127.0.0.1
+-- Generation Time: Feb 21, 2025 at 10:49 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
--- Generation Time: Feb 21, 2025 at 09:17 AM
-
--- Server version: 8.0.30
--- PHP Version: 8.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,7 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `vnstech_vnsindex`
+-- Database: `vnsteck`
+
 --
 
 -- --------------------------------------------------------
@@ -30,12 +30,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -45,7 +45,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$p6bwLMtkJuIBWCLFxmZgZ.XTzU2K2A1xUixRszQ.MbeGwZEZbyvxO', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
+(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$1MRw9rT/zTGkAwlvSt2douugwTLY6bjxscJdrBmSRhRj3ZW9IWQBe', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
+
 
 -- --------------------------------------------------------
 
@@ -54,11 +55,11 @@ INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `crea
 --
 
 CREATE TABLE `call_to_actions` (
-  `id` bigint UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `text` text DEFAULT NULL,
+  `icon` text DEFAULT NULL,
+  `phone` text DEFAULT NULL,
+  `email` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -77,9 +78,9 @@ INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_
 --
 
 CREATE TABLE `clients` (
-  `id` bigint UNSIGNED NOT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -102,12 +103,12 @@ INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `custom_pages` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -127,13 +128,13 @@ INSERT INTO `custom_pages` (`id`, `name`, `slug`, `content`, `seo_title`, `seo_m
 --
 
 CREATE TABLE `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `failed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uuid` varchar(255) DEFAULT NULL,
+  `connection` text DEFAULT NULL,
+  `queue` text DEFAULT NULL,
+  `payload` longtext DEFAULT NULL,
+  `exception` longtext DEFAULT NULL,
+  `failed_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -143,9 +144,9 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `faqs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `answer` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -168,9 +169,9 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALU
 --
 
 CREATE TABLE `feature_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `text` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -189,10 +190,10 @@ INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_a
 --
 
 CREATE TABLE `feature_one_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -213,11 +214,11 @@ INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 --
 
 CREATE TABLE `feature_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `subheading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -236,8 +237,8 @@ INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`,
 --
 
 CREATE TABLE `feature_two_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -258,8 +259,8 @@ INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at
 --
 
 CREATE TABLE `flat_icons` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon_code` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -301,10 +302,10 @@ INSERT INTO `flat_icons` (`id`, `icon_code`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `fun_facts` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -323,10 +324,10 @@ INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `u
 --
 
 CREATE TABLE `fun_fact_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `number` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `number` text DEFAULT NULL,
+  `name` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -347,11 +348,11 @@ INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `
 --
 
 CREATE TABLE `home_contact_photos` (
-  `id` bigint UNSIGNED NOT NULL,
-  `home_1_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_2_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_3_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_4_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `home_1_contact_photo` varchar(255) DEFAULT NULL,
+  `home_2_contact_photo` varchar(255) DEFAULT NULL,
+  `home_3_contact_photo` varchar(255) DEFAULT NULL,
+  `home_4_contact_photo` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -370,35 +371,35 @@ INSERT INTO `home_contact_photos` (`id`, `home_1_contact_photo`, `home_2_contact
 --
 
 CREATE TABLE `home_four_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `marquee_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `map_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_heading` text DEFAULT NULL,
+  `service_subheading` text DEFAULT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `marquee_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `why_choose_status` text DEFAULT NULL,
+  `testimonial_heading` text DEFAULT NULL,
+  `testimonial_subheading` text DEFAULT NULL,
+  `testimonial_text` text DEFAULT NULL,
+  `testimonial_status` text DEFAULT NULL,
+  `team_member_heading` text DEFAULT NULL,
+  `team_member_subheading` text DEFAULT NULL,
+  `team_member_how_many` text DEFAULT NULL,
+  `team_member_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
+  `blog_heading` text DEFAULT NULL,
+  `blog_subheading` text DEFAULT NULL,
+  `blog_how_many` text DEFAULT NULL,
+  `blog_status` text DEFAULT NULL,
+  `map_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -417,35 +418,35 @@ INSERT INTO `home_four_page_items` (`id`, `service_heading`, `service_subheading
 --
 
 CREATE TABLE `home_one_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_on_slider_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_on_slider_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_one_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `fun_fact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_two_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `feature_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_on_slider_how_many` text DEFAULT NULL,
+  `service_on_slider_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `service_heading` text DEFAULT NULL,
+  `service_subheading` text DEFAULT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `video_one_status` text DEFAULT NULL,
+  `fun_fact_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
+  `blog_heading` text DEFAULT NULL,
+  `blog_subheading` text DEFAULT NULL,
+  `blog_how_many` text DEFAULT NULL,
+  `blog_status` text DEFAULT NULL,
+  `video_two_status` text DEFAULT NULL,
+  `feature_status` text DEFAULT NULL,
+  `testimonial_heading` text DEFAULT NULL,
+  `testimonial_subheading` text DEFAULT NULL,
+  `testimonial_text` text DEFAULT NULL,
+  `testimonial_status` text DEFAULT NULL,
+  `why_choose_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -464,27 +465,27 @@ INSERT INTO `home_one_page_items` (`id`, `service_on_slider_how_many`, `service_
 --
 
 CREATE TABLE `home_three_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `offer_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `video_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `feature_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `call_to_action_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `offer_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_text` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `video_status` text DEFAULT NULL,
+  `feature_status` text DEFAULT NULL,
+  `call_to_action_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
+  `team_member_heading` text DEFAULT NULL,
+  `team_member_subheading` text DEFAULT NULL,
+  `team_member_how_many` text DEFAULT NULL,
+  `team_member_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -503,35 +504,35 @@ INSERT INTO `home_three_page_items` (`id`, `service_how_many`, `service_status`,
 --
 
 CREATE TABLE `home_two_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `marquee_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `map_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_heading` text DEFAULT NULL,
+  `service_subheading` text DEFAULT NULL,
+  `service_how_many` text DEFAULT NULL,
+  `service_status` text DEFAULT NULL,
+  `marquee_status` text DEFAULT NULL,
+  `welcome_status` text DEFAULT NULL,
+  `portfolio_heading` text DEFAULT NULL,
+  `portfolio_subheading` text DEFAULT NULL,
+  `portfolio_how_many` text DEFAULT NULL,
+  `portfolio_status` text DEFAULT NULL,
+  `why_choose_status` text DEFAULT NULL,
+  `testimonial_heading` text DEFAULT NULL,
+  `testimonial_subheading` text DEFAULT NULL,
+  `testimonial_text` text DEFAULT NULL,
+  `testimonial_status` text DEFAULT NULL,
+  `team_member_heading` text DEFAULT NULL,
+  `team_member_subheading` text DEFAULT NULL,
+  `team_member_how_many` text DEFAULT NULL,
+  `team_member_status` text DEFAULT NULL,
+  `client_status` text DEFAULT NULL,
+  `contact_heading` text DEFAULT NULL,
+  `contact_subheading` text DEFAULT NULL,
+  `contact_status` text DEFAULT NULL,
+  `blog_heading` text DEFAULT NULL,
+  `blog_subheading` text DEFAULT NULL,
+  `blog_how_many` text DEFAULT NULL,
+  `blog_status` text DEFAULT NULL,
+  `map_status` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -550,6 +551,7 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 --
 
 CREATE TABLE `languages` (
+
   `id` bigint UNSIGNED NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -564,10 +566,10 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_at`, `updated_at`) VALUES
-(1, 'English', 'en', 'Left to Right (LTR)', 0, NULL, '2025-02-20 21:19:07'),
-(9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2025-02-20 21:19:07'),
-(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2025-02-20 21:19:07'),
-(11, 'VietNam', 'vi', 'Left to Right (LTR)', 1, '2025-02-20 21:19:07', '2025-02-20 21:19:07');
+(1, 'English', 'en', 'Left to Right (LTR)', 1, NULL, '2024-04-29 01:17:18'),
+(9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2024-05-01 21:51:52'),
+(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2025-02-20 21:45:12'),
+(11, 'Viet Nam', 'vi', 'Left to Right (LTR)', 0, '2025-02-20 21:24:46', '2025-02-20 21:45:05');
 
 -- --------------------------------------------------------
 
@@ -576,8 +578,8 @@ INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_
 --
 
 CREATE TABLE `marquees` (
-  `id` bigint UNSIGNED NOT NULL,
-  `item` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `item` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -600,9 +602,9 @@ INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `menus` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -629,9 +631,9 @@ INSERT INTO `menus` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `migrations` (
-  `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `batch` int DEFAULT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `migration` varchar(255) DEFAULT NULL,
+  `batch` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -698,14 +700,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `offers` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `icon` text DEFAULT NULL,
+  `tagline` text DEFAULT NULL,
+  `youtube_video_id` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -724,8 +726,8 @@ INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, 
 --
 
 CREATE TABLE `offer_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `item` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `item` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -746,67 +748,67 @@ INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `other_page_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `page_about_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_about_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_team_members_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_team_members_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_team_members_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_pricing_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_pricing_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_pricing_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_faq_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_faq_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_faq_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_services_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_services_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_services_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_blog_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_blog_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_blog_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_send_mail_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_send_mail_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_phone_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_phone_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_email_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_email_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_address_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_address_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_contact_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_terms_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_privacy_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_search_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_search_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_tag_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `page_tag_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_about_title` text DEFAULT NULL,
+  `page_about_welcome_status` text DEFAULT NULL,
+  `page_about_service_heading` text DEFAULT NULL,
+  `page_about_service_subheading` text DEFAULT NULL,
+  `page_about_service_text` text DEFAULT NULL,
+  `page_about_service_how_many` text DEFAULT NULL,
+  `page_about_service_status` text DEFAULT NULL,
+  `page_about_team_members_heading` text DEFAULT NULL,
+  `page_about_team_members_subheading` text DEFAULT NULL,
+  `page_about_team_members_how_many` text DEFAULT NULL,
+  `page_about_team_members_status` text DEFAULT NULL,
+  `page_about_seo_title` text DEFAULT NULL,
+  `page_about_seo_meta_description` text DEFAULT NULL,
+  `page_team_members_title` text DEFAULT NULL,
+  `page_team_members_seo_title` text DEFAULT NULL,
+  `page_team_members_seo_meta_description` text DEFAULT NULL,
+  `page_testimonials_title` text DEFAULT NULL,
+  `page_testimonials_seo_title` text DEFAULT NULL,
+  `page_testimonials_seo_meta_description` text DEFAULT NULL,
+  `page_pricing_title` text DEFAULT NULL,
+  `page_pricing_seo_title` text DEFAULT NULL,
+  `page_pricing_seo_meta_description` text DEFAULT NULL,
+  `page_faq_title` text DEFAULT NULL,
+  `page_faq_seo_title` text DEFAULT NULL,
+  `page_faq_seo_meta_description` text DEFAULT NULL,
+  `page_services_title` text DEFAULT NULL,
+  `page_services_seo_title` text DEFAULT NULL,
+  `page_services_seo_meta_description` text DEFAULT NULL,
+  `page_portfolios_title` text DEFAULT NULL,
+  `page_portfolios_seo_title` text DEFAULT NULL,
+  `page_portfolios_seo_meta_description` text DEFAULT NULL,
+  `page_blog_title` text DEFAULT NULL,
+  `page_blog_seo_title` text DEFAULT NULL,
+  `page_blog_seo_meta_description` text DEFAULT NULL,
+  `page_contact_title` text DEFAULT NULL,
+  `page_contact_send_mail_heading` text DEFAULT NULL,
+  `page_contact_send_mail_subheading` text DEFAULT NULL,
+  `page_contact_info_heading` text DEFAULT NULL,
+  `page_contact_info_subheading` text DEFAULT NULL,
+  `page_contact_info_text` text DEFAULT NULL,
+  `page_contact_info_phone_title` text DEFAULT NULL,
+  `page_contact_info_phone_value` text DEFAULT NULL,
+  `page_contact_info_email_title` text DEFAULT NULL,
+  `page_contact_info_email_value` text DEFAULT NULL,
+  `page_contact_info_address_title` text DEFAULT NULL,
+  `page_contact_info_address_value` text DEFAULT NULL,
+  `page_contact_seo_title` text DEFAULT NULL,
+  `page_contact_seo_meta_description` text DEFAULT NULL,
+  `page_terms_title` text DEFAULT NULL,
+  `page_terms_content` text DEFAULT NULL,
+  `page_terms_seo_title` text DEFAULT NULL,
+  `page_terms_seo_meta_description` text DEFAULT NULL,
+  `page_privacy_title` text DEFAULT NULL,
+  `page_privacy_content` text DEFAULT NULL,
+  `page_privacy_seo_title` text DEFAULT NULL,
+  `page_privacy_seo_meta_description` text DEFAULT NULL,
+  `page_search_seo_title` text DEFAULT NULL,
+  `page_search_seo_meta_description` text DEFAULT NULL,
+  `page_tag_seo_title` text DEFAULT NULL,
+  `page_tag_seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -825,8 +827,8 @@ INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_st
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -837,12 +839,12 @@ CREATE TABLE `password_reset_tokens` (
 --
 
 CREATE TABLE `personal_access_tokens` (
-  `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tokenable_id` bigint UNSIGNED DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) DEFAULT NULL,
+  `tokenable_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `token` varchar(64) DEFAULT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -856,18 +858,18 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `portfolios` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `client` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `client` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `location` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `banner` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -891,15 +893,15 @@ INSERT INTO `portfolios` (`id`, `name`, `slug`, `description`, `date`, `client`,
 --
 
 CREATE TABLE `posts` (
-  `id` bigint UNSIGNED NOT NULL,
-  `post_category_id` int DEFAULT NULL,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tags` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `post_category_id` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `tags` text DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -909,9 +911,16 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `photo`, `tags`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 3, 'Digital Branding Mastery: Your Ultimate Guide', 'digital-branding-mastery', '<p>Lorem ipsum dolor sit amet, duo veniam feugiat platonem cu, laoreet graecis sensibus ius ut. Cum lorem vocent luptatum at, no ius possim maluisset vituperatoribus, ea vivendo tacimates ius. Ius an altera essent iisque. Ceteros intellegebat at sit, eam amet paulo timeam ex. Ad sed fierent moderatius. Cum id debitis probatus partiendo. Eius principes expetendis eu vim, et voluptatum instructior mediocritatem duo, invenire periculis id sit. Timeam omnesque pro no. Quodsi ocurreret posidonium no quo. Nostrud perpetua convenire ex usu, eu errem scriptorem sea.<br /><br />At pro ubique adipisci pertinacia, homero interpretaris conclusionemque has in. Sea offendit tacimates ne, summo dolore voluptatibus no vix. Mea nemore dignissim id, eos in facer conclusionemque. Ei duo omnesque conclusionemque. Nec ne paulo dolorem euripidis, sed ea epicurei singulis honestatis. Et quodsi platonem definiebas sed, cum no justo tamquam, pro paulo viris et. Putant partiendo dissentiunt te vis. Te percipit torquatos mea, erant audiam sapientem et mel, quas vituperata ad ius. Deserunt tractatos et quo, eu pri omnis aliquip honestatis. Est id doming possit facilisis, meis feugait deseruisse id quo.<br /><br />His ex zril ponderum disputando, nonumes epicurei accommodare mei id. Vis an simul delenit propriae. Ne eos nisl iisque indoctum, ut est vivendo fastidii, hinc eripuit cum at. Nam ei adhuc oblique. Movet salutandi expetendis ad vis. Ea mea vide exerci. Nec an appetere maiestatis, ridens delicata vis at. Viris probatus vis no, ei regione voluptatibus vel. Ut his feugiat scaevola, id qui libris pericula definitionem. Sit te urbanitas torquatos, et sumo scaevola expetenda per. Ad vix doctus referrentur repudiandae, eu vix nibh graecis posidonium, agam commodo an ius.</p>', 'post_1704687929.jpg', 'digital,agency,website', 'Digital Branding Mastery: Your Ultimate Guide', 'Digital Branding Mastery: Your Ultimate Guide', '2024-01-07 22:25:29', '2024-01-08 19:30:56'),
-(2, 5, 'Web Design Essentials for Optimal User Experience', 'web-design-essentials-for-optimal-ux', '<p>Lorem ipsum dolor sit amet, duo veniam feugiat platonem cu, laoreet graecis sensibus ius ut. Cum lorem vocent luptatum at, no ius possim maluisset vituperatoribus, ea vivendo tacimates ius. Ius an altera essent iisque. Ceteros intellegebat at sit, eam amet paulo timeam ex. Ad sed fierent moderatius. Cum id debitis probatus partiendo. Eius principes expetendis eu vim, et voluptatum instructior mediocritatem duo, invenire periculis id sit. Timeam omnesque pro no. Quodsi ocurreret posidonium no quo. Nostrud perpetua convenire ex usu, eu errem scriptorem sea.<br /><br />At pro ubique adipisci pertinacia, homero interpretaris conclusionemque has in. Sea offendit tacimates ne, summo dolore voluptatibus no vix. Mea nemore dignissim id, eos in facer conclusionemque. Ei duo omnesque conclusionemque. Nec ne paulo dolorem euripidis, sed ea epicurei singulis honestatis. Et quodsi platonem definiebas sed, cum no justo tamquam, pro paulo viris et. Putant partiendo dissentiunt te vis. Te percipit torquatos mea, erant audiam sapientem et mel, quas vituperata ad ius. Deserunt tractatos et quo, eu pri omnis aliquip honestatis. Est id doming possit facilisis, meis feugait deseruisse id quo.<br /><br />His ex zril ponderum disputando, nonumes epicurei accommodare mei id. Vis an simul delenit propriae. Ne eos nisl iisque indoctum, ut est vivendo fastidii, hinc eripuit cum at. Nam ei adhuc oblique. Movet salutandi expetendis ad vis. Ea mea vide exerci. Nec an appetere maiestatis, ridens delicata vis at. Viris probatus vis no, ei regione voluptatibus vel. Ut his feugiat scaevola, id qui libris pericula definitionem. Sit te urbanitas torquatos, et sumo scaevola expetenda per. Ad vix doctus referrentur repudiandae, eu vix nibh graecis posidonium, agam commodo an ius.</p>', 'post_1704688078.jpg', 'web design,agency,ui,ux', 'Web Design Essentials for Optimal User Experience', 'Web Design Essentials for Optimal User Experience', '2024-01-07 22:27:58', '2024-05-01 00:08:47'),
-(3, 1, 'Social Media Success: Pro Strategies for You', 'social-media-success-pro-strategies', '<p>Lorem ipsum dolor sit amet, duo veniam feugiat platonem cu, laoreet graecis sensibus ius ut. Cum lorem vocent luptatum at, no ius possim maluisset vituperatoribus, ea vivendo tacimates ius. Ius an altera essent iisque. Ceteros intellegebat at sit, eam amet paulo timeam ex. Ad sed fierent moderatius. Cum id debitis probatus partiendo. Eius principes expetendis eu vim, et voluptatum instructior mediocritatem duo, invenire periculis id sit. Timeam omnesque pro no. Quodsi ocurreret posidonium no quo. Nostrud perpetua convenire ex usu, eu errem scriptorem sea.<br /><br />At pro ubique adipisci pertinacia, homero interpretaris conclusionemque has in. Sea offendit tacimates ne, summo dolore voluptatibus no vix. Mea nemore dignissim id, eos in facer conclusionemque. Ei duo omnesque conclusionemque. Nec ne paulo dolorem euripidis, sed ea epicurei singulis honestatis. Et quodsi platonem definiebas sed, cum no justo tamquam, pro paulo viris et. Putant partiendo dissentiunt te vis. Te percipit torquatos mea, erant audiam sapientem et mel, quas vituperata ad ius. Deserunt tractatos et quo, eu pri omnis aliquip honestatis. Est id doming possit facilisis, meis feugait deseruisse id quo.<br /><br />His ex zril ponderum disputando, nonumes epicurei accommodare mei id. Vis an simul delenit propriae. Ne eos nisl iisque indoctum, ut est vivendo fastidii, hinc eripuit cum at. Nam ei adhuc oblique. Movet salutandi expetendis ad vis. Ea mea vide exerci. Nec an appetere maiestatis, ridens delicata vis at. Viris probatus vis no, ei regione voluptatibus vel. Ut his feugiat scaevola, id qui libris pericula definitionem. Sit te urbanitas torquatos, et sumo scaevola expetenda per. Ad vix doctus referrentur repudiandae, eu vix nibh graecis posidonium, agam commodo an ius.</p>', 'post_1704688156.jpg', 'social,strategies,business', 'Social Media Success: Pro Strategies for You', 'Social Media Success: Pro Strategies for You', '2024-01-07 22:29:16', '2024-05-01 22:14:02');
+(8, 12, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '<p data-pm-slice=\"1 1 []\">Thiết kế web đang trở th&agrave;nh một xu hướng tất yếu trong qu&aacute; tr&igrave;nh hội nhập của doanh nghiệp trong thời đại c&ocirc;ng nghệ số. Một website kh&ocirc;ng chỉ l&agrave; bộ mặt của doanh nghiệp tr&ecirc;n nền tảng Internet m&agrave; c&ograve;n gi&uacute;p mở rộng phạm vi tiếp cận kh&aacute;ch h&agrave;ng, gia tăng doanh thu v&agrave; n&acirc;ng cao khả năng cạnh tranh. Vậy những c&ocirc;ng nghệ thiết kế web phổ biến hiện nay l&agrave; g&igrave;? H&atilde;y c&ugrave;ng t&igrave;m hiểu qua b&agrave;i viết dưới đ&acirc;y!</p>\r\n<p data-pm-slice=\"1 1 []\"><img src=\"https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Cận Cảnh ảnh Gi&agrave;n Khoan Khai Th&aacute;c Ảnh lưu trữ\" /></p>\r\n<h2>V&igrave; Sao Doanh Nghiệp Cần Thiết Kế Website?</h2>\r\n<p>Website ch&iacute;nh l&agrave; k&ecirc;nh th&ocirc;ng tin quan trọng, gi&uacute;p doanh nghiệp tiếp cận kh&aacute;ch h&agrave;ng mọi l&uacute;c, mọi nơi. Dưới đ&acirc;y l&agrave; một số lợi &iacute;ch m&agrave; website mang lại:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Mở rộng quy m&ocirc; kinh doanh</strong>: Website gi&uacute;p doanh nghiệp tiếp cận kh&aacute;ch h&agrave;ng tiềm năng kh&ocirc;ng giới hạn về địa l&yacute;.</p>\r\n</li>\r\n<li>\r\n<p><strong>Tiết kiệm chi ph&iacute; quảng c&aacute;o</strong>: So với c&aacute;c h&igrave;nh thức quảng c&aacute;o truyền thống, website l&agrave; c&ocirc;ng cụ marketing bền vững với chi ph&iacute; hợp l&yacute;.</p>\r\n</li>\r\n<li>\r\n<p><strong>Tối ưu th&ocirc;ng tin nhanh ch&oacute;ng</strong>: Doanh nghiệp dễ d&agrave;ng cập nhật sản phẩm, dịch vụ chỉ với v&agrave;i thao t&aacute;c đơn giản.</p>\r\n</li>\r\n<li>\r\n<p><strong>X&acirc;y dựng thương hiệu chuy&ecirc;n nghiệp</strong>: Một website chuy&ecirc;n nghiệp gi&uacute;p n&acirc;ng cao uy t&iacute;n v&agrave; sự tin tưởng từ kh&aacute;ch h&agrave;ng.</p>\r\n</li>\r\n<li>\r\n<p><strong>Dễ d&agrave;ng cập nhật sản phẩm, dịch vụ</strong>: T&iacute;ch hợp c&aacute;c c&ocirc;ng cụ quản l&yacute; nội dung gi&uacute;p việc cập nhật sản phẩm, tin tức diễn ra nhanh ch&oacute;ng.</p>\r\n</li>\r\n<li>\r\n<p><strong>Gia tăng khả năng cạnh tranh</strong>: Website gi&uacute;p doanh nghiệp nổi bật giữa h&agrave;ng ng&agrave;n đối thủ trong c&ugrave;ng lĩnh vực.</p>\r\n</li>\r\n</ul>\r\n<h2>C&aacute;c C&ocirc;ng Nghệ Thiết Kế Web Phổ Biến Hiện Nay</h2>\r\n<p>Việc lựa chọn c&ocirc;ng nghệ thiết kế web ph&ugrave; hợp sẽ ảnh hưởng trực tiếp đến hiệu suất, t&iacute;nh bảo mật v&agrave; khả năng mở rộng của website. Dưới đ&acirc;y l&agrave; một số c&ocirc;ng nghệ thiết kế web phổ biến:</p>\r\n<h3>1. <strong>PHP</strong></h3>\r\n<p>PHP l&agrave; ng&ocirc;n ngữ lập tr&igrave;nh phổ biến nhất trong thiết kế website hiện nay, nhờ v&agrave;o tốc độ xử l&yacute; nhanh v&agrave; hiệu quả cao. Những ưu điểm của PHP bao gồm:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Chi ph&iacute; thấp</strong>: Miễn ph&iacute; v&agrave; c&oacute; cộng đồng hỗ trợ lớn.</p>\r\n</li>\r\n<li>\r\n<p><strong>Thời gian triển khai nhanh ch&oacute;ng</strong>: Gi&uacute;p doanh nghiệp sớm đưa website v&agrave;o hoạt động.</p>\r\n</li>\r\n<li>\r\n<p><strong>Khả năng mở rộng dễ d&agrave;ng</strong>: Hỗ trợ nhiều framework như Laravel, CodeIgniter, Symfony...</p>\r\n</li>\r\n<li>\r\n<p><strong>Đa dạng nh&agrave; cung cấp hosting</strong>: Hầu hết c&aacute;c dịch vụ hosting đều hỗ trợ PHP.</p>\r\n</li>\r\n</ul>\r\n<h3>2. <strong>ASP.NET</strong></h3>\r\n<p>ASP.NET l&agrave; c&ocirc;ng nghệ ph&aacute;t triển bởi Microsoft, được nhiều doanh nghiệp lựa chọn nhờ t&iacute;nh bảo mật cao v&agrave; khả năng t&iacute;ch hợp mạnh mẽ. Những ưu điểm của ASP.NET:</p>\r\n<p><img src=\"https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Ảnh Cận Cảnh Của Người đang G&otilde; Tr&ecirc;n M&aacute;y T&iacute;nh X&aacute;ch Tay Ảnh lưu trữ\" /></p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Qu&aacute; tr&igrave;nh tối ưu nhanh gọn</strong>: Hỗ trợ nhiều c&ocirc;ng cụ gi&uacute;p lập tr&igrave;nh vi&ecirc;n l&agrave;m việc hiệu quả hơn.</p>\r\n</li>\r\n<li>\r\n<p><strong>Chức năng hỗ trợ phong ph&uacute;</strong>: Cho ph&eacute;p tạo ra c&aacute;c ứng dụng web phức tạp với hiệu suất cao.</p>\r\n</li>\r\n<li>\r\n<p><strong>Giao diện th&acirc;n thiện với người d&ugrave;ng</strong>: Dễ d&agrave;ng tạo ra trải nghiệm tốt hơn cho kh&aacute;ch h&agrave;ng.</p>\r\n</li>\r\n</ul>\r\n<p>Tuy nhi&ecirc;n, ASP.NET c&oacute; nhược điểm l&agrave; chi ph&iacute; cao hơn so với PHP v&agrave; y&ecirc;u cầu m&ocirc;i trường hosting ph&ugrave; hợp.</p>\r\n<h2>Thiết Kế Website Chuy&ecirc;n Nghiệp Ở Đ&acirc;u?</h2>\r\n<p>Nếu bạn đang t&igrave;m kiếm một đơn vị thiết kế website chuy&ecirc;n nghiệp, <strong>Thiết Kế Web Số</strong> l&agrave; sự lựa chọn ho&agrave;n hảo với hơn 10 năm kinh nghiệm trong lĩnh vực thiết kế web v&agrave; digital marketing. Ch&uacute;ng t&ocirc;i mang đến giải ph&aacute;p tối ưu với nhiều ưu điểm vượt trội:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Giao diện độc quyền</strong> theo y&ecirc;u cầu của kh&aacute;ch h&agrave;ng.</p>\r\n</li>\r\n<li>\r\n<p><strong>T&iacute;ch hợp miễn ph&iacute;</strong> c&ocirc;ng nghệ chat trực tuyến, đo lường hiệu quả website.</p>\r\n</li>\r\n<li>\r\n<p><strong>Bảo mật cao</strong>, trang quản trị được đảm bảo bởi hai lớp an ninh.</p>\r\n</li>\r\n<li>\r\n<p><strong>Thao t&aacute;c truy cập đơn giản</strong>, th&acirc;n thiện với mọi hệ điều h&agrave;nh.</p>\r\n</li>\r\n<li>\r\n<p><strong>Thiết kế chuẩn SEO</strong>, gi&uacute;p website dễ d&agrave;ng l&ecirc;n top Google.</p>\r\n</li>\r\n<li>\r\n<p><strong>Chế độ bảo h&agrave;nh, cập nhật trọn đời</strong>, đảm bảo website hoạt động ổn định.</p>\r\n</li>\r\n<li>\r\n<p><strong>Hỗ trợ tư vấn chiến lược Digital Marketing</strong> tận t&igrave;nh.</p>\r\n</li>\r\n</ul>\r\n<p>&nbsp;</p>', 'post_1740123794.jpg', 'công nghệ,thiết kế web,công cụ thiết kế web', 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'Tìm hiểu lý do doanh nghiệp cần thiết kế website và các công nghệ thiết kế web phổ biến hiện nay như PHP và ASP.NET. Khám phá những lợi ích mà website mang lại cho doanh nghiệp, từ việc mở rộng quy mô kinh doanh, tiết kiệm chi phí quảng cáo, đến xây dựng thương hiệu chuyên nghiệp và gia tăng khả năng cạnh tranh.', '2025-02-21 00:43:14', '2025-02-21 01:52:24'),
+(9, 13, 'Những Yếu Tố Quan Trọng Cần Biết Khi Thiết Kế Giao Diện Web', 'nhung-yeu-to-quan-trong-can-biet-khi-thiet-ke-giao-dien-', '<p data-pm-slice=\"1 1 []\">Thiết kế giao diện website kh&ocirc;ng chỉ đơn thuần l&agrave; tạo ra một trang web đẹp mắt m&agrave; c&ograve;n cần tối ưu để mang lại trải nghiệm tốt nhất cho người d&ugrave;ng. Một giao diện web hiệu quả gi&uacute;p giữ ch&acirc;n kh&aacute;ch h&agrave;ng, n&acirc;ng cao khả năng chuyển đổi v&agrave; hỗ trợ SEO tốt hơn. H&atilde;y c&ugrave;ng điểm qua những yếu tố quan trọng khi thiết kế giao diện web để đạt được hiệu suất tối ưu!</p>\r\n<h2>1. Trải Nghiệm Người D&ugrave;ng (UI/UX)</h2>\r\n<p><img src=\"https://images.pexels.com/photos/955405/pexels-photo-955405.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Người Vận H&agrave;nh Macbook Pro Ảnh lưu trữ\" /></p>\r\n<p data-pm-slice=\"1 3 []\">Giao diện web cần đảm bảo yếu tố th&acirc;n thiện với người d&ugrave;ng bằng c&aacute;ch tập trung v&agrave;o cả trải nghiệm người d&ugrave;ng (UX) v&agrave; thiết kế giao diện người d&ugrave;ng (UI). Một số điểm quan trọng cần lưu &yacute;:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Bố cục khoa học, dễ hiểu</strong>: Sắp xếp nội dung hợp l&yacute;, gi&uacute;p người d&ugrave;ng dễ d&agrave;ng t&igrave;m kiếm th&ocirc;ng tin.</p>\r\n</li>\r\n<li>\r\n<p><strong>M&agrave;u sắc h&agrave;i h&ograve;a</strong>: Chọn m&agrave;u sắc ph&ugrave; hợp với thương hiệu, tr&aacute;nh sử dụng qu&aacute; nhiều m&agrave;u g&acirc;y rối mắt.</p>\r\n</li>\r\n<li>\r\n<p><strong>Font chữ dễ đọc</strong>: Sử dụng font chữ phổ biến, cỡ chữ vừa phải để đảm bảo hiển thị tốt tr&ecirc;n mọi thiết bị.</p>\r\n</li>\r\n<li>\r\n<p><strong>Hạn chế hiệu ứng động phức tạp</strong>: C&aacute;c hiệu ứng kh&ocirc;ng cần thiết c&oacute; thể l&agrave;m giảm tốc độ tải trang.</p>\r\n</li>\r\n</ul>\r\n<h2 data-pm-slice=\"1 1 []\">2. Thiết Kế Giao Diện Chuẩn Mobile</h2>\r\n<p><img src=\"https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; ứng Dụng Truyền Th&ocirc;ng X&atilde; Hội Hiển Thị Iphone Ảnh lưu trữ\" /></p>\r\n<p data-pm-slice=\"1 3 []\">Trong thời đại c&ocirc;ng nghệ số, phần lớn người d&ugrave;ng truy cập website qua điện thoại di động. V&igrave; vậy, thiết kế web cần đảm bảo tương th&iacute;ch tr&ecirc;n nhiều thiết bị:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Thiết kế theo chuẩn responsive</strong>: Giao diện tự động điều chỉnh ph&ugrave; hợp với từng k&iacute;ch thước m&agrave;n h&igrave;nh.</p>\r\n</li>\r\n<li>\r\n<p><strong>C&aacute;c n&uacute;t bấm dễ thao t&aacute;c</strong>: K&iacute;ch thước đủ lớn để người d&ugrave;ng dễ d&agrave;ng nhấn tr&ecirc;n m&agrave;n h&igrave;nh cảm ứng.</p>\r\n</li>\r\n<li>\r\n<p><strong>Hạn chế pop-up tr&ecirc;n mobile</strong>: Tr&aacute;nh hiển thị pop-up lớn g&acirc;y kh&oacute; chịu cho người d&ugrave;ng.</p>\r\n</li>\r\n</ul>\r\n<h2 data-pm-slice=\"1 3 []\">3. Tối Ưu Tốc Độ Tải Trang</h2>\r\n<p><img src=\"data:image/png;base64,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\" alt=\"Tốc độ tải trang quan trọng như thế n&agrave;o? Đ&acirc;y l&agrave; 4 điều bạn cần l&agrave;m ngay!\" /></p>\r\n<p>Tốc độ tải trang ảnh hưởng trực tiếp đến trải nghiệm người d&ugrave;ng. Theo thống k&ecirc;, nếu một trang web mất hơn 3 gi&acirc;y để tải, c&oacute; đến 40% người d&ugrave;ng sẽ rời đi ngay lập tức. Để tối ưu tốc độ tải trang, bạn c&oacute; thể &aacute;p dụng c&aacute;c phương ph&aacute;p sau:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Sử dụng định dạng ảnh tối ưu</strong>: WebP l&agrave; một lựa chọn tốt gi&uacute;p giảm dung lượng m&agrave; kh&ocirc;ng l&agrave;m giảm chất lượng h&igrave;nh ảnh.</p>\r\n</li>\r\n<li>\r\n<p><strong>N&eacute;n dữ liệu v&agrave; sử dụng bộ nhớ đệm (cache)</strong>: Gi&uacute;p tải trang nhanh hơn bằng c&aacute;ch lưu trữ c&aacute;c dữ liệu tĩnh.</p>\r\n</li>\r\n<li>\r\n<p><strong>Giảm dung lượng m&atilde; nguồn</strong>: X&oacute;a bỏ c&aacute;c đoạn m&atilde; kh&ocirc;ng cần thiết để tăng hiệu suất hoạt động.</p>\r\n</li>\r\n</ul>\r\n<h2 data-pm-slice=\"1 3 []\">4. Điều Hướng R&otilde; R&agrave;ng, Hợp L&yacute;</h2>\r\n<p>Một hệ thống điều hướng tốt gi&uacute;p người d&ugrave;ng dễ d&agrave;ng t&igrave;m thấy th&ocirc;ng tin họ cần, từ đ&oacute; tăng trải nghiệm v&agrave; giữ ch&acirc;n họ l&acirc;u hơn tr&ecirc;n website.</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Thanh menu trực quan</strong>: Đặt menu ở vị tr&iacute; dễ thấy với c&aacute;c danh mục r&otilde; r&agrave;ng.</p>\r\n</li>\r\n<li>\r\n<p><strong>Sử dụng breadcrumbs</strong>: Gi&uacute;p người d&ugrave;ng dễ d&agrave;ng theo d&otilde;i vị tr&iacute; của họ tr&ecirc;n website.</p>\r\n</li>\r\n<li>\r\n<p><strong>Li&ecirc;n kết nội bộ hợp l&yacute;</strong>: Tăng thời gian ở lại trang v&agrave; hỗ trợ SEO tốt hơn.</p>\r\n</li>\r\n</ul>\r\n<h2 data-pm-slice=\"1 1 []\">5. Kiểm Tra V&agrave; Cải Tiến Định Kỳ</h2>\r\n<p>Sau khi ho&agrave;n th&agrave;nh thiết kế web, việc kiểm tra v&agrave; tối ưu thường xuy&ecirc;n l&agrave; điều cần thiết để đảm bảo hiệu suất lu&ocirc;n đạt mức tối đa. Một số c&ocirc;ng cụ hữu &iacute;ch c&oacute; thể hỗ trợ bạn:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Google PageSpeed Insights</strong>: Đ&aacute;nh gi&aacute; hiệu suất tải trang v&agrave; đề xuất c&aacute;c cải tiến cần thiết.</p>\r\n</li>\r\n<li>\r\n<p><strong>Google Analytics</strong>: Theo d&otilde;i h&agrave;nh vi người d&ugrave;ng để điều chỉnh giao diện v&agrave; nội dung ph&ugrave; hợp.</p>\r\n</li>\r\n<li>\r\n<p><strong>Kiểm tra định kỳ tr&ecirc;n nhiều thiết bị</strong>: Đảm bảo trang web hiển thị tốt tr&ecirc;n cả m&aacute;y t&iacute;nh v&agrave; điện thoại di động.</p>\r\n</li>\r\n</ul>\r\n<h2>Kết Luận</h2>\r\n<p>Một giao diện web tốt kh&ocirc;ng chỉ thu h&uacute;t về mặt thẩm mỹ m&agrave; c&ograve;n phải đảm bảo t&iacute;nh tối ưu cho trải nghiệm người d&ugrave;ng v&agrave; hiệu suất tải trang. Hy vọng những lưu &yacute; tr&ecirc;n sẽ gi&uacute;p bạn thiết kế một website chuy&ecirc;n nghiệp, hiệu quả v&agrave; thu h&uacute;t được nhiều kh&aacute;ch h&agrave;ng hơn!</p>', 'post_1740124296.jpg', 'thiết kế giao diện Web,một số lưu ý khi thiết kế giao diện Web', 'Những Yếu Tố Quan Trọng Khi Thiết Kế Giao Diện Web', 'Tìm hiểu các yếu tố quan trọng khi thiết kế giao diện website để tối ưu trải nghiệm người dùng, tăng tốc độ tải trang và hỗ trợ SEO hiệu quả. Khám phá cách thiết kế giao diện web chuẩn mobile, cải thiện điều hướng, và kiểm tra định kỳ để nâng cao hiệu suất và giữ chân khách hàng lâu dài.', '2025-02-21 00:51:36', '2025-02-21 01:51:56'),
+(10, 11, 'Bí Quyết Xây Dựng Thương Hiệu Số Thành Công Trong Thời Buổi Hiện Nay', 'bi-quyet-xay-dung-thuong-hieu-so-thanh-cong-trong-thoi-buoi-hien-nay', '<p data-pm-slice=\"1 1 []\">Trong kỷ nguy&ecirc;n số, việc x&acirc;y dựng thương hiệu tr&ecirc;n c&aacute;c nền tảng số đ&atilde; trở th&agrave;nh yếu tố quan trọng quyết định sự th&agrave;nh c&ocirc;ng của doanh nghiệp. Thương hiệu số kh&ocirc;ng chỉ gi&uacute;p gia tăng độ nhận diện m&agrave; c&ograve;n đem lại độ tin cậy v&agrave; kết nối bền vững với kh&aacute;ch h&agrave;ng. Vậy l&agrave;m thế n&agrave;o để x&acirc;y dựng một thương hiệu số th&agrave;nh c&ocirc;ng? H&atilde;y c&ugrave;ng t&igrave;m hiểu trong b&agrave;i viết dưới đ&acirc;y.</p>\r\n<h2>1. X&aacute;c Định Bản Săc Thương Hiệu</h2>\r\n<p><img src=\"https://images.pexels.com/photos/5453837/pexels-photo-5453837.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Ảnh lưu trữ miễn ph&iacute; về an to&agrave;n, ban ng&agrave;y, b&agrave;n trợ gi&uacute;p Ảnh lưu trữ\" /></p>\r\n<p>Trước khi bắt đầu bất kỳ chiến lược n&agrave;o, doanh nghiệp cần x&aacute;c định bản săc thương hiệu r&otilde; r&agrave;ng:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Gi&aacute; trị cốt l&otilde;i</strong>: Doanh nghiệp muốn truyền tải gi&aacute; trị g&igrave;?</p>\r\n</li>\r\n<li>\r\n<p><strong>T&aacute;ch biệt với đối thủ</strong>: Điều g&igrave; khiến thương hiệu bạn đặc biệt?</p>\r\n</li>\r\n<li>\r\n<p><strong>Kh&aacute;ch h&agrave;ng mục ti&ecirc;u</strong>: Ai l&agrave; người bạn muốn kết nối?</p>\r\n</li>\r\n</ul>\r\n<h2>2. Thiết Kế Website Chuy&ecirc;n Nghiệp</h2>\r\n<p>Website l&agrave; bộ mặt của thương hiệu tr&ecirc;n Internet. Đảm bảo website:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Giao diện h&agrave;i h&ograve;a</strong>, t&ocirc;n vinh bản săc thương hiệu.</p>\r\n</li>\r\n<li>\r\n<p><strong>Tốc độ tải nhanh</strong>, tối ưu tr&ecirc;n m&aacute;y t&iacute;nh v&agrave; di động.</p>\r\n</li>\r\n<li>\r\n<p><strong>Chuẩn SEO</strong>, gi&uacute;p website l&ecirc;n top Google.</p>\r\n</li>\r\n</ul>\r\n<h2>3. Sử Dụng Mạng X&atilde; Hội Hiệu Quả</h2>\r\n<p>Mạng x&atilde; hội l&agrave; c&ocirc;ng cụ hỗ trợ quan trọng gi&uacute;p doanh nghiệp kết nối với kh&aacute;ch h&agrave;ng. H&atilde;y:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Lựa chọn nền tảng ph&ugrave; hợp</strong>: Facebook, Instagram, TikTok, LinkedIn...</p>\r\n</li>\r\n<li>\r\n<p><strong>Tạo nội dung chất lượng</strong>: Chia sẻ b&agrave;i viết, video, infographic...</p>\r\n</li>\r\n<li>\r\n<p><strong>Tương t&aacute;c thường xuy&ecirc;n</strong>: Trả lời b&igrave;nh luậu, tin nhắn, tạo mini-game...</p>\r\n</li>\r\n</ul>\r\n<h2>4. Chiến Lược Content Marketing B&agrave;i Bản</h2>\r\n<p>Nội dung l&agrave; yếu tố quan trọng gi&uacute;p x&acirc;y dựng l&ograve;ng tin v&agrave; thu h&uacute;t kh&aacute;ch h&agrave;ng:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Viết blog ch&iacute;nh thống</strong>: Cung cấp th&ocirc;ng tin gi&aacute; trị.</p>\r\n</li>\r\n<li>\r\n<p><strong>Video marketing</strong>: Tăng tương t&aacute;c v&agrave; g&acirc;y ấn tượng.</p>\r\n</li>\r\n<li>\r\n<p><strong>Email marketing</strong>: Giữ li&ecirc;n lạc với kh&aacute;ch h&agrave;ng tiềm năng.</p>\r\n</li>\r\n</ul>\r\n<h2>5. Quảng C&aacute;o Kỹ Thuật Số</h2>\r\n<p>Quảng c&aacute;o trực tuyến gi&uacute;p doanh nghiệp tiếp cận đ&uacute;ng đối tượng:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Google Ads</strong>: Tăng lượt truy cập website.</p>\r\n</li>\r\n<li>\r\n<p><strong>Facebook &amp; Instagram Ads</strong>: Nhắm đ&uacute;ng kh&aacute;ch h&agrave;ng tiềm năng.</p>\r\n</li>\r\n<li>\r\n<p><strong>TikTok Ads</strong>: Thu h&uacute;t giới trẻ với video s&aacute;ng tạo.</p>\r\n</li>\r\n</ul>\r\n<h2>6. Theo D&otilde;i &amp; Tối Ưu Hiệu Suất</h2>\r\n<p>X&acirc;y dựng thương hiệu số l&agrave; qu&aacute; tr&igrave;nh li&ecirc;n tục tối ưu:</p>\r\n<ul data-spread=\"false\">\r\n<li>\r\n<p><strong>Google Analytics</strong>: Theo d&otilde;i lưu lượng website.</p>\r\n</li>\r\n<li>\r\n<p><strong>Facebook Insights</strong>: Đo lường hiệu quả tương t&aacute;c.</p>\r\n</li>\r\n<li>\r\n<p><strong>A/B Testing</strong>: Thử nghiệm nội dung quảng c&aacute;o.</p>\r\n</li>\r\n</ul>\r\n<h2>Kết Luận</h2>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>X&acirc;y dựng thương hiệu số l&agrave; ch&igrave;a kh&oacute;a gi&uacute;p doanh nghiệp khẳng định vị thế v&agrave; tăng trưởng bền vững. Bằng việc &aacute;p dụng c&aacute;c chiến lược đ&uacute;ng đắn, doanh nghiệp c&oacute; thể tạo dựng độ tin cậy v&agrave; thu h&uacute;t kh&aacute;ch h&agrave;ng hiệu quả.</p>', 'post_1740125102.jpg', 'thương hiệu số,kinh doanh,xây dựng thương hiệu', 'Bí Quyết Xây Dựng Thương Hiệu Số Thành Công', 'Tìm hiểu cách xây dựng thương hiệu số thành công trong kỷ nguyên số. Khám phá các chiến lược quan trọng như xác định bản sắc thương hiệu, thiết kế website chuyên nghiệp, sử dụng mạng xã hội, content marketing, quảng cáo trực tuyến và tối ưu hiệu suất để tăng trưởng bền vững và kết nối lâu dài với khách hàng.', '2025-02-21 01:05:02', '2025-02-21 01:41:57'),
+(11, 10, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '<p data-start=\"67\" data-end=\"505\">Trong kỷ nguy&ecirc;n số h&oacute;a hiện nay, việc &aacute;p dụng chiến lược marketing số kh&ocirc;ng chỉ gi&uacute;p doanh nghiệp gia tăng sự hiện diện trực tuyến m&agrave; c&ograve;n mang lại lợi &iacute;ch d&agrave;i hạn v&agrave; sự ph&aacute;t triển bền vững. Marketing số gi&uacute;p doanh nghiệp tiếp cận đối tượng kh&aacute;ch h&agrave;ng rộng lớn, n&acirc;ng cao trải nghiệm kh&aacute;ch h&agrave;ng, tối ưu chi ph&iacute; v&agrave; tăng trưởng doanh thu. Dưới đ&acirc;y l&agrave; một số yếu tố quan trọng trong chiến lược marketing số để doanh nghiệp ph&aacute;t triển bền vững:</p>\r\n<p data-start=\"67\" data-end=\"505\"><img src=\"https://images.pexels.com/photos/8348739/pexels-photo-8348739.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Ảnh lưu trữ miễn ph&iacute; về 10000, ảnh nh&oacute;m, ban ng&agrave;y Ảnh lưu trữ\" /></p>\r\n<h3 data-start=\"507\" data-end=\"563\">1. <strong data-start=\"514\" data-end=\"563\">X&acirc;y dựng thương hiệu mạnh mẽ tr&ecirc;n nền tảng số</strong></h3>\r\n<p data-start=\"564\" data-end=\"978\">Việc x&acirc;y dựng một thương hiệu mạnh mẽ v&agrave; dễ nhận diện l&agrave; yếu tố then chốt trong chiến lược marketing số. Doanh nghiệp cần phải tạo ra những th&ocirc;ng điệp r&otilde; r&agrave;ng v&agrave; nhất qu&aacute;n, đồng thời duy tr&igrave; một h&igrave;nh ảnh thương hiệu mạnh mẽ tr&ecirc;n c&aacute;c nền tảng số như website, mạng x&atilde; hội, v&agrave; c&aacute;c c&ocirc;ng cụ t&igrave;m kiếm. Khi kh&aacute;ch h&agrave;ng c&oacute; thể nhận diện thương hiệu của bạn ngay lập tức, họ sẽ cảm thấy tin tưởng v&agrave; sẵn s&agrave;ng gắn b&oacute; l&acirc;u d&agrave;i.</p>\r\n<h3 data-start=\"980\" data-end=\"1016\">2. <strong data-start=\"987\" data-end=\"1016\">Marketing qua mạng x&atilde; hội</strong></h3>\r\n<p data-start=\"1017\" data-end=\"1419\">Mạng x&atilde; hội đ&atilde; trở th&agrave;nh một c&ocirc;ng cụ cực kỳ mạnh mẽ trong chiến lược marketing số. C&aacute;c nền tảng như Facebook, Instagram, LinkedIn v&agrave; TikTok gi&uacute;p doanh nghiệp kết nối với kh&aacute;ch h&agrave;ng một c&aacute;ch nhanh ch&oacute;ng v&agrave; hiệu quả. Doanh nghiệp cần đầu tư v&agrave;o việc tạo ra nội dung hấp dẫn v&agrave; li&ecirc;n tục tương t&aacute;c với kh&aacute;ch h&agrave;ng tr&ecirc;n c&aacute;c nền tảng n&agrave;y để duy tr&igrave; sự hiện diện v&agrave; tạo dựng mối quan hệ l&acirc;u d&agrave;i với kh&aacute;ch h&agrave;ng.</p>\r\n<h3 data-start=\"1421\" data-end=\"1465\">3. <strong data-start=\"1428\" data-end=\"1465\">Tối ưu h&oacute;a c&ocirc;ng cụ t&igrave;m kiếm (SEO)</strong></h3>\r\n<p data-start=\"1466\" data-end=\"1871\">SEO l&agrave; một trong những yếu tố quan trọng để doanh nghiệp c&oacute; thể xuất hiện ở vị tr&iacute; cao trong kết quả t&igrave;m kiếm của Google. Việc tối ưu h&oacute;a SEO gi&uacute;p doanh nghiệp thu h&uacute;t kh&aacute;ch h&agrave;ng tiềm năng m&agrave; kh&ocirc;ng cần phải trả ph&iacute; quảng c&aacute;o. SEO kh&ocirc;ng chỉ bao gồm việc tối ưu h&oacute;a từ kh&oacute;a m&agrave; c&ograve;n phải cải thiện tốc độ website, tạo ra nội dung chất lượng, v&agrave; x&acirc;y dựng c&aacute;c li&ecirc;n kết chất lượng để gia tăng thứ hạng trang web.</p>\r\n<h3 data-start=\"1873\" data-end=\"1899\">4. <strong data-start=\"1880\" data-end=\"1899\">Email Marketing</strong></h3>\r\n<p data-start=\"1900\" data-end=\"2333\">Email marketing vẫn l&agrave; một trong những c&ocirc;ng cụ hiệu quả nhất trong chiến lược marketing số. Bằng c&aacute;ch x&acirc;y dựng một danh s&aacute;ch email chất lượng v&agrave; gửi th&ocirc;ng điệp c&aacute; nh&acirc;n h&oacute;a, doanh nghiệp c&oacute; thể giữ li&ecirc;n lạc thường xuy&ecirc;n với kh&aacute;ch h&agrave;ng, th&ocirc;ng b&aacute;o về c&aacute;c sản phẩm mới, chương tr&igrave;nh khuyến m&atilde;i, hoặc cung cấp c&aacute;c gi&aacute; trị bổ sung. Điều n&agrave;y kh&ocirc;ng chỉ gi&uacute;p duy tr&igrave; mối quan hệ m&agrave; c&ograve;n k&iacute;ch th&iacute;ch kh&aacute;ch h&agrave;ng quay lại v&agrave; tăng trưởng doanh thu.</p>\r\n<h3 data-start=\"2335\" data-end=\"2372\">5. <strong data-start=\"2342\" data-end=\"2372\">Quảng c&aacute;o trực tuyến (PPC)</strong></h3>\r\n<p data-start=\"2373\" data-end=\"2721\">Quảng c&aacute;o trả ph&iacute; tr&ecirc;n c&aacute;c nền tảng như Google Ads, Facebook Ads hay Instagram Ads gi&uacute;p doanh nghiệp tiếp cận kh&aacute;ch h&agrave;ng mục ti&ecirc;u nhanh ch&oacute;ng. Mặc d&ugrave; chi ph&iacute; c&oacute; thể cao hơn so với c&aacute;c phương thức marketing kh&aacute;c, nhưng quảng c&aacute;o trực tuyến lại gi&uacute;p doanh nghiệp c&oacute; thể đo lường hiệu quả ngay lập tức v&agrave; tối ưu h&oacute;a chiến dịch để đạt được ROI tốt hơn.</p>\r\n<h3 data-start=\"2723\" data-end=\"2772\">6. <strong data-start=\"2730\" data-end=\"2772\">Ph&acirc;n t&iacute;ch dữ liệu v&agrave; tối ưu chiến dịch</strong></h3>\r\n<p data-start=\"2773\" data-end=\"3194\">Một lợi &iacute;ch lớn của marketing số l&agrave; khả năng theo d&otilde;i v&agrave; ph&acirc;n t&iacute;ch hiệu quả chiến dịch. Doanh nghiệp c&oacute; thể sử dụng c&aacute;c c&ocirc;ng cụ ph&acirc;n t&iacute;ch như Google Analytics, Facebook Insights để hiểu r&otilde; hơn về h&agrave;nh vi của kh&aacute;ch h&agrave;ng, đo lường hiệu quả c&aacute;c chiến dịch v&agrave; tối ưu h&oacute;a chiến lược marketing. Việc ph&acirc;n t&iacute;ch dữ liệu gi&uacute;p doanh nghiệp điều chỉnh chiến dịch kịp thời, đưa ra quyết định ch&iacute;nh x&aacute;c v&agrave; n&acirc;ng cao hiệu quả hoạt động.</p>\r\n<h3 data-start=\"3196\" data-end=\"3244\">7. <strong data-start=\"3203\" data-end=\"3244\">Cải thiện trải nghiệm kh&aacute;ch h&agrave;ng (CX)</strong></h3>\r\n<p data-start=\"3245\" data-end=\"3695\">Trải nghiệm kh&aacute;ch h&agrave;ng l&agrave; một trong những yếu tố quyết định sự th&agrave;nh c&ocirc;ng của chiến lược marketing số. Doanh nghiệp cần tạo ra c&aacute;c trải nghiệm mượt m&agrave; từ khi kh&aacute;ch h&agrave;ng t&igrave;m hiểu về sản phẩm cho đến khi mua h&agrave;ng v&agrave; sử dụng dịch vụ. Đầu tư v&agrave;o giao diện người d&ugrave;ng (UI), tối ưu h&oacute;a trải nghiệm người d&ugrave;ng (UX), cung cấp dịch vụ chăm s&oacute;c kh&aacute;ch h&agrave;ng trực tuyến nhanh ch&oacute;ng sẽ gi&uacute;p doanh nghiệp n&acirc;ng cao mức độ h&agrave;i l&ograve;ng v&agrave; l&ograve;ng trung th&agrave;nh của kh&aacute;ch h&agrave;ng.</p>\r\n<h3 data-start=\"3697\" data-end=\"3709\">Kết luận</h3>\r\n<p data-start=\"3710\" data-end=\"4145\" data-is-last-node=\"\" data-is-only-node=\"\">Để ph&aacute;t triển bền vững trong thời đại số, doanh nghiệp cần phải &aacute;p dụng một chiến lược marketing số to&agrave;n diện, li&ecirc;n kết c&aacute;c c&ocirc;ng cụ v&agrave; nền tảng trực tuyến để tối ưu h&oacute;a hiệu quả tiếp cận kh&aacute;ch h&agrave;ng v&agrave; gia tăng doanh thu. Marketing số kh&ocirc;ng chỉ gi&uacute;p doanh nghiệp n&acirc;ng cao sự hiện diện m&agrave; c&ograve;n đ&oacute;ng vai tr&ograve; quan trọng trong việc x&acirc;y dựng v&agrave; duy tr&igrave; mối quan hệ l&acirc;u d&agrave;i với kh&aacute;ch h&agrave;ng, từ đ&oacute; đảm bảo sự ph&aacute;t triển bền vững trong tương lai.</p>', 'post_1740127165.jpg', 'maketing,phát triển doanh nghiệp,maketing doanh nghiệp', 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'Tìm hiểu cách áp dụng chiến lược marketing số giúp doanh nghiệp xây dựng thương hiệu mạnh mẽ, tối ưu chi phí, tăng trưởng doanh thu và phát triển bền vững trong thời đại số. Khám phá các yếu tố quan trọng như marketing qua mạng xã hội, SEO, email marketing, quảng cáo trực tuyến và phân tích dữ liệu.', '2025-02-21 01:09:47', '2025-02-21 01:39:25'),
+(12, 12, 'Tầm Quan Trọng Của Truyền Thông Kỹ Thuật Số Trong Thời Đại 4.0', 'tam-quan-trong-cua-truyen-thong-ky-thuat-so-trong-thoi-dai-4-0', '<p>Trong thời đại c&ocirc;ng nghiệp 4.0, truyền th&ocirc;ng kỹ thuật số đ&atilde; trở th&agrave;nh một yếu tố kh&ocirc;ng thể thiếu trong chiến lược ph&aacute;t triển của c&aacute;c doanh nghiệp, tổ chức v&agrave; thậm ch&iacute; l&agrave; c&aacute; nh&acirc;n. Với sự ph&aacute;t triển nhanh ch&oacute;ng của c&ocirc;ng nghệ v&agrave; Internet, truyền th&ocirc;ng kỹ thuật số đ&atilde; mở ra những cơ hội mới, đồng thời cũng đặt ra những th&aacute;ch thức đối với mọi lĩnh vực. B&agrave;i viết n&agrave;y sẽ l&agrave;m r&otilde; tầm quan trọng của truyền th&ocirc;ng kỹ thuật số trong thời đại 4.0 v&agrave; tại sao n&oacute; lại quyết định sự th&agrave;nh c&ocirc;ng của mọi chiến lược kinh doanh hiện nay.</p>\r\n<h3 data-start=\"587\" data-end=\"665\">1. <strong data-start=\"594\" data-end=\"665\">Truyền Th&ocirc;ng Kỹ Thuật Số L&agrave; Cầu Nối Giữa Doanh Nghiệp V&agrave; Kh&aacute;ch H&agrave;ng</strong></h3>\r\n<p data-start=\"667\" data-end=\"1132\">Một trong những yếu tố quan trọng nhất trong truyền th&ocirc;ng kỹ thuật số l&agrave; khả năng kết nối giữa doanh nghiệp v&agrave; kh&aacute;ch h&agrave;ng. Trong thời đại 4.0, kh&aacute;ch h&agrave;ng kh&ocirc;ng c&ograve;n chỉ t&igrave;m kiếm th&ocirc;ng tin qua c&aacute;c k&ecirc;nh truyền thống như TV hay b&aacute;o ch&iacute; m&agrave; chủ yếu th&ocirc;ng qua c&aacute;c nền tảng kỹ thuật số như website, mạng x&atilde; hội, ứng dụng di động, email v&agrave; nhiều k&ecirc;nh kh&aacute;c. Doanh nghiệp cần phải sử dụng c&aacute;c c&ocirc;ng cụ n&agrave;y để duy tr&igrave; sự tương t&aacute;c v&agrave; tiếp cận đ&uacute;ng đối tượng kh&aacute;ch h&agrave;ng mục ti&ecirc;u.</p>\r\n<p data-start=\"1134\" data-end=\"1495\">Mạng x&atilde; hội, chẳng hạn, đ&atilde; trở th&agrave;nh một phần quan trọng trong chiến lược truyền th&ocirc;ng của mọi doanh nghiệp. C&aacute;c nền tảng như Facebook, Instagram, LinkedIn hay TikTok kh&ocirc;ng chỉ gi&uacute;p doanh nghiệp quảng b&aacute; sản phẩm m&agrave; c&ograve;n l&agrave; nơi để giao tiếp trực tiếp với kh&aacute;ch h&agrave;ng, phản hồi nhanh ch&oacute;ng c&aacute;c c&acirc;u hỏi v&agrave; khiếu nại, đồng thời x&acirc;y dựng h&igrave;nh ảnh thương hiệu mạnh mẽ.</p>\r\n<h3 data-start=\"1497\" data-end=\"1541\">2. <strong data-start=\"1504\" data-end=\"1541\">Khả Năng Tối Ưu Chi Ph&iacute; Quảng C&aacute;o</strong></h3>\r\n<p data-start=\"1543\" data-end=\"1867\">Truyền th&ocirc;ng kỹ thuật số kh&ocirc;ng chỉ mang lại hiệu quả tiếp cận m&agrave; c&ograve;n gi&uacute;p doanh nghiệp tối ưu chi ph&iacute; quảng c&aacute;o. Trong khi quảng c&aacute;o truyền thống đ&ograve;i hỏi chi ph&iacute; cao v&agrave; kh&ocirc;ng thể đo lường ch&iacute;nh x&aacute;c hiệu quả, truyền th&ocirc;ng kỹ thuật số cung cấp khả năng đo lường chi tiết v&agrave; tối ưu h&oacute;a chiến dịch quảng c&aacute;o theo thời gian thực.</p>\r\n<p data-start=\"1869\" data-end=\"2168\">Với c&aacute;c c&ocirc;ng cụ như Google Ads, Facebook Ads, doanh nghiệp c&oacute; thể dễ d&agrave;ng x&aacute;c định đối tượng kh&aacute;ch h&agrave;ng mục ti&ecirc;u, từ đ&oacute; chi ti&ecirc;u hiệu quả hơn trong việc chạy quảng c&aacute;o. Chưa kể, c&aacute;c chiến dịch c&oacute; thể được điều chỉnh v&agrave; tối ưu h&oacute;a li&ecirc;n tục để đạt được tỷ lệ chuyển đổi cao nhất với chi ph&iacute; thấp nhất.</p>\r\n<h3 data-start=\"2170\" data-end=\"2218\">3. <strong data-start=\"2177\" data-end=\"2218\">Cải Thiện Trải Nghiệm Kh&aacute;ch H&agrave;ng (CX)</strong></h3>\r\n<p data-start=\"2220\" data-end=\"2696\">Một trong những yếu tố quyết định đến sự th&agrave;nh c&ocirc;ng của doanh nghiệp trong thời đại 4.0 l&agrave; khả năng cung cấp một trải nghiệm kh&aacute;ch h&agrave;ng tuyệt vời (CX). Truyền th&ocirc;ng kỹ thuật số đ&oacute;ng một vai tr&ograve; quan trọng trong việc x&acirc;y dựng v&agrave; cải thiện trải nghiệm kh&aacute;ch h&agrave;ng. Doanh nghiệp c&oacute; thể sử dụng c&aacute;c c&ocirc;ng cụ kỹ thuật số để c&aacute; nh&acirc;n h&oacute;a trải nghiệm của kh&aacute;ch h&agrave;ng, từ việc gửi email tiếp thị được c&aacute; nh&acirc;n h&oacute;a đến việc cung cấp c&aacute;c th&ocirc;ng tin chi tiết qua website hoặc ứng dụng di động.</p>\r\n<p data-start=\"2698\" data-end=\"2945\">Chẳng hạn, nếu doanh nghiệp sử dụng chatbot tr&ecirc;n website, kh&aacute;ch h&agrave;ng c&oacute; thể nhận được hỗ trợ ngay lập tức m&agrave; kh&ocirc;ng phải chờ đợi l&acirc;u. Việc n&agrave;y kh&ocirc;ng chỉ gi&uacute;p tăng sự h&agrave;i l&ograve;ng của kh&aacute;ch h&agrave;ng m&agrave; c&ograve;n n&acirc;ng cao sự trung th&agrave;nh của họ đối với thương hiệu.</p>\r\n<h3 data-start=\"2947\" data-end=\"2989\">4. <strong data-start=\"2954\" data-end=\"2989\">Ph&acirc;n T&iacute;ch V&agrave; Đo Lường Ch&iacute;nh X&aacute;c</strong></h3>\r\n<p data-start=\"2991\" data-end=\"3300\">Một trong những ưu điểm lớn nhất của truyền th&ocirc;ng kỹ thuật số l&agrave; khả năng ph&acirc;n t&iacute;ch v&agrave; đo lường hiệu quả. C&aacute;c c&ocirc;ng cụ như Google Analytics, Facebook Insights, v&agrave; c&aacute;c phần mềm ph&acirc;n t&iacute;ch kh&aacute;c gi&uacute;p doanh nghiệp thu thập dữ liệu về h&agrave;nh vi người d&ugrave;ng, mức độ tương t&aacute;c v&agrave; hiệu quả của c&aacute;c chiến dịch truyền th&ocirc;ng.</p>\r\n<p data-start=\"3302\" data-end=\"3514\">Việc c&oacute; dữ liệu ch&iacute;nh x&aacute;c gi&uacute;p doanh nghiệp hiểu r&otilde; hơn về nhu cầu v&agrave; sở th&iacute;ch của kh&aacute;ch h&agrave;ng, từ đ&oacute; c&oacute; thể điều chỉnh chiến lược truyền th&ocirc;ng sao cho ph&ugrave; hợp, tối ưu h&oacute;a chiến dịch v&agrave; đạt được hiệu quả cao nhất.</p>\r\n<h3 data-start=\"3516\" data-end=\"3575\">5. <strong data-start=\"3523\" data-end=\"3575\">Tăng Cường Sự Tương T&aacute;c V&agrave; Kết Nối Với Cộng Đồng</strong></h3>\r\n<p data-start=\"3577\" data-end=\"3909\">Truyền th&ocirc;ng kỹ thuật số gi&uacute;p doanh nghiệp kh&ocirc;ng chỉ giao tiếp với kh&aacute;ch h&agrave;ng m&agrave; c&ograve;n x&acirc;y dựng cộng đồng xung quanh thương hiệu. Th&ocirc;ng qua c&aacute;c nền tảng mạng x&atilde; hội v&agrave; diễn đ&agrave;n trực tuyến, doanh nghiệp c&oacute; thể tạo ra c&aacute;c cuộc tr&ograve; chuyện, sự kiện trực tuyến v&agrave; c&aacute;c chiến dịch g&acirc;y quỹ cộng đồng, từ đ&oacute; gắn kết kh&aacute;ch h&agrave;ng với thương hiệu.</p>\r\n<p data-start=\"3911\" data-end=\"4107\">Việc x&acirc;y dựng một cộng đồng trực tuyến vững mạnh gi&uacute;p doanh nghiệp tạo ra một lượng kh&aacute;ch h&agrave;ng trung th&agrave;nh l&acirc;u d&agrave;i, tăng mức độ tin tưởng v&agrave; sự gắn b&oacute; của kh&aacute;ch h&agrave;ng đối với sản phẩm hoặc dịch vụ.</p>\r\n<h3 data-start=\"4109\" data-end=\"4153\">6. <strong data-start=\"4116\" data-end=\"4153\">Th&uacute;c Đẩy Sự Đổi Mới V&agrave; Ph&aacute;t Triển</strong></h3>\r\n<p data-start=\"4155\" data-end=\"4433\">Cuối c&ugrave;ng, truyền th&ocirc;ng kỹ thuật số kh&ocirc;ng chỉ gi&uacute;p doanh nghiệp duy tr&igrave; sự ổn định m&agrave; c&ograve;n l&agrave; yếu tố th&uacute;c đẩy sự đổi mới v&agrave; ph&aacute;t triển. C&aacute;c doanh nghiệp c&oacute; thể sử dụng c&ocirc;ng nghệ để thử nghiệm c&aacute;c chiến lược mới, thay đổi c&aacute;ch tiếp cận thị trường v&agrave; đưa ra c&aacute;c s&aacute;ng kiến s&aacute;ng tạo.</p>\r\n<p data-start=\"4435\" data-end=\"4608\">Sự đổi mới trong chiến lược truyền th&ocirc;ng kỹ thuật số gi&uacute;p doanh nghiệp kh&ocirc;ng bị lạc hậu, lu&ocirc;n bắt kịp xu hướng v&agrave; duy tr&igrave; sự cạnh tranh trong thị trường ng&agrave;y c&agrave;ng khốc liệt.</p>\r\n<h3 data-start=\"4610\" data-end=\"4622\">Kết luận</h3>\r\n<p data-start=\"4624\" data-end=\"5121\" data-is-last-node=\"\" data-is-only-node=\"\">Truyền th&ocirc;ng kỹ thuật số trong thời đại 4.0 kh&ocirc;ng chỉ l&agrave; một c&ocirc;ng cụ hỗ trợ m&agrave; c&ograve;n l&agrave; yếu tố quyết định gi&uacute;p doanh nghiệp ph&aacute;t triển bền vững. Việc ứng dụng th&agrave;nh c&ocirc;ng truyền th&ocirc;ng kỹ thuật số sẽ gi&uacute;p doanh nghiệp duy tr&igrave; mối quan hệ gắn b&oacute; với kh&aacute;ch h&agrave;ng, tối ưu chi ph&iacute;, cải thiện trải nghiệm kh&aacute;ch h&agrave;ng, v&agrave; quan trọng nhất l&agrave; lu&ocirc;n duy tr&igrave; sự đổi mới, ph&aacute;t triển trong thị trường cạnh tranh khốc liệt. Ch&iacute;nh v&igrave; vậy, doanh nghiệp n&agrave;o kh&ocirc;ng nắm bắt được xu hướng n&agrave;y sẽ dễ d&agrave;ng bị bỏ lại ph&iacute;a sau.</p>', 'post_1740127228.jpg', 'maketing số,phát triển bền vững,thời đại 4.0,trải nghiệm khách hàng', 'Tầm Quan Trọng Của Truyền Thông Kỹ Thuật Số Trong Thời Đại 4.0: Chiến Lược Marketing Số Thành Công', 'Tìm hiểu tầm quan trọng của truyền thông kỹ thuật số trong thời đại 4.0 và cách doanh nghiệp có thể sử dụng chiến lược marketing số để tăng trưởng bền vững, tối ưu chi phí và xây dựng mối quan hệ lâu dài với khách hàng', '2025-02-21 01:15:25', '2025-02-21 01:40:28');
+INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `photo`, `tags`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
+(13, 11, 'Tại Sao Doanh Nghiệp Cần Chuyển Đổi Số Ngay Hôm Nay?', 'tai-sao-doanh-nghiep-can-chuyen-doi-so-ngay-hom-nay', '<p data-start=\"643\" data-end=\"1023\">Trong thời đại c&ocirc;ng nghệ số ng&agrave;y nay, việc chuyển đổi số kh&ocirc;ng c&ograve;n l&agrave; sự lựa chọn, m&agrave; l&agrave; y&ecirc;u cầu bắt buộc đối với mọi doanh nghiệp nếu muốn tồn tại v&agrave; ph&aacute;t triển. Chuyển đổi số kh&ocirc;ng chỉ đơn giản l&agrave; việc &aacute;p dụng c&aacute;c c&ocirc;ng nghệ mới m&agrave; l&agrave; một chiến lược to&agrave;n diện nhằm tối ưu h&oacute;a mọi mặt của doanh nghiệp. Dưới đ&acirc;y l&agrave; l&yacute; do v&igrave; sao doanh nghiệp cần bắt đầu chuyển đổi số ngay h&ocirc;m nay.</p>\r\n<p data-start=\"643\" data-end=\"1023\"><img src=\"https://media.istockphoto.com/id/1193054831/vi/anh/m%E1%BB%8Di-ng%C6%B0%E1%BB%9Di-s%E1%BB%AD-d%E1%BB%A5ng-%C4%91i%E1%BB%87n-tho%E1%BA%A1i-th%C3%B4ng-minh-g%C3%B5-tr%C3%B2-chuy%E1%BB%87n-ho%E1%BA%B7c-tin-nh%E1%BA%AFn-v%C4%83n-b%E1%BA%A3n-trong-bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=-D_0wrNd_4NQXfr4IGE3OfSdTL1sFacgK9Qr49j5r4s=\" /></p>\r\n<h4 data-start=\"1025\" data-end=\"1079\">1. <strong data-start=\"1033\" data-end=\"1079\">Tăng Cường Năng Suất v&agrave; Hiệu Quả C&ocirc;ng Việc</strong></h4>\r\n<p data-start=\"1080\" data-end=\"1364\">Việc ứng dụng c&aacute;c c&ocirc;ng nghệ số gi&uacute;p tối ưu h&oacute;a quy tr&igrave;nh l&agrave;m việc, giảm thiểu c&aacute;c c&ocirc;ng đoạn thủ c&ocirc;ng v&agrave; tiết kiệm thời gian. C&aacute;c phần mềm quản l&yacute; doanh nghiệp, tự động h&oacute;a c&aacute;c t&aacute;c vụ, v&agrave; hệ thống ERP (Enterprise Resource Planning) gi&uacute;p c&aacute;c bộ phận trong c&ocirc;ng ty phối hợp hiệu quả hơn.</p>\r\n<h4 data-start=\"1366\" data-end=\"1410\">2. <strong data-start=\"1374\" data-end=\"1410\">Cải Thiện Trải Nghiệm Kh&aacute;ch H&agrave;ng</strong></h4>\r\n<p data-start=\"1411\" data-end=\"1682\">Chuyển đổi số gi&uacute;p doanh nghiệp n&acirc;ng cao khả năng phục vụ kh&aacute;ch h&agrave;ng, từ việc cung cấp c&aacute;c dịch vụ trực tuyến 24/7 đến việc c&aacute; nh&acirc;n h&oacute;a c&aacute;c trải nghiệm mua sắm của kh&aacute;ch h&agrave;ng th&ocirc;ng qua c&aacute;c c&ocirc;ng cụ ph&acirc;n t&iacute;ch dữ liệu. Điều n&agrave;y gi&uacute;p tạo dựng l&ograve;ng tin v&agrave; giữ ch&acirc;n kh&aacute;ch h&agrave;ng.</p>\r\n<h4 data-start=\"1684\" data-end=\"1722\">3. <strong data-start=\"1692\" data-end=\"1722\">Tăng Cường T&iacute;nh Cạnh Tranh</strong></h4>\r\n<p data-start=\"1723\" data-end=\"2042\">Trong một thị trường ng&agrave;y c&agrave;ng cạnh tranh, việc sử dụng c&ocirc;ng nghệ để cải thiện sản phẩm, dịch vụ v&agrave; quy tr&igrave;nh l&agrave;m việc sẽ gi&uacute;p doanh nghiệp nổi bật hơn so với đối thủ. Những doanh nghiệp &aacute;p dụng chuyển đổi số sẽ c&oacute; lợi thế trong việc ph&aacute;t triển sản phẩm mới, tối ưu h&oacute;a chiến lược marketing v&agrave; cung cấp dịch vụ tốt hơn.</p>\r\n<h4 data-start=\"2044\" data-end=\"2077\">4. <strong data-start=\"2052\" data-end=\"2077\">Giảm Chi Ph&iacute; Vận H&agrave;nh</strong></h4>\r\n<p data-start=\"2078\" data-end=\"2302\">Chuyển đổi số cũng gi&uacute;p doanh nghiệp giảm thiểu chi ph&iacute; vận h&agrave;nh th&ocirc;ng qua việc tự động h&oacute;a v&agrave; tối ưu h&oacute;a c&aacute;c quy tr&igrave;nh. C&aacute;c hệ thống đ&aacute;m m&acirc;y gi&uacute;p lưu trữ v&agrave; xử l&yacute; dữ liệu m&agrave; kh&ocirc;ng cần đầu tư v&agrave;o cơ sở hạ tầng vật l&yacute; đắt đỏ.</p>\r\n<h4 data-start=\"2304\" data-end=\"2339\">5. <strong data-start=\"2312\" data-end=\"2339\">Khả Năng Mở Rộng Quy M&ocirc;</strong></h4>\r\n<p data-start=\"2340\" data-end=\"2596\">C&ocirc;ng nghệ gi&uacute;p doanh nghiệp mở rộng quy m&ocirc; dễ d&agrave;ng m&agrave; kh&ocirc;ng cần phải tăng th&ecirc;m qu&aacute; nhiều nh&acirc;n lực. Việc quản l&yacute; dữ liệu v&agrave; hệ thống trực tuyến gi&uacute;p doanh nghiệp dễ d&agrave;ng mở rộng thị trường v&agrave; n&acirc;ng cao chất lượng dịch vụ m&agrave; kh&ocirc;ng gặp phải c&aacute;c r&agrave;o cản vật l&yacute;.</p>\r\n<h4 data-start=\"2598\" data-end=\"2640\">6. <strong data-start=\"2606\" data-end=\"2640\">Đ&aacute;p Ứng Nhu Cầu Của Thị Trường</strong></h4>\r\n<p data-start=\"2641\" data-end=\"2889\">Với sự thay đổi nhanh ch&oacute;ng của thị trường v&agrave; sự ph&aacute;t triển của c&ocirc;ng nghệ, kh&aacute;ch h&agrave;ng ng&agrave;y c&agrave;ng kỳ vọng v&agrave;o những dịch vụ nhanh ch&oacute;ng, tiện lợi v&agrave; dễ sử dụng. Chuyển đổi số gi&uacute;p doanh nghiệp th&iacute;ch ứng nhanh ch&oacute;ng v&agrave; hiệu quả với những thay đổi n&agrave;y.</p>\r\n<h4 data-start=\"2891\" data-end=\"2904\">Kết Luận</h4>\r\n<p data-start=\"2905\" data-end=\"3205\">Chuyển đổi số kh&ocirc;ng chỉ gi&uacute;p doanh nghiệp cải thiện hoạt động m&agrave; c&ograve;n l&agrave; yếu tố sống c&ograve;n trong việc duy tr&igrave; sự cạnh tranh v&agrave; ph&aacute;t triển bền vững. V&igrave; vậy, c&aacute;c doanh nghiệp cần nhanh ch&oacute;ng bắt tay v&agrave;o qu&aacute; tr&igrave;nh chuyển đổi số nếu muốn nắm bắt cơ hội v&agrave; kh&ocirc;ng bị tụt lại ph&iacute;a sau trong cuộc đua c&ocirc;ng nghệ.</p>', 'post_1740126099.jpg', 'Chuyển đổi số,Doanh nghiệp số,Công nghệ thông tin,Marketing số', 'Tại Sao Doanh Nghiệp Cần Chuyển Đổi Số Ngay Hôm Nay?', 'Tìm hiểu tại sao chuyển đổi số là yếu tố quan trọng giúp doanh nghiệp nâng cao hiệu suất, cải thiện trải nghiệm khách hàng và tối ưu hóa quy trình làm việc. Cập nhật các xu hướng công nghệ mới, giải pháp phần mềm và lợi ích khi doanh nghiệp áp dụng chuyển đổi số ngay hôm nay.', '2025-02-21 01:21:39', '2025-02-21 01:21:52'),
+(14, 13, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '<p data-start=\"172\" data-end=\"408\">Trong qu&aacute; tr&igrave;nh ph&aacute;t triển web, việc lựa chọn c&ocirc;ng nghệ ph&ugrave; hợp cho dự &aacute;n của bạn c&oacute; thể quyết định đến hiệu quả v&agrave; sự th&agrave;nh c&ocirc;ng của dự &aacute;n. Dưới đ&acirc;y l&agrave; một số c&ocirc;ng nghệ web phổ biến v&agrave; c&aacute;ch bạn c&oacute; thể chọn lựa ch&uacute;ng cho dự &aacute;n của m&igrave;nh.</p>\r\n<p data-start=\"172\" data-end=\"408\"><img src=\"https://images.pexels.com/photos/699459/pexels-photo-699459.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; M&aacute;y T&iacute;nh X&aacute;ch Tay M&agrave;u X&aacute;m đ&atilde; Bật Tr&ecirc;n B&agrave;n Ảnh lưu trữ\" /></p>\r\n<h3 data-start=\"410\" data-end=\"463\">1. <strong data-start=\"417\" data-end=\"463\">Frontend Technologies (C&ocirc;ng Nghệ Frontend)</strong></h3>\r\n<p><strong data-start=\"417\" data-end=\"463\"><img src=\"https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Bản Văn Ảnh lưu trữ\" /></strong></p>\r\n<p data-start=\"465\" data-end=\"571\">Frontend l&agrave; phần giao diện người d&ugrave;ng, nơi người d&ugrave;ng tương t&aacute;c trực tiếp. C&aacute;c c&ocirc;ng nghệ phổ biến bao gồm:</p>\r\n<ul data-start=\"573\" data-end=\"1108\">\r\n<li data-start=\"573\" data-end=\"748\">\r\n<p data-start=\"575\" data-end=\"748\"><strong data-start=\"575\" data-end=\"600\">HTML, CSS, JavaScript</strong>: Đ&acirc;y l&agrave; ba nền tảng cơ bản để x&acirc;y dựng trang web. HTML tạo cấu tr&uacute;c, CSS quản l&yacute; kiểu d&aacute;ng, c&ograve;n JavaScript gi&uacute;p trang web c&oacute; thể tương t&aacute;c v&agrave; động.</p>\r\n</li>\r\n<li data-start=\"752\" data-end=\"1108\">\r\n<p data-start=\"754\" data-end=\"769\"><strong data-start=\"754\" data-end=\"769\">Frameworks:</strong></p>\r\n<ul data-start=\"772\" data-end=\"1108\">\r\n<li data-start=\"772\" data-end=\"906\"><strong data-start=\"774\" data-end=\"783\">React</strong>: Một thư viện JavaScript mạnh mẽ, th&iacute;ch hợp cho c&aacute;c ứng dụng một trang (SPA), nơi người d&ugrave;ng kh&ocirc;ng cần phải tải lại trang.</li>\r\n<li data-start=\"909\" data-end=\"988\"><strong data-start=\"911\" data-end=\"921\">Vue.js</strong>: Một framework tiến bộ, dễ học v&agrave; t&iacute;ch hợp v&agrave;o c&aacute;c dự &aacute;n hiện tại.</li>\r\n<li data-start=\"991\" data-end=\"1105\"><strong data-start=\"993\" data-end=\"1004\">Angular</strong>: Một framework mạnh mẽ từ Google, ph&ugrave; hợp cho c&aacute;c ứng dụng web phức tạp với t&iacute;nh năng tương t&aacute;c cao.</li>\r\n</ul>\r\n</li>\r\n</ul>\r\n<p data-start=\"1109\" data-end=\"1330\">Chọn c&ocirc;ng nghệ frontend sẽ phụ thuộc v&agrave;o y&ecirc;u cầu về t&iacute;nh năng của trang web. Nếu bạn cần ứng dụng web nhanh v&agrave; nhẹ, React hoặc Vue.js c&oacute; thể l&agrave; sự lựa chọn tốt. Nếu cần ứng dụng lớn, phức tạp, Angular l&agrave; lựa chọn mạnh mẽ.</p>\r\n<h3 data-start=\"1332\" data-end=\"1383\">2. <strong data-start=\"1339\" data-end=\"1383\">Backend Technologies (C&ocirc;ng Nghệ Backend)</strong></h3>\r\n<p data-start=\"1385\" data-end=\"1465\">Backend l&agrave; phần xử l&yacute; dữ liệu v&agrave; logic ứng dụng. C&aacute;c c&ocirc;ng nghệ phổ biến bao gồm:</p>\r\n<ul data-start=\"1467\" data-end=\"2001\">\r\n<li data-start=\"1467\" data-end=\"1576\"><strong data-start=\"1469\" data-end=\"1480\">Node.js</strong>: Sử dụng JavaScript để ph&aacute;t triển backend, cho ph&eacute;p x&acirc;y dựng ứng dụng nhanh v&agrave; dễ d&agrave;ng mở rộng.</li>\r\n<li data-start=\"1577\" data-end=\"1751\"><strong data-start=\"1579\" data-end=\"1605\">PHP (Laravel, Symfony)</strong>: PHP l&agrave; ng&ocirc;n ngữ phổ biến v&agrave; dễ học cho backend. Laravel l&agrave; framework PHP hiện đại, dễ sử dụng v&agrave; hỗ trợ mạnh mẽ cho c&aacute;c dự &aacute;n quy m&ocirc; vừa v&agrave; nhỏ.</li>\r\n<li data-start=\"1752\" data-end=\"1895\"><strong data-start=\"1754\" data-end=\"1780\">Python (Django, Flask)</strong>: Python l&agrave; ng&ocirc;n ngữ dễ học v&agrave; mạnh mẽ, Django v&agrave; Flask l&agrave; c&aacute;c framework phổ biến cho việc ph&aacute;t triển ứng dụng web.</li>\r\n<li data-start=\"1896\" data-end=\"2001\"><strong data-start=\"1898\" data-end=\"1915\">Ruby on Rails</strong>: Một framework Ruby cho ph&eacute;p ph&aacute;t triển ứng dụng nhanh ch&oacute;ng với quy tr&igrave;nh chuẩn h&oacute;a.</li>\r\n</ul>\r\n<p data-start=\"2003\" data-end=\"2210\">Lựa chọn backend phụ thuộc v&agrave;o c&aacute;c yếu tố như tốc độ ph&aacute;t triển, t&iacute;nh linh hoạt v&agrave; cộng đồng hỗ trợ. Nếu bạn cần một framework mạnh mẽ v&agrave; dễ duy tr&igrave;, Laravel (PHP) hoặc Django (Python) l&agrave; lựa chọn tuyệt vời.</p>\r\n<h3 data-start=\"2212\" data-end=\"2270\">3. <strong data-start=\"2219\" data-end=\"2270\">Database Technologies (C&ocirc;ng Nghệ Cơ Sở Dữ Liệu)</strong></h3>\r\n<p data-start=\"2272\" data-end=\"2363\">Cơ sở dữ liệu gi&uacute;p bạn lưu trữ v&agrave; quản l&yacute; dữ liệu ứng dụng. C&aacute;c c&ocirc;ng nghệ phổ biến bao gồm:</p>\r\n<ul data-start=\"2365\" data-end=\"2672\">\r\n<li data-start=\"2365\" data-end=\"2475\"><strong data-start=\"2367\" data-end=\"2389\">MySQL / PostgreSQL</strong>: Hai cơ sở dữ liệu quan hệ phổ biến với khả năng mở rộng v&agrave; hỗ trợ cộng đồng mạnh mẽ.</li>\r\n<li data-start=\"2476\" data-end=\"2575\"><strong data-start=\"2478\" data-end=\"2489\">MongoDB</strong>: Một cơ sở dữ liệu NoSQL, th&iacute;ch hợp cho c&aacute;c ứng dụng y&ecirc;u cầu tốc độ đọc v&agrave; ghi nhanh.</li>\r\n<li data-start=\"2576\" data-end=\"2672\"><strong data-start=\"2578\" data-end=\"2590\">Firebase</strong>: Một giải ph&aacute;p cơ sở dữ liệu thời gian thực, phổ biến trong c&aacute;c ứng dụng di động.</li>\r\n</ul>\r\n<p data-start=\"2674\" data-end=\"2780\">Khi lựa chọn cơ sở dữ liệu, bạn cần xem x&eacute;t kiểu dữ liệu của ứng dụng, t&iacute;nh linh hoạt v&agrave; khả năng mở rộng.</p>\r\n<h3 data-start=\"2782\" data-end=\"2853\">4. <strong data-start=\"2789\" data-end=\"2853\">DevOps v&agrave; Hosting Technologies (C&ocirc;ng Nghệ DevOps v&agrave; Lưu Trữ)</strong></h3>\r\n<p data-start=\"2855\" data-end=\"2955\">DevOps gi&uacute;p tự động h&oacute;a quy tr&igrave;nh ph&aacute;t triển v&agrave; triển khai ứng dụng. C&aacute;c c&ocirc;ng nghệ phổ biến bao gồm:</p>\r\n<ul data-start=\"2957\" data-end=\"3287\">\r\n<li data-start=\"2957\" data-end=\"3087\"><strong data-start=\"2959\" data-end=\"2969\">Docker</strong>: C&ocirc;ng cụ gi&uacute;p bạn x&acirc;y dựng, triển khai v&agrave; quản l&yacute; c&aacute;c container, gi&uacute;p ứng dụng dễ d&agrave;ng di chuyển giữa c&aacute;c m&ocirc;i trường.</li>\r\n<li data-start=\"3088\" data-end=\"3191\"><strong data-start=\"3090\" data-end=\"3104\">Kubernetes</strong>: Nền tảng quản l&yacute; container, th&iacute;ch hợp cho c&aacute;c ứng dụng lớn v&agrave; cần sự mở rộng mạnh mẽ.</li>\r\n<li data-start=\"3192\" data-end=\"3287\"><strong data-start=\"3194\" data-end=\"3225\">AWS / Heroku / DigitalOcean</strong>: C&aacute;c nền tảng cloud gi&uacute;p bạn dễ d&agrave;ng triển khai ứng dụng web.</li>\r\n</ul>\r\n<p data-start=\"3289\" data-end=\"3494\">Lựa chọn dịch vụ hosting phụ thuộc v&agrave;o y&ecirc;u cầu về hiệu suất v&agrave; chi ph&iacute;. AWS hoặc DigitalOcean l&agrave; lựa chọn tuyệt vời cho c&aacute;c dự &aacute;n cần khả năng mở rộng cao, trong khi Heroku dễ sử dụng cho c&aacute;c ứng dụng nhỏ.</p>\r\n<h3 data-start=\"3496\" data-end=\"3508\">Kết Luận</h3>\r\n<p data-start=\"3510\" data-end=\"3733\">Việc lựa chọn c&ocirc;ng nghệ web ph&ugrave; hợp l&agrave; một qu&aacute; tr&igrave;nh quan trọng v&agrave; cần c&acirc;n nhắc kỹ lưỡng c&aacute;c yếu tố như y&ecirc;u cầu dự &aacute;n, đội ngũ ph&aacute;t triển v&agrave; ng&acirc;n s&aacute;ch. H&atilde;y lu&ocirc;n dựa v&agrave;o nhu cầu cụ thể của bạn để đưa ra quyết định s&aacute;ng suốt.</p>', 'post_1740127620.jpg', 'Công nghệ web,Frontend,Phát triển web,React', 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'Tìm hiểu các công nghệ web phổ biến như React, Laravel, Node.js, và MongoDB. Chọn công nghệ phù hợp cho dự án web của bạn để đạt được hiệu quả tối đa trong quá trình phát triển.', '2025-02-21 01:27:50', '2025-02-21 01:47:00'),
+(15, 14, 'An Ninh Website: Các Biện Pháp Bảo Mật Bạn Không Thể Bỏ Qua', 'an-ninh-website-cac-bien-phap-bao-mat-ban-khong-the-bo-qua', '<p data-start=\"126\" data-end=\"438\">Bảo mật website l&agrave; một yếu tố quan trọng kh&ocirc;ng thể thiếu trong bất kỳ dự &aacute;n web n&agrave;o. Khi website của bạn bị tấn c&ocirc;ng, kh&ocirc;ng chỉ dữ liệu của người d&ugrave;ng bị x&acirc;m phạm m&agrave; c&ograve;n ảnh hưởng đến uy t&iacute;n v&agrave; hoạt động kinh doanh. Để bảo vệ website khỏi c&aacute;c mối đe dọa, dưới đ&acirc;y l&agrave; những biện ph&aacute;p bảo mật bạn kh&ocirc;ng thể bỏ qua.</p>\r\n<p data-start=\"126\" data-end=\"438\"><img src=\"https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Logo Bảo Mật Ảnh lưu trữ\" /></p>\r\n<h3 data-start=\"440\" data-end=\"464\">1. <strong data-start=\"447\" data-end=\"464\">Sử Dụng HTTPS</strong></h3>\r\n<p data-start=\"466\" data-end=\"779\">HTTPS (Hypertext Transfer Protocol Secure) l&agrave; giao thức an to&agrave;n cho website. Sử dụng HTTPS gi&uacute;p bảo vệ dữ liệu truyền tải giữa tr&igrave;nh duyệt v&agrave; server khỏi c&aacute;c cuộc tấn c&ocirc;ng nghe l&eacute;n (man-in-the-middle attacks). Để triển khai HTTPS, bạn cần c&oacute; một chứng chỉ SSL (Secure Sockets Layer) v&agrave; c&agrave;i đặt ch&uacute;ng tr&ecirc;n m&aacute;y chủ.</p>\r\n<h3 data-start=\"781\" data-end=\"836\">2. <strong data-start=\"788\" data-end=\"836\">Cập Nhật Thường Xuy&ecirc;n C&aacute;c Phần Mềm v&agrave; Plugin</strong></h3>\r\n<p data-start=\"838\" data-end=\"1055\">C&aacute;c phần mềm cũ v&agrave; plugin kh&ocirc;ng được cập nhật c&oacute; thể chứa lỗ hổng bảo mật. Đảm bảo rằng tất cả phần mềm, hệ điều h&agrave;nh v&agrave; plugin tr&ecirc;n website của bạn lu&ocirc;n được cập nhật phi&ecirc;n bản mới nhất để giảm thiểu rủi ro tấn c&ocirc;ng.</p>\r\n<h3 data-start=\"1057\" data-end=\"1118\">3. <strong data-start=\"1064\" data-end=\"1118\">Sử Dụng Mật Khẩu Mạnh v&agrave; X&aacute;c Thực Hai Yếu Tố (2FA)</strong></h3>\r\n<p data-start=\"1120\" data-end=\"1414\">Mật khẩu mạnh l&agrave; một trong những lớp bảo mật cơ bản nhất cho t&agrave;i khoản người d&ugrave;ng v&agrave; quản trị vi&ecirc;n. Mật khẩu n&ecirc;n bao gồm chữ c&aacute;i, số v&agrave; k&yacute; tự đặc biệt. Ngo&agrave;i ra, sử dụng x&aacute;c thực hai yếu tố (2FA) gi&uacute;p tăng cường bảo mật bằng c&aacute;ch y&ecirc;u cầu người d&ugrave;ng cung cấp một m&atilde; x&aacute;c thực th&ecirc;m ngo&agrave;i mật khẩu.</p>\r\n<h3 data-start=\"1416\" data-end=\"1460\">4. <strong data-start=\"1423\" data-end=\"1460\">X&aacute;c Thực v&agrave; Ph&acirc;n Quyền Người D&ugrave;ng</strong></h3>\r\n<p data-start=\"1462\" data-end=\"1692\">Đảm bảo rằng c&aacute;c quyền truy cập tr&ecirc;n website được ph&acirc;n bổ đ&uacute;ng đắn. Người d&ugrave;ng chỉ n&ecirc;n c&oacute; quyền truy cập v&agrave;o c&aacute;c phần cần thiết. Quản trị vi&ecirc;n n&ecirc;n kiểm so&aacute;t chặt chẽ quyền truy cập v&agrave; thường xuy&ecirc;n r&agrave; so&aacute;t c&aacute;c t&agrave;i khoản người d&ugrave;ng.</p>\r\n<h3 data-start=\"1694\" data-end=\"1733\">5. <strong data-start=\"1701\" data-end=\"1733\">Sử Dụng Tường Lửa (Firewall)</strong></h3>\r\n<p data-start=\"1735\" data-end=\"1926\">Tường lửa gi&uacute;p ngăn chặn c&aacute;c cuộc tấn c&ocirc;ng từ b&ecirc;n ngo&agrave;i v&agrave; chỉ cho ph&eacute;p c&aacute;c kết nối hợp lệ v&agrave;o website. Hệ thống tường lửa sẽ lọc c&aacute;c lưu lượng truy cập v&agrave; ngăn chặn c&aacute;c y&ecirc;u cầu bất hợp ph&aacute;p.</p>\r\n<h3 data-start=\"1928\" data-end=\"1960\">6. <strong data-start=\"1935\" data-end=\"1960\">Bảo Mật Cơ Sở Dữ Liệu</strong></h3>\r\n<p data-start=\"1962\" data-end=\"2214\">Cơ sở dữ liệu l&agrave; nơi chứa th&ocirc;ng tin quan trọng của website. Bạn cần đảm bảo rằng cơ sở dữ liệu của m&igrave;nh được bảo vệ bằng c&aacute;ch m&atilde; h&oacute;a dữ liệu nhạy cảm v&agrave; sử dụng c&aacute;c biện ph&aacute;p an ninh như SQL injection prevention v&agrave; hạn chế quyền truy cập cơ sở dữ liệu.</p>\r\n<h3 data-start=\"2216\" data-end=\"2250\">7. <strong data-start=\"2223\" data-end=\"2250\">Sao Lưu Dữ Liệu Định Kỳ</strong></h3>\r\n<p data-start=\"2252\" data-end=\"2471\">Sao lưu dữ liệu l&agrave; một biện ph&aacute;p bảo mật dự ph&ograve;ng quan trọng. Khi c&oacute; sự cố xảy ra, bạn c&oacute; thể kh&ocirc;i phục website về trạng th&aacute;i trước đ&oacute; m&agrave; kh&ocirc;ng mất dữ liệu quan trọng. H&atilde;y đảm bảo sao lưu định kỳ v&agrave; lưu trữ ở nhiều nơi.</p>\r\n<h3 data-start=\"2473\" data-end=\"2503\">8. <strong data-start=\"2480\" data-end=\"2503\">Chống Tấn C&ocirc;ng DDoS</strong></h3>\r\n<p data-start=\"2505\" data-end=\"2738\">C&aacute;c cuộc tấn c&ocirc;ng từ chối dịch vụ ph&acirc;n t&aacute;n (DDoS) c&oacute; thể l&agrave;m gi&aacute;n đoạn hoạt động của website. Để ph&ograve;ng tr&aacute;nh, bạn c&oacute; thể sử dụng c&aacute;c dịch vụ chống DDoS hoặc c&aacute;c hệ thống ph&acirc;n t&aacute;n mạng để giảm thiểu t&aacute;c động của c&aacute;c cuộc tấn c&ocirc;ng n&agrave;y.</p>\r\n<h3 data-start=\"2740\" data-end=\"2787\">9. <strong data-start=\"2747\" data-end=\"2787\">Gi&aacute;m S&aacute;t v&agrave; Kiểm Tra An Ninh Định Kỳ</strong></h3>\r\n<p data-start=\"2789\" data-end=\"3006\">Cuối c&ugrave;ng, việc gi&aacute;m s&aacute;t v&agrave; kiểm tra bảo mật định kỳ l&agrave; rất quan trọng để ph&aacute;t hiện sớm c&aacute;c lỗ hổng. C&aacute;c c&ocirc;ng cụ qu&eacute;t lỗ hổng v&agrave; kiểm tra bảo mật gi&uacute;p ph&aacute;t hiện c&aacute;c vấn đề trước khi ch&uacute;ng trở th&agrave;nh mối đe dọa thực sự.</p>\r\n<h3 data-start=\"3008\" data-end=\"3020\">Kết Luận</h3>\r\n<p data-start=\"3022\" data-end=\"3304\">Bảo mật website l&agrave; một qu&aacute; tr&igrave;nh li&ecirc;n tục v&agrave; cần sự ch&uacute; &yacute; đặc biệt từ đội ngũ ph&aacute;t triển. Việc thực hiện c&aacute;c biện ph&aacute;p bảo mật như HTTPS, cập nhật phần mềm, sử dụng mật khẩu mạnh v&agrave; 2FA, c&ugrave;ng với việc gi&aacute;m s&aacute;t an ninh thường xuy&ecirc;n sẽ gi&uacute;p bảo vệ website của bạn khỏi c&aacute;c mối đe dọa.</p>', 'post_1740127397.jpg', 'An ninh website,HTTPS,Mật khẩu mạnh,Bảo mật web,DDoS', 'An Ninh Website: Các Biện Pháp Bảo Mật Bạn Không Thể Bỏ Qua', 'Tìm hiểu các biện pháp bảo mật website hiệu quả, từ việc sử dụng HTTPS, cập nhật phần mềm, đến việc bảo vệ cơ sở dữ liệu và chống tấn công DDoS. Đảm bảo an toàn cho website của bạn ngay hôm nay.', '2025-02-21 01:34:21', '2025-02-21 01:43:17'),
+(16, 14, 'Cách Tạo Website Thương Mại Điện Tử (E-commerce) Hiệu Quả', 'cach--tao-website-thuong-mai-dien-tu-hieu-qua', '<p data-start=\"139\" data-end=\"564\">Website thương mại điện tử (E-commerce) l&agrave; nền tảng quan trọng để kinh doanh trực tuyến, gi&uacute;p bạn tiếp cận kh&aacute;ch h&agrave;ng tiềm năng v&agrave; tăng trưởng doanh thu. Việc x&acirc;y dựng một website thương mại điện tử hiệu quả kh&ocirc;ng chỉ đơn giản l&agrave; tạo một cửa h&agrave;ng trực tuyến, m&agrave; c&ograve;n li&ecirc;n quan đến việc tối ưu h&oacute;a trải nghiệm người d&ugrave;ng, bảo mật, v&agrave; khả năng mở rộng. Dưới đ&acirc;y l&agrave; c&aacute;c bước v&agrave; b&iacute; quyết để tạo ra một website E-commerce hiệu quả.</p>\r\n<p data-start=\"139\" data-end=\"564\"><img src=\"https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500\" alt=\"Miễn ph&iacute; Ảnh lưu trữ miễn ph&iacute; về am hiểu c&ocirc;ng nghệ cao, bắn dọc, c&aacute;c dịch vụ t&agrave;i ch&iacute;nh Ảnh lưu trữ\" /></p>\r\n<h3 data-start=\"566\" data-end=\"609\">1. <strong data-start=\"573\" data-end=\"609\">Chọn Nền Tảng Thương Mại Điện Tử</strong></h3>\r\n<p data-start=\"611\" data-end=\"736\">Một trong những bước đầu ti&ecirc;n khi tạo website E-commerce l&agrave; chọn nền tảng ph&ugrave; hợp. Một số nền tảng phổ biến hiện nay bao gồm:</p>\r\n<ul data-start=\"738\" data-end=\"1167\">\r\n<li data-start=\"738\" data-end=\"849\"><strong data-start=\"740\" data-end=\"751\">Shopify</strong>: Dễ sử dụng, giao diện th&acirc;n thiện với người d&ugrave;ng v&agrave; hỗ trợ t&iacute;ch hợp nhiều phương thức thanh to&aacute;n.</li>\r\n<li data-start=\"850\" data-end=\"975\"><strong data-start=\"852\" data-end=\"879\">WooCommerce (WordPress)</strong>: Ph&ugrave; hợp với những ai đ&atilde; quen sử dụng WordPress, dễ t&ugrave;y chỉnh v&agrave; t&iacute;ch hợp nhiều plugin hữu &iacute;ch.</li>\r\n<li data-start=\"976\" data-end=\"1069\"><strong data-start=\"978\" data-end=\"989\">Magento</strong>: Giải ph&aacute;p mạnh mẽ, th&iacute;ch hợp cho c&aacute;c doanh nghiệp lớn với nhu cầu mở rộng cao.</li>\r\n<li data-start=\"1070\" data-end=\"1167\"><strong data-start=\"1072\" data-end=\"1087\">BigCommerce</strong>: D&agrave;nh cho những người muốn một nền tảng mạnh mẽ với c&aacute;c t&iacute;nh năng t&iacute;ch hợp sẵn.</li>\r\n</ul>\r\n<p data-start=\"1169\" data-end=\"1250\">Lựa chọn nền tảng sẽ phụ thuộc v&agrave;o quy m&ocirc;, ng&acirc;n s&aacute;ch v&agrave; y&ecirc;u cầu cụ thể của dự &aacute;n.</p>\r\n<h3 data-start=\"1252\" data-end=\"1300\">2. <strong data-start=\"1259\" data-end=\"1300\">Thiết Kế Giao Diện Website Th&acirc;n Thiện</strong></h3>\r\n<p data-start=\"1302\" data-end=\"1537\">Giao diện người d&ugrave;ng (UI) v&agrave; trải nghiệm người d&ugrave;ng (UX) l&agrave; yếu tố quyết định gi&uacute;p website của bạn thu h&uacute;t kh&aacute;ch h&agrave;ng v&agrave; tăng tỷ lệ chuyển đổi. Một website E-commerce th&agrave;nh c&ocirc;ng cần c&oacute; giao diện dễ d&agrave;ng điều hướng, tối giản v&agrave; đẹp mắt.</p>\r\n<ul data-start=\"1539\" data-end=\"1775\">\r\n<li data-start=\"1539\" data-end=\"1663\"><strong data-start=\"1541\" data-end=\"1562\">Responsive Design</strong>: Đảm bảo website của bạn hoạt động tốt tr&ecirc;n mọi thiết bị, từ m&aacute;y t&iacute;nh để b&agrave;n đến điện thoại di động.</li>\r\n<li data-start=\"1664\" data-end=\"1775\"><strong data-start=\"1666\" data-end=\"1689\">M&agrave;u sắc v&agrave; h&igrave;nh ảnh</strong>: Sử dụng m&agrave;u sắc ph&ugrave; hợp với thương hiệu v&agrave; h&igrave;nh ảnh sản phẩm r&otilde; n&eacute;t, chất lượng cao.</li>\r\n</ul>\r\n<h3 data-start=\"1777\" data-end=\"1823\">3. <strong data-start=\"1784\" data-end=\"1823\">T&iacute;ch Hợp C&aacute;c Phương Thức Thanh To&aacute;n</strong></h3>\r\n<p data-start=\"1825\" data-end=\"1940\">Cung cấp nhiều phương thức thanh to&aacute;n gi&uacute;p kh&aacute;ch h&agrave;ng dễ d&agrave;ng mua sắm. C&aacute;c phương thức thanh to&aacute;n phổ biến bao gồm:</p>\r\n<ul data-start=\"1942\" data-end=\"2106\">\r\n<li data-start=\"1942\" data-end=\"1994\"><strong data-start=\"1944\" data-end=\"1994\">Thanh to&aacute;n qua thẻ t&iacute;n dụng (Visa, MasterCard)</strong></li>\r\n<li data-start=\"1995\" data-end=\"2050\"><strong data-start=\"1997\" data-end=\"2050\">Thanh to&aacute;n qua v&iacute; điện tử (Momo, ZaloPay, PayPal)</strong></li>\r\n<li data-start=\"2051\" data-end=\"2106\"><strong data-start=\"2053\" data-end=\"2079\">COD (Cash on Delivery)</strong>: Thanh to&aacute;n khi nhận h&agrave;ng.</li>\r\n</ul>\r\n<p data-start=\"2108\" data-end=\"2174\">H&atilde;y đảm bảo rằng qu&aacute; tr&igrave;nh thanh to&aacute;n diễn ra đơn giản v&agrave; an to&agrave;n.</p>\r\n<h3 data-start=\"2176\" data-end=\"2209\">4. <strong data-start=\"2183\" data-end=\"2209\">Tối Ưu SEO Cho Website</strong></h3>\r\n<p data-start=\"2211\" data-end=\"2390\">Tối ưu h&oacute;a c&ocirc;ng cụ t&igrave;m kiếm (SEO) gi&uacute;p website của bạn xuất hiện tr&ecirc;n c&aacute;c kết quả t&igrave;m kiếm của Google v&agrave; thu h&uacute;t lưu lượng truy cập tự nhi&ecirc;n. Một số yếu tố cần tối ưu h&oacute;a bao gồm:</p>\r\n<ul data-start=\"2392\" data-end=\"2725\">\r\n<li data-start=\"2392\" data-end=\"2508\"><strong data-start=\"2394\" data-end=\"2432\">Tối ưu ti&ecirc;u đề trang v&agrave; m&ocirc; tả meta</strong>: Chắc chắn rằng mỗi trang sản phẩm c&oacute; ti&ecirc;u đề v&agrave; m&ocirc; tả ph&ugrave; hợp với từ kh&oacute;a.</li>\r\n<li data-start=\"2509\" data-end=\"2611\"><strong data-start=\"2511\" data-end=\"2531\">Tốc độ tải trang</strong>: Website nhanh ch&oacute;ng kh&ocirc;ng chỉ gi&uacute;p trải nghiệm người d&ugrave;ng tốt m&agrave; c&ograve;n gi&uacute;p SEO.</li>\r\n<li data-start=\"2612\" data-end=\"2725\"><strong data-start=\"2614\" data-end=\"2633\">Li&ecirc;n kết nội bộ</strong>: Sử dụng c&aacute;c li&ecirc;n kết nội bộ để dẫn dắt kh&aacute;ch h&agrave;ng kh&aacute;m ph&aacute; th&ecirc;m sản phẩm v&agrave; cải thiện SEO.</li>\r\n</ul>\r\n<h3 data-start=\"2727\" data-end=\"2772\">5. <strong data-start=\"2734\" data-end=\"2772\">Bảo Mật Website Thương Mại Điện Tử</strong></h3>\r\n<p data-start=\"2774\" data-end=\"2927\">Bảo mật l&agrave; yếu tố quan trọng khi kinh doanh trực tuyến. Bạn cần đảm bảo website của m&igrave;nh được bảo vệ tốt để tr&aacute;nh bị hack v&agrave; bảo vệ th&ocirc;ng tin kh&aacute;ch h&agrave;ng.</p>\r\n<ul data-start=\"2929\" data-end=\"3185\">\r\n<li data-start=\"2929\" data-end=\"2991\"><strong data-start=\"2931\" data-end=\"2948\">Chứng chỉ SSL</strong>: M&atilde; h&oacute;a dữ liệu khi kh&aacute;ch h&agrave;ng thanh to&aacute;n.</li>\r\n<li data-start=\"2992\" data-end=\"3079\"><strong data-start=\"2994\" data-end=\"3018\">Tường lửa v&agrave; bảo mật</strong>: Sử dụng tường lửa v&agrave; bảo vệ website khỏi c&aacute;c cuộc tấn c&ocirc;ng.</li>\r\n<li data-start=\"3080\" data-end=\"3185\"><strong data-start=\"3082\" data-end=\"3108\">Quản l&yacute; quyền truy cập</strong>: Giới hạn quyền truy cập của c&aacute;c nh&acirc;n vi&ecirc;n v&agrave; bảo vệ c&aacute;c t&agrave;i khoản quản trị.</li>\r\n</ul>\r\n<h3 data-start=\"3187\" data-end=\"3242\">6. <strong data-start=\"3194\" data-end=\"3242\">Tạo Ch&iacute;nh S&aacute;ch Giao H&agrave;ng v&agrave; Ho&agrave;n Trả R&otilde; R&agrave;ng</strong></h3>\r\n<p data-start=\"3244\" data-end=\"3383\">Kh&aacute;ch h&agrave;ng muốn biết ch&iacute;nh x&aacute;c về ch&iacute;nh s&aacute;ch giao h&agrave;ng v&agrave; ho&agrave;n trả. H&atilde;y l&agrave;m r&otilde; c&aacute;c ch&iacute;nh s&aacute;ch n&agrave;y tr&ecirc;n website của bạn để tạo sự tin tưởng:</p>\r\n<ul data-start=\"3385\" data-end=\"3560\">\r\n<li data-start=\"3385\" data-end=\"3472\"><strong data-start=\"3387\" data-end=\"3411\">Ch&iacute;nh s&aacute;ch giao h&agrave;ng</strong>: Thời gian giao h&agrave;ng, chi ph&iacute; vận chuyển, khu vực giao h&agrave;ng.</li>\r\n<li data-start=\"3473\" data-end=\"3560\"><strong data-start=\"3475\" data-end=\"3498\">Ch&iacute;nh s&aacute;ch ho&agrave;n trả</strong>: Điều kiện ho&agrave;n trả, thời gian ho&agrave;n trả, c&aacute;ch thức ho&agrave;n tiền.</li>\r\n</ul>\r\n<h3 data-start=\"3562\" data-end=\"3602\">7. <strong data-start=\"3569\" data-end=\"3602\">Quảng C&aacute;o v&agrave; Tiếp Thị Website</strong></h3>\r\n<p data-start=\"3604\" data-end=\"3687\">Để thu h&uacute;t kh&aacute;ch h&agrave;ng, bạn cần quảng b&aacute; website của m&igrave;nh qua c&aacute;c k&ecirc;nh tiếp thị như:</p>\r\n<ul data-start=\"3689\" data-end=\"3985\">\r\n<li data-start=\"3689\" data-end=\"3772\"><strong data-start=\"3691\" data-end=\"3731\">Quảng c&aacute;o Google Ads v&agrave; Facebook Ads</strong>: Tiếp cận đối tượng kh&aacute;ch h&agrave;ng mục ti&ecirc;u.</li>\r\n<li data-start=\"3773\" data-end=\"3863\"><strong data-start=\"3775\" data-end=\"3798\">Marketing qua email</strong>: Gửi th&ocirc;ng tin khuyến m&atilde;i, m&atilde; giảm gi&aacute; cho kh&aacute;ch h&agrave;ng cũ v&agrave; mới.</li>\r\n<li data-start=\"3864\" data-end=\"3985\"><strong data-start=\"3866\" data-end=\"3895\">Tiếp thị tr&ecirc;n mạng x&atilde; hội</strong>: X&acirc;y dựng cộng đồng v&agrave; quảng b&aacute; sản phẩm qua c&aacute;c nền tảng như Instagram, TikTok, YouTube.</li>\r\n</ul>\r\n<h3 data-start=\"3987\" data-end=\"3999\">Kết Luận</h3>\r\n<p data-start=\"4001\" data-end=\"4308\">X&acirc;y dựng một website thương mại điện tử hiệu quả kh&ocirc;ng phải l&agrave; một c&ocirc;ng việc dễ d&agrave;ng, nhưng với c&aacute;c bước chuẩn bị kỹ lưỡng v&agrave; sự tối ưu h&oacute;a cẩn thận, bạn sẽ c&oacute; cơ hội th&agrave;nh c&ocirc;ng cao. Ch&uacute; trọng v&agrave;o thiết kế, bảo mật, SEO, v&agrave; phương thức thanh to&aacute;n sẽ gi&uacute;p website của bạn hoạt động tốt v&agrave; thu h&uacute;t kh&aacute;ch h&agrave;ng.</p>', 'post_1740127866.jpg', 'Thương mại điện tử,Xây dựng website,Thanh toán trực tuyến', 'Cách Tạo Website Thương Mại Điện Tử (E-commerce) Hiệu Quả', 'Hướng dẫn chi tiết cách tạo website thương mại điện tử (E-commerce) hiệu quả. Từ chọn nền tảng, thiết kế giao diện đến tối ưu SEO và bảo mật, giúp website của bạn phát triển bền vững.', '2025-02-21 01:51:06', '2025-02-21 01:51:06');
 
 -- --------------------------------------------------------
 
@@ -920,11 +929,11 @@ INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `
 --
 
 CREATE TABLE `post_categories` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -934,11 +943,11 @@ CREATE TABLE `post_categories` (
 --
 
 INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'Business', 'business', 'Business', 'Business', '2024-01-07 21:24:27', '2024-01-08 19:30:04'),
-(2, 'Technology', 'technology', 'Technology', 'Technology', '2024-01-07 21:40:30', '2024-01-08 19:30:18'),
-(3, 'Digital Agency', 'digital-agency', 'Digital Agency', 'Digital Agency', '2024-01-07 21:40:42', '2024-01-08 19:30:13'),
-(4, 'Web Development', 'web-development', 'Web Development', 'Web Development', '2024-01-07 21:40:59', '2024-01-08 19:30:31'),
-(5, 'Web Design', 'web-design', 'Web Design', 'Web Design', '2024-01-07 21:41:18', '2024-01-08 19:30:26');
+(10, 'Kinh doanh', 'kinh-doanh', 'Kinh doanh', 'Kinh doanh', '2025-02-21 00:27:54', '2025-02-21 00:27:54'),
+(11, 'Công ty truyền thông kỹ thuật số', 'cong-ty-truyen-thong-ky-thuat-so', 'Công ty truyền thông kỹ thuật số', 'Công ty truyền thông kỹ thuật số', '2025-02-21 00:29:00', '2025-02-21 00:29:00'),
+(12, 'Công nghệ', 'cong-nghe', 'Công nghệ', 'Công nghệ', '2025-02-21 00:29:23', '2025-02-21 00:29:23'),
+(13, 'Thiết kế Web', 'thiet-ke-web', 'Thiết kế Web', 'Thiết kế Web', '2025-02-21 00:29:48', '2025-02-21 00:29:48'),
+(14, 'Phát triển Web', 'phat-trien-web', 'Phát triển Web', 'Phát triển Web', '2025-02-21 00:30:22', '2025-02-21 00:30:22');
 
 -- --------------------------------------------------------
 
@@ -947,13 +956,13 @@ INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_desc
 --
 
 CREATE TABLE `pricing_plans` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `period` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `price` varchar(255) DEFAULT NULL,
+  `period` varchar(255) DEFAULT NULL,
+  `button_text` varchar(255) DEFAULT NULL,
+  `button_url` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -974,9 +983,9 @@ INSERT INTO `pricing_plans` (`id`, `name`, `price`, `period`, `button_text`, `bu
 --
 
 CREATE TABLE `pricing_plan_options` (
-  `id` bigint UNSIGNED NOT NULL,
-  `pricing_plan_id` int DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `pricing_plan_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1006,18 +1015,18 @@ INSERT INTO `pricing_plan_options` (`id`, `pricing_plan_id`, `name`, `created_at
 --
 
 CREATE TABLE `services` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `short_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pdf` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `short_description` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `icon` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `banner` varchar(255) DEFAULT NULL,
+  `pdf` varchar(255) DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1043,10 +1052,10 @@ INSERT INTO `services` (`id`, `name`, `slug`, `short_description`, `description`
 --
 
 CREATE TABLE `service_faqs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `service_id` int DEFAULT NULL,
-  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_id` int(11) DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `answer` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1110,52 +1119,52 @@ INSERT INTO `service_faqs` (`id`, `service_id`, `question`, `answer`, `created_a
 --
 
 CREATE TABLE `settings` (
-  `id` bigint UNSIGNED NOT NULL,
-  `logo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `logo_sticky` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `favicon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `home_show` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `image_404` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `banner` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `login_page_photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `facebook` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `twitter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `linkedin` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `instagram` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `pinterest` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `top_bar_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `top_bar_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `top_bar_phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `map` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_copyright` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_links_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_subscriber_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `footer_subscriber_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `sticky_header` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `preloader` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `layout_direction` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `theme_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `currency_symbol` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_text_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_bg_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_text_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_bg_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `tawk_live_chat_property_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `tawk_live_chat_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_analytic_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_analytic_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_recaptcha_site_key` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `google_recaptcha_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `home_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `home_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `logo` text DEFAULT NULL,
+  `logo_sticky` text DEFAULT NULL,
+  `favicon` text DEFAULT NULL,
+  `home_show` text DEFAULT NULL,
+  `image_404` text DEFAULT NULL,
+  `banner` text DEFAULT NULL,
+  `login_page_photo` text DEFAULT NULL,
+  `facebook` text DEFAULT NULL,
+  `twitter` text DEFAULT NULL,
+  `linkedin` text DEFAULT NULL,
+  `instagram` text DEFAULT NULL,
+  `youtube` text DEFAULT NULL,
+  `pinterest` text DEFAULT NULL,
+  `top_bar_email` text DEFAULT NULL,
+  `top_bar_address` text DEFAULT NULL,
+  `top_bar_phone` text DEFAULT NULL,
+  `map` text DEFAULT NULL,
+  `footer_email` text DEFAULT NULL,
+  `footer_phone` text DEFAULT NULL,
+  `footer_address` text DEFAULT NULL,
+  `footer_copyright` text DEFAULT NULL,
+  `footer_text` text DEFAULT NULL,
+  `footer_links_heading` text DEFAULT NULL,
+  `footer_subscriber_heading` text DEFAULT NULL,
+  `footer_subscriber_text` text DEFAULT NULL,
+  `sticky_header` text DEFAULT NULL,
+  `preloader` text DEFAULT NULL,
+  `layout_direction` text DEFAULT NULL,
+  `theme_color` text DEFAULT NULL,
+  `currency_symbol` text DEFAULT NULL,
+  `cookie_consent_message` text DEFAULT NULL,
+  `cookie_consent_button_text` text DEFAULT NULL,
+  `cookie_consent_text_color` text DEFAULT NULL,
+  `cookie_consent_bg_color` text DEFAULT NULL,
+  `cookie_consent_button_text_color` text DEFAULT NULL,
+  `cookie_consent_button_bg_color` text DEFAULT NULL,
+  `cookie_consent_status` text DEFAULT NULL,
+  `tawk_live_chat_property_id` text DEFAULT NULL,
+  `tawk_live_chat_status` text DEFAULT NULL,
+  `google_analytic_id` text DEFAULT NULL,
+  `google_analytic_status` text DEFAULT NULL,
+  `google_recaptcha_site_key` text DEFAULT NULL,
+  `google_recaptcha_status` text DEFAULT NULL,
+  `home_seo_title` text DEFAULT NULL,
+  `home_seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1165,7 +1174,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `logo`, `logo_sticky`, `favicon`, `home_show`, `image_404`, `banner`, `login_page_photo`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `top_bar_email`, `top_bar_address`, `top_bar_phone`, `map`, `footer_email`, `footer_phone`, `footer_address`, `footer_copyright`, `footer_text`, `footer_links_heading`, `footer_subscriber_heading`, `footer_subscriber_text`, `sticky_header`, `preloader`, `layout_direction`, `theme_color`, `currency_symbol`, `cookie_consent_message`, `cookie_consent_button_text`, `cookie_consent_text_color`, `cookie_consent_bg_color`, `cookie_consent_button_text_color`, `cookie_consent_button_bg_color`, `cookie_consent_status`, `tawk_live_chat_property_id`, `tawk_live_chat_status`, `google_analytic_id`, `google_analytic_status`, `google_recaptcha_site_key`, `google_recaptcha_status`, `home_seo_title`, `home_seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1704942796.jpg', '#', '#', NULL, '#', NULL, '#', 'needhelp@company.com', '88 Broklyn Golden Street. New York', '+92 (8800) - 9850', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d35753.80272668888!2d-119.34303891638667!3d37.078457181068664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1704944810889!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'needhelp@company.com', '+92 (8800) -89 8630', '30 Broklyn Golden Street, USA', 'Copyright © 2024, phpscriptpoint', 'Welcome to our digital agency. We hope you will love our website and soon get some awesome services from us.', 'Explore', 'Newsletter', 'Subsrcibe our newsletter to get latest news.', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'This website uses cookies to ensure you get the best experience on our website.', 'ACCEPT', 'F8FFED', '000000', '000000', 'FFFFFF', 'Hide', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2024-05-01 21:51:38');
+(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1704942796.jpg', 'https://www.facebook.com/tran.an.435757?locale=vi_VN', '#', NULL, '#', NULL, '#', 'needhelp@company.com', '88 Broklyn Golden Street. New York', '+92 (8800) - 9850', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d35753.80272668888!2d-119.34303891638667!3d37.078457181068664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1704944810889!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'needhelp@company.com', '+92 (8800) -89 8630', '30 Broklyn Golden Street, USA', 'Copyright © 2024, phpscriptpoint', 'Welcome to our digital agency. We hope you will love our website and soon get some awesome services from us.', 'Explore', 'Newsletter', 'Subsrcibe our newsletter to get latest news.', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'This website uses cookies to ensure you get the best experience on our website.', 'ACCEPT', 'F8FFED', '000000', '000000', 'FFFFFF', 'Hide', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2025-02-21 02:24:04');
 
 -- --------------------------------------------------------
 
@@ -1174,11 +1183,11 @@ INSERT INTO `settings` (`id`, `logo`, `logo_sticky`, `favicon`, `home_show`, `im
 --
 
 CREATE TABLE `sliders` (
-  `id` bigint UNSIGNED NOT NULL,
-  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `text` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `button_text` varchar(255) DEFAULT NULL,
+  `button_url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1188,8 +1197,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `text`, `photo`, `button_text`, `button_url`, `created_at`, `updated_at`) VALUES
-(4, 'Empowering Your\r\nDigital Journey\r\nWith Innovation', 'slider_1699468031.jpg', 'Discover More', '#', '2023-11-08 12:27:11', '2023-11-08 12:40:57'),
-(5, 'Shaping the\r\nPerfect Solution\r\nFor Your Business', 'slider_1699468038.jpg', 'Discover More', '#', '2023-11-08 12:27:18', '2023-11-08 12:38:45');
+(4, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1699468031.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2023-11-08 12:27:11', '2025-02-21 02:15:20'),
+(5, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1699468038.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2023-11-08 12:27:18', '2025-02-21 02:13:34'),
+(7, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740129411.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-21 01:46:14', '2025-02-21 02:16:51');
 
 -- --------------------------------------------------------
 
@@ -1198,10 +1208,10 @@ INSERT INTO `sliders` (`id`, `text`, `photo`, `button_text`, `button_url`, `crea
 --
 
 CREATE TABLE `subscribers` (
-  `id` bigint UNSIGNED NOT NULL,
-  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `status` int DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `email` text DEFAULT NULL,
+  `token` text DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1225,24 +1235,24 @@ INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `upda
 --
 
 CREATE TABLE `team_members` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `linkedin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pinterest` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `experience_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `tagline` text DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `website` varchar(255) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
+  `twitter` varchar(255) DEFAULT NULL,
+  `linkedin` varchar(255) DEFAULT NULL,
+  `instagram` varchar(255) DEFAULT NULL,
+  `youtube` varchar(255) DEFAULT NULL,
+  `pinterest` varchar(255) DEFAULT NULL,
+  `experience_text` text DEFAULT NULL,
+  `seo_title` varchar(255) DEFAULT NULL,
+  `seo_meta_description` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1263,10 +1273,10 @@ INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `tagline`, `pho
 --
 
 CREATE TABLE `team_member_experiences` (
-  `id` bigint UNSIGNED NOT NULL,
-  `team_member_id` int DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `percentage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `team_member_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `percentage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1293,12 +1303,12 @@ INSERT INTO `team_member_experiences` (`id`, `team_member_id`, `name`, `percenta
 --
 
 CREATE TABLE `testimonials` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `rating` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `designation` varchar(255) DEFAULT NULL,
+  `rating` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `comment` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1320,19 +1330,19 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `rating`, `photo`, `com
 --
 
 CREATE TABLE `users` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `state` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `zip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '0' COMMENT '0=pending, 1=active, 2=suspended',
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `zip` varchar(255) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT '0' COMMENT '0=pending, 1=active, 2=suspended',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1344,10 +1354,10 @@ CREATE TABLE `users` (
 --
 
 CREATE TABLE `video_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `youtube_video_id` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1366,9 +1376,9 @@ INSERT INTO `video_one_items` (`id`, `heading`, `youtube_video_id`, `photo`, `cr
 --
 
 CREATE TABLE `video_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `youtube_video_id` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1387,18 +1397,18 @@ INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`
 --
 
 CREATE TABLE `welcome_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `experience_year` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `person_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `person_designation` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `person_photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `button_text` text DEFAULT NULL,
+  `button_url` text DEFAULT NULL,
+  `experience_year` text DEFAULT NULL,
+  `person_name` text DEFAULT NULL,
+  `person_designation` text DEFAULT NULL,
+  `person_photo` text DEFAULT NULL,
+  `photo1` text DEFAULT NULL,
+  `photo2` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1417,10 +1427,10 @@ INSERT INTO `welcome_one_items` (`id`, `subheading`, `heading`, `text`, `button_
 --
 
 CREATE TABLE `welcome_one_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` varchar(255) DEFAULT NULL,
+  `heading` varchar(255) DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1440,15 +1450,15 @@ INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 --
 
 CREATE TABLE `welcome_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `button_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `experience_year` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `subheading` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `button_text` text DEFAULT NULL,
+  `button_url` text DEFAULT NULL,
+  `experience_year` text DEFAULT NULL,
+  `photo1` text DEFAULT NULL,
+  `photo2` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1467,9 +1477,9 @@ INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_
 --
 
 CREATE TABLE `welcome_two_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` varchar(255) DEFAULT NULL,
+  `text` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1489,9 +1499,9 @@ INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, 
 --
 
 CREATE TABLE `welcome_two_item_skills` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `percentage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `percentage` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1511,11 +1521,11 @@ INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`,
 --
 
 CREATE TABLE `why_choose_one_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `subheading` text DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1534,9 +1544,9 @@ INSERT INTO `why_choose_one_items` (`id`, `heading`, `subheading`, `text`, `phot
 --
 
 CREATE TABLE `why_choose_one_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1556,12 +1566,12 @@ INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at
 --
 
 CREATE TABLE `why_choose_two_items` (
-  `id` bigint UNSIGNED NOT NULL,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_over_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo_over_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `heading` text DEFAULT NULL,
+  `subheading` text DEFAULT NULL,
+  `photo_over_text` text DEFAULT NULL,
+  `photo_over_heading` text DEFAULT NULL,
+  `photo` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1580,9 +1590,9 @@ INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_t
 --
 
 CREATE TABLE `why_choose_two_item_elements` (
-  `id` bigint UNSIGNED NOT NULL,
-  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `icon` text DEFAULT NULL,
+  `heading` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1926,109 +1936,109 @@ ALTER TABLE `why_choose_two_item_elements`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `call_to_actions`
 --
 ALTER TABLE `call_to_actions`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `custom_pages`
 --
 ALTER TABLE `custom_pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `feature_one_items`
 --
 ALTER TABLE `feature_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feature_one_item_elements`
 --
 ALTER TABLE `feature_one_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `feature_two_items`
 --
 ALTER TABLE `feature_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feature_two_item_elements`
 --
 ALTER TABLE `feature_two_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `flat_icons`
 --
 ALTER TABLE `flat_icons`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `fun_facts`
 --
 ALTER TABLE `fun_facts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fun_fact_elements`
 --
 ALTER TABLE `fun_fact_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `home_contact_photos`
 --
 ALTER TABLE `home_contact_photos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_four_page_items`
 --
 ALTER TABLE `home_four_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_three_page_items`
 --
 ALTER TABLE `home_three_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `home_two_page_items`
 --
 ALTER TABLE `home_two_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `languages`
@@ -2040,193 +2050,195 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT for table `marquees`
 --
 ALTER TABLE `marquees`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `offer_elements`
 --
 ALTER TABLE `offer_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `other_page_items`
 --
 ALTER TABLE `other_page_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `post_categories`
 --
 ALTER TABLE `post_categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pricing_plans`
 --
 ALTER TABLE `pricing_plans`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pricing_plan_options`
 --
 ALTER TABLE `pricing_plan_options`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `service_faqs`
 --
 ALTER TABLE `service_faqs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `team_members`
 --
 ALTER TABLE `team_members`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `team_member_experiences`
 --
 ALTER TABLE `team_member_experiences`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `video_one_items`
 --
 ALTER TABLE `video_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `video_two_items`
 --
 ALTER TABLE `video_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `welcome_one_items`
 --
 ALTER TABLE `welcome_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `welcome_one_item_elements`
 --
 ALTER TABLE `welcome_one_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `welcome_two_items`
 --
 ALTER TABLE `welcome_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `welcome_two_item_elements`
 --
 ALTER TABLE `welcome_two_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
+
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 
 --
 -- AUTO_INCREMENT for table `why_choose_one_items`
 --
 ALTER TABLE `why_choose_one_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `why_choose_one_item_elements`
 --
 ALTER TABLE `why_choose_one_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `why_choose_two_items`
 --
 ALTER TABLE `why_choose_two_items`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `why_choose_two_item_elements`
 --
 ALTER TABLE `why_choose_two_item_elements`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

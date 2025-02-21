@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 02, 2024 at 06:59 AM
--- Server version: 8.2.0
--- PHP Version: 8.1.27
+-- Host: localhost:3306
+-- Generation Time: Feb 21, 2025 at 09:21 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$12$0bxVX1vqFVqtne4jkVs4SOnznkpUwEMl2hECrbGmBUbTFiFfJJio6', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
+(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$p6bwLMtkJuIBWCLFxmZgZ.XTzU2K2A1xUixRszQ.MbeGwZEZbyvxO', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,7 @@ CREATE TABLE `call_to_actions` (
 --
 
 INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Get your FREE\r\nBusiness Consultation', 'flaticon-phone-call', '+1 (266) 456-7895', 'support@company.com', NULL, '2024-01-10 03:27:14');
+(1, 'Get your FREE\r\nBusiness Consultation', 'flaticon-phone-call', '0563988575', 'support@company.com', NULL, '2024-01-10 03:27:14');
 
 -- --------------------------------------------------------
 
@@ -549,9 +549,9 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 
 CREATE TABLE `languages` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `direction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `direction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `default` tinyint(1) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -562,9 +562,10 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_at`, `updated_at`) VALUES
-(1, 'English', 'en', 'Left to Right (LTR)', 1, NULL, '2024-04-29 01:17:18'),
-(9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2024-05-01 21:51:52'),
-(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2024-05-01 21:52:51');
+(1, 'English', 'en', 'Left to Right (LTR)', 0, NULL, '2025-02-20 21:19:07'),
+(9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2025-02-20 21:19:07'),
+(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2025-02-20 21:19:07'),
+(11, 'VietNam', 'vi', 'Left to Right (LTR)', 1, '2025-02-20 21:19:07', '2025-02-20 21:19:07');
 
 -- --------------------------------------------------------
 
@@ -2030,7 +2031,7 @@ ALTER TABLE `home_two_page_items`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `marquees`

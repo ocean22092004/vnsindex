@@ -6,6 +6,7 @@
     "Icon": "Bi\u1ec3u t\u01b0\u1ee3ng",
     "Tagline": "Dòng giới thiệu",
     "Youtube Video Id": "ID video YouTube",
+
     "Existing Photo": "\u1ea2nh hi\u1ec7n c\u00f3",
     "Change Photo": "Thay \u0111\u1ed5i \u1ea3nh",
     "Update": "C\u1eadp nh\u1eadt",
@@ -183,7 +184,7 @@
     "Welcome One": "Ch\u00e0o m\u1eebng m\u1ed9t",
     "Welcome Two": "Ch\u00e0o m\u1eebng hai",
     "Video One": "Video m\u1ed9t",
-    "Video Two": "Video hai",
+    "Video Two": "Video l\u00e0",
     "Feature One": "T\u00ednh n\u0103ng m\u1ed9t",
     "Feature Two": "T\u00ednh n\u0103ng Hai",
     "Why Choose One": "T\u1ea1i sao ch\u1ecdn m\u1ed9t",
@@ -294,14 +295,14 @@
     "Links Heading": "Li\u00ean k\u1ebft ti\u00eau \u0111\u1ec1",
     "Subscriber Heading": "Ti\u00eau \u0111\u1ec1 thu\u00ea bao",
     "Subscriber Text": "V\u0103n b\u1ea3n thu\u00ea bao",
-    "iframe code": "M\u00e3 iframe",
+    "iframe code": "M",
     "Message": "Tin nh\u1eafn",
     "Text Color": "M\u00e0u v\u0103n b\u1ea3n",
     "Background Color": "M\u00e0u n\u1ec1n",
     "Button Text Color": "N\u00fat m\u00e0u v\u0103n b\u1ea3n",
     "Button Background Color": "N\u00fat m\u00e0u n\u1ec1n",
     "Analytic Code": "M\u00e3 ph\u00e2n t\u00edch",
-    "Recaptcha Site Key": "Trang web Ricaptcha Kiya",
+    "Recaptcha Site Key": "Wave Webcoptacha \u0111\u00e3 ho\u00e0n th\u00e0nh",
     "Property Id": "ID t\u00e0i s\u1ea3n",
     "Sticky Header": "Ti\u00eau \u0111\u1ec1 d\u00ednh",
     "Preloader": "Tr\u00ecnh t\u1ea3i tr\u01b0\u1edbc",
@@ -435,6 +436,7 @@
     "Subscriber Submit Success": "Thu\u00ea bao g\u1eedi th\u00e0nh c\u00f4ng",
     "Subscriber Verify Success": "Thu\u00ea bao x\u00e1c minh th\u00e0nh c\u00f4ng",
     "Invalid email or token": "Email ho\u1eb7c m\u00e3 th\u00f4ng b\u00e1o kh\u00f4ng h\u1ee3p l\u1ec7",
-    "Meet the experts": "Gặp gỡ các chuyên gia",
-    "Custom Page 1": "Trang thiết kế 1"
+    "Meet the experts": "G\u1eb7p g\u1ee1 c\u00e1c chuy\u00ean gia",
+    "Custom Page 1": "Trang thi\u1ebft k\u1ebf 1"
 }
+

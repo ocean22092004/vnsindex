@@ -25,7 +25,8 @@ class AdminSliderController extends Controller
         if(env('PROJECT_MODE') == 0) {
             return redirect()->back()->with('info', env('PROJECT_NOTIFICATION'));
         }
-        
+
+
         $request->validate([
             'photo' => ['required','mimes:jpeg,png,pdf'],
         ],[

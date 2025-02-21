@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 21, 2025 at 10:49 AM
+-- Host: 127.0.0.1:3308
+-- Generation Time: Feb 21, 2025 at 10:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,7 +45,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
-(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$1MRw9rT/zTGkAwlvSt2douugwTLY6bjxscJdrBmSRhRj3ZW9IWQBe', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
+(1, 'Peter Smith', 'admin@gmail.com', 'admin_1699280526.jpg', '$2y$10$/SU/4XOVhYugd91n.VJqKOI7vB8GO7Qz1y2SzJWqkBhUf2VL3R.5C', '', '2023-11-06 06:11:22', '2024-01-16 00:45:13');
 
 
 -- --------------------------------------------------------
@@ -90,11 +90,13 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
-(1, 'client_1705167020.png', '#', '2024-01-13 11:09:02', '2024-01-13 11:31:23'),
-(2, 'client_1705167033.png', NULL, '2024-01-13 11:09:31', '2024-01-13 11:30:33'),
-(3, 'client_1705167041.png', NULL, '2024-01-13 11:09:40', '2024-01-13 11:30:41'),
-(4, 'client_1705167049.png', NULL, '2024-01-13 11:09:46', '2024-01-13 11:30:49'),
-(5, 'client_1705167062.png', NULL, '2024-01-13 11:09:53', '2024-01-13 11:31:02');
+(1, 'client_1740129978.png', '#', '2024-01-13 11:09:02', '2025-02-21 02:26:18'),
+(2, 'client_1740130081.png', NULL, '2024-01-13 11:09:31', '2025-02-21 02:28:01'),
+(3, 'client_1740130329.png', NULL, '2024-01-13 11:09:40', '2025-02-21 02:32:09'),
+(4, 'client_1740130357.png', NULL, '2024-01-13 11:09:46', '2025-02-21 02:32:37'),
+(5, 'client_1740130414.png', NULL, '2024-01-13 11:09:53', '2025-02-21 02:33:34'),
+(7, 'client_1740130605.png', NULL, '2025-02-21 02:36:45', '2025-02-21 02:36:45'),
+(8, 'client_1740130859.png', NULL, '2025-02-21 02:40:59', '2025-02-21 02:40:59');
 
 -- --------------------------------------------------------
 
@@ -551,12 +553,11 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 --
 
 CREATE TABLE `languages` (
-
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `direction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `default` tinyint(1) DEFAULT '1',
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `direction` varchar(255) DEFAULT NULL,
+  `default` tinyint(1) DEFAULT 1,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1947,7 +1948,8 @@ ALTER TABLE `call_to_actions`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 
 --
 -- AUTO_INCREMENT for table `custom_pages`
@@ -2043,7 +2045,8 @@ ALTER TABLE `home_two_page_items`
 -- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 
 --
 -- AUTO_INCREMENT for table `marquees`
@@ -2097,13 +2100,13 @@ ALTER TABLE `portfolios`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `post_categories`
 --
 ALTER TABLE `post_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pricing_plans`
@@ -2211,9 +2214,7 @@ ALTER TABLE `welcome_two_item_elements`
 -- AUTO_INCREMENT for table `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
-
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `why_choose_one_items`

@@ -223,7 +223,7 @@ INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 --
 -- Table structure for table `feature_two_items`
 --
-
+ 
 CREATE TABLE `feature_two_items` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `heading` text DEFAULT NULL,

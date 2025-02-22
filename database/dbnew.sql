@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 21, 2025 at 10:43 AM
--- Server version: 8.0.30
--- PHP Version: 8.2.27
+-- Máy chủ: localhost:3306
+-- Thời gian đã tạo: Th2 22, 2025 lúc 02:36 AM
+-- Phiên bản máy phục vụ: 8.0.30
+-- Phiên bản PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,28 +18,28 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `vnstech_vnsindex`
+-- Cơ sở dữ liệu: `desix`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
@@ -48,21 +48,21 @@ INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `crea
 -- --------------------------------------------------------
 
 --
--- Table structure for table `call_to_actions`
+-- Cấu trúc bảng cho bảng `call_to_actions`
 --
 
 CREATE TABLE `call_to_actions` (
   `id` bigint UNSIGNED NOT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `icon` text COLLATE utf8mb4_unicode_ci,
-  `phone` text COLLATE utf8mb4_unicode_ci,
-  `email` text COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `call_to_actions`
+-- Đang đổ dữ liệu cho bảng `call_to_actions`
 --
 
 INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_at`, `updated_at`) VALUES
@@ -71,19 +71,19 @@ INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clients`
+-- Cấu trúc bảng cho bảng `clients`
 --
 
 CREATE TABLE `clients` (
   `id` bigint UNSIGNED NOT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `clients`
+-- Đang đổ dữ liệu cho bảng `clients`
 --
 
 INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
@@ -98,22 +98,22 @@ INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `custom_pages`
+-- Cấu trúc bảng cho bảng `custom_pages`
 --
 
 CREATE TABLE `custom_pages` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `custom_pages`
+-- Đang đổ dữ liệu cho bảng `custom_pages`
 --
 
 INSERT INTO `custom_pages` (`id`, `name`, `slug`, `content`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -123,35 +123,35 @@ INSERT INTO `custom_pages` (`id`, `name`, `slug`, `content`, `seo_title`, `seo_m
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Cấu trúc bảng cho bảng `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci,
-  `queue` text COLLATE utf8mb4_unicode_ci,
-  `payload` longtext COLLATE utf8mb4_unicode_ci,
-  `exception` longtext COLLATE utf8mb4_unicode_ci,
+  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `failed_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `faqs`
+-- Cấu trúc bảng cho bảng `faqs`
 --
 
 CREATE TABLE `faqs` (
   `id` bigint UNSIGNED NOT NULL,
-  `question` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` text COLLATE utf8mb4_unicode_ci,
+  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `faqs`
+-- Đang đổ dữ liệu cho bảng `faqs`
 --
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
@@ -164,19 +164,19 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feature_one_items`
+-- Cấu trúc bảng cho bảng `feature_one_items`
 --
 
 CREATE TABLE `feature_one_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `photo` text COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `feature_one_items`
+-- Đang đổ dữ liệu cho bảng `feature_one_items`
 --
 
 INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_at`) VALUES
@@ -185,20 +185,20 @@ INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feature_one_item_elements`
+-- Cấu trúc bảng cho bảng `feature_one_item_elements`
 --
 
 CREATE TABLE `feature_one_item_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `icon` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
+  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `feature_one_item_elements`
+-- Đang đổ dữ liệu cho bảng `feature_one_item_elements`
 --
 
 INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -209,21 +209,21 @@ INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feature_two_items`
+-- Cấu trúc bảng cho bảng `feature_two_items`
 --
 
 CREATE TABLE `feature_two_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `photo` text COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `feature_two_items`
+-- Đang đổ dữ liệu cho bảng `feature_two_items`
 --
 
 INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
@@ -232,18 +232,18 @@ INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feature_two_item_elements`
+-- Cấu trúc bảng cho bảng `feature_two_item_elements`
 --
 
 CREATE TABLE `feature_two_item_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci,
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `feature_two_item_elements`
+-- Đang đổ dữ liệu cho bảng `feature_two_item_elements`
 --
 
 INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -254,18 +254,18 @@ INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `flat_icons`
+-- Cấu trúc bảng cho bảng `flat_icons`
 --
 
 CREATE TABLE `flat_icons` (
   `id` bigint UNSIGNED NOT NULL,
-  `icon_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `icon_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `flat_icons`
+-- Đang đổ dữ liệu cho bảng `flat_icons`
 --
 
 INSERT INTO `flat_icons` (`id`, `icon_code`, `created_at`, `updated_at`) VALUES
@@ -297,20 +297,20 @@ INSERT INTO `flat_icons` (`id`, `icon_code`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fun_facts`
+-- Cấu trúc bảng cho bảng `fun_facts`
 --
 
 CREATE TABLE `fun_facts` (
   `id` bigint UNSIGNED NOT NULL,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `fun_facts`
+-- Đang đổ dữ liệu cho bảng `fun_facts`
 --
 
 INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -319,20 +319,20 @@ INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fun_fact_elements`
+-- Cấu trúc bảng cho bảng `fun_fact_elements`
 --
 
 CREATE TABLE `fun_fact_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `icon` text COLLATE utf8mb4_unicode_ci,
-  `number` text COLLATE utf8mb4_unicode_ci,
-  `name` text COLLATE utf8mb4_unicode_ci,
+  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `number` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `fun_fact_elements`
+-- Đang đổ dữ liệu cho bảng `fun_fact_elements`
 --
 
 INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `updated_at`) VALUES
@@ -343,68 +343,68 @@ INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_contact_photos`
+-- Cấu trúc bảng cho bảng `home_contact_photos`
 --
 
 CREATE TABLE `home_contact_photos` (
   `id` bigint UNSIGNED NOT NULL,
-  `home_1_contact_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_2_contact_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_3_contact_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `home_4_contact_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_1_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_2_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_3_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `home_4_contact_photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `home_contact_photos`
+-- Đang đổ dữ liệu cho bảng `home_contact_photos`
 --
 
 INSERT INTO `home_contact_photos` (`id`, `home_1_contact_photo`, `home_2_contact_photo`, `home_3_contact_photo`, `home_4_contact_photo`, `created_at`, `updated_at`) VALUES
-(1, 'home_1_contact_1705210297.png', 'home_2_contact_1705210297.png', 'home_3_contact_1705210297.png', 'home_4_contact_1705210297.png', NULL, '2024-01-13 23:31:37');
+(1, 'home_1_contact_1740191169.png', 'home_2_contact_1740191005.png', 'home_3_contact_1740191005.png', 'home_4_contact_1740191005.png', NULL, '2025-02-21 19:26:09');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_four_page_items`
+-- Cấu trúc bảng cho bảng `home_four_page_items`
 --
 
 CREATE TABLE `home_four_page_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_heading` text COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text COLLATE utf8mb4_unicode_ci,
-  `service_status` text COLLATE utf8mb4_unicode_ci,
-  `marquee_status` text COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text COLLATE utf8mb4_unicode_ci,
-  `client_status` text COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text COLLATE utf8mb4_unicode_ci,
-  `contact_status` text COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text COLLATE utf8mb4_unicode_ci,
-  `blog_status` text COLLATE utf8mb4_unicode_ci,
-  `map_status` text COLLATE utf8mb4_unicode_ci,
+  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `marquee_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `map_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `home_four_page_items`
+-- Đang đổ dữ liệu cho bảng `home_four_page_items`
 --
 
 INSERT INTO `home_four_page_items` (`id`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `marquee_status`, `welcome_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `why_choose_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `team_member_heading`, `team_member_subheading`, `team_member_how_many`, `team_member_status`, `client_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `map_status`, `created_at`, `updated_at`) VALUES
@@ -413,45 +413,45 @@ INSERT INTO `home_four_page_items` (`id`, `service_heading`, `service_subheading
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_one_page_items`
+-- Cấu trúc bảng cho bảng `home_one_page_items`
 --
 
 CREATE TABLE `home_one_page_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_on_slider_how_many` text COLLATE utf8mb4_unicode_ci,
-  `service_on_slider_status` text COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text COLLATE utf8mb4_unicode_ci,
-  `service_heading` text COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text COLLATE utf8mb4_unicode_ci,
-  `service_status` text COLLATE utf8mb4_unicode_ci,
-  `video_one_status` text COLLATE utf8mb4_unicode_ci,
-  `fun_fact_status` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text COLLATE utf8mb4_unicode_ci,
-  `contact_status` text COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text COLLATE utf8mb4_unicode_ci,
-  `blog_status` text COLLATE utf8mb4_unicode_ci,
-  `video_two_status` text COLLATE utf8mb4_unicode_ci,
-  `feature_status` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text COLLATE utf8mb4_unicode_ci,
-  `client_status` text COLLATE utf8mb4_unicode_ci,
+  `service_on_slider_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_on_slider_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `video_one_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `fun_fact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `video_two_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `feature_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `home_one_page_items`
+-- Đang đổ dữ liệu cho bảng `home_one_page_items`
 --
 
 INSERT INTO `home_one_page_items` (`id`, `service_on_slider_how_many`, `service_on_slider_status`, `welcome_status`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `video_one_status`, `fun_fact_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `video_two_status`, `feature_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `why_choose_status`, `client_status`, `created_at`, `updated_at`) VALUES
@@ -460,37 +460,37 @@ INSERT INTO `home_one_page_items` (`id`, `service_on_slider_how_many`, `service_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_three_page_items`
+-- Cấu trúc bảng cho bảng `home_three_page_items`
 --
 
 CREATE TABLE `home_three_page_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_how_many` text COLLATE utf8mb4_unicode_ci,
-  `service_status` text COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text COLLATE utf8mb4_unicode_ci,
-  `offer_status` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_text` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text COLLATE utf8mb4_unicode_ci,
-  `video_status` text COLLATE utf8mb4_unicode_ci,
-  `feature_status` text COLLATE utf8mb4_unicode_ci,
-  `call_to_action_status` text COLLATE utf8mb4_unicode_ci,
-  `client_status` text COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text COLLATE utf8mb4_unicode_ci,
-  `contact_status` text COLLATE utf8mb4_unicode_ci,
+  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `offer_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `video_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `feature_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `call_to_action_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `home_three_page_items`
+-- Đang đổ dữ liệu cho bảng `home_three_page_items`
 --
 
 INSERT INTO `home_three_page_items` (`id`, `service_how_many`, `service_status`, `welcome_status`, `offer_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_text`, `portfolio_status`, `video_status`, `feature_status`, `call_to_action_status`, `client_status`, `team_member_heading`, `team_member_subheading`, `team_member_how_many`, `team_member_status`, `contact_heading`, `contact_subheading`, `contact_status`, `created_at`, `updated_at`) VALUES
@@ -499,45 +499,45 @@ INSERT INTO `home_three_page_items` (`id`, `service_how_many`, `service_status`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_two_page_items`
+-- Cấu trúc bảng cho bảng `home_two_page_items`
 --
 
 CREATE TABLE `home_two_page_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `service_heading` text COLLATE utf8mb4_unicode_ci,
-  `service_subheading` text COLLATE utf8mb4_unicode_ci,
-  `service_how_many` text COLLATE utf8mb4_unicode_ci,
-  `service_status` text COLLATE utf8mb4_unicode_ci,
-  `marquee_status` text COLLATE utf8mb4_unicode_ci,
-  `welcome_status` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_heading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_subheading` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_how_many` text COLLATE utf8mb4_unicode_ci,
-  `portfolio_status` text COLLATE utf8mb4_unicode_ci,
-  `why_choose_status` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_heading` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_subheading` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_text` text COLLATE utf8mb4_unicode_ci,
-  `testimonial_status` text COLLATE utf8mb4_unicode_ci,
-  `team_member_heading` text COLLATE utf8mb4_unicode_ci,
-  `team_member_subheading` text COLLATE utf8mb4_unicode_ci,
-  `team_member_how_many` text COLLATE utf8mb4_unicode_ci,
-  `team_member_status` text COLLATE utf8mb4_unicode_ci,
-  `client_status` text COLLATE utf8mb4_unicode_ci,
-  `contact_heading` text COLLATE utf8mb4_unicode_ci,
-  `contact_subheading` text COLLATE utf8mb4_unicode_ci,
-  `contact_status` text COLLATE utf8mb4_unicode_ci,
-  `blog_heading` text COLLATE utf8mb4_unicode_ci,
-  `blog_subheading` text COLLATE utf8mb4_unicode_ci,
-  `blog_how_many` text COLLATE utf8mb4_unicode_ci,
-  `blog_status` text COLLATE utf8mb4_unicode_ci,
-  `map_status` text COLLATE utf8mb4_unicode_ci,
+  `service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `marquee_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `portfolio_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `why_choose_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `testimonial_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `team_member_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `client_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `contact_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `blog_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `map_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `home_two_page_items`
+-- Đang đổ dữ liệu cho bảng `home_two_page_items`
 --
 
 INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `marquee_status`, `welcome_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `why_choose_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `team_member_heading`, `team_member_subheading`, `team_member_how_many`, `team_member_status`, `client_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `map_status`, `created_at`, `updated_at`) VALUES
@@ -546,21 +546,21 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `languages`
+-- Cấu trúc bảng cho bảng `languages`
 --
 
 CREATE TABLE `languages` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `direction` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `direction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `default` tinyint(1) DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `languages`
+-- Đang đổ dữ liệu cho bảng `languages`
 --
 
 INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_at`, `updated_at`) VALUES
@@ -572,18 +572,18 @@ INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `marquees`
+-- Cấu trúc bảng cho bảng `marquees`
 --
 
 CREATE TABLE `marquees` (
   `id` bigint UNSIGNED NOT NULL,
-  `item` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `item` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `marquees`
+-- Đang đổ dữ liệu cho bảng `marquees`
 --
 
 INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
@@ -596,19 +596,19 @@ INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menus`
+-- Cấu trúc bảng cho bảng `menus`
 --
 
 CREATE TABLE `menus` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menus`
+-- Đang đổ dữ liệu cho bảng `menus`
 --
 
 INSERT INTO `menus` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
@@ -625,17 +625,17 @@ INSERT INTO `menus` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
   `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `batch` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -694,24 +694,24 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `offers`
+-- Cấu trúc bảng cho bảng `offers`
 --
 
 CREATE TABLE `offers` (
   `id` bigint UNSIGNED NOT NULL,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `icon` text COLLATE utf8mb4_unicode_ci,
-  `tagline` text COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text COLLATE utf8mb4_unicode_ci,
-  `photo` text COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `offers`
+-- Đang đổ dữ liệu cho bảng `offers`
 --
 
 INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
@@ -720,18 +720,18 @@ INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `offer_elements`
+-- Cấu trúc bảng cho bảng `offer_elements`
 --
 
 CREATE TABLE `offer_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `item` text COLLATE utf8mb4_unicode_ci,
+  `item` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `offer_elements`
+-- Đang đổ dữ liệu cho bảng `offer_elements`
 --
 
 INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
@@ -742,77 +742,77 @@ INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `other_page_items`
+-- Cấu trúc bảng cho bảng `other_page_items`
 --
 
 CREATE TABLE `other_page_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `page_about_title` text COLLATE utf8mb4_unicode_ci,
-  `page_about_welcome_status` text COLLATE utf8mb4_unicode_ci,
-  `page_about_service_heading` text COLLATE utf8mb4_unicode_ci,
-  `page_about_service_subheading` text COLLATE utf8mb4_unicode_ci,
-  `page_about_service_text` text COLLATE utf8mb4_unicode_ci,
-  `page_about_service_how_many` text COLLATE utf8mb4_unicode_ci,
-  `page_about_service_status` text COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_heading` text COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_subheading` text COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_how_many` text COLLATE utf8mb4_unicode_ci,
-  `page_about_team_members_status` text COLLATE utf8mb4_unicode_ci,
-  `page_about_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_about_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_team_members_title` text COLLATE utf8mb4_unicode_ci,
-  `page_team_members_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_team_members_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_title` text COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_testimonials_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_pricing_title` text COLLATE utf8mb4_unicode_ci,
-  `page_pricing_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_pricing_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_faq_title` text COLLATE utf8mb4_unicode_ci,
-  `page_faq_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_faq_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_services_title` text COLLATE utf8mb4_unicode_ci,
-  `page_services_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_services_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_title` text COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_portfolios_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_blog_title` text COLLATE utf8mb4_unicode_ci,
-  `page_blog_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_blog_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_title` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_send_mail_heading` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_send_mail_subheading` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_heading` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_subheading` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_text` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_phone_title` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_phone_value` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_email_title` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_email_value` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_address_title` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_info_address_value` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_contact_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_terms_title` text COLLATE utf8mb4_unicode_ci,
-  `page_terms_content` text COLLATE utf8mb4_unicode_ci,
-  `page_terms_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_terms_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_privacy_title` text COLLATE utf8mb4_unicode_ci,
-  `page_privacy_content` text COLLATE utf8mb4_unicode_ci,
-  `page_privacy_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_privacy_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_search_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_search_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
-  `page_tag_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `page_tag_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `page_about_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_welcome_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_service_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_service_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_service_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_service_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_service_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_team_members_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_team_members_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_team_members_how_many` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_team_members_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_about_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_team_members_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_team_members_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_team_members_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_testimonials_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_testimonials_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_testimonials_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_pricing_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_pricing_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_pricing_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_faq_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_faq_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_faq_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_services_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_services_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_services_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_portfolios_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_portfolios_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_portfolios_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_blog_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_blog_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_blog_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_send_mail_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_send_mail_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_phone_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_phone_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_email_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_email_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_address_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_info_address_value` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_contact_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_terms_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_terms_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_terms_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_terms_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_privacy_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_privacy_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_privacy_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_privacy_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_search_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_search_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_tag_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `page_tag_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `other_page_items`
+-- Đang đổ dữ liệu cho bảng `other_page_items`
 --
 
 INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_status`, `page_about_service_heading`, `page_about_service_subheading`, `page_about_service_text`, `page_about_service_how_many`, `page_about_service_status`, `page_about_team_members_heading`, `page_about_team_members_subheading`, `page_about_team_members_how_many`, `page_about_team_members_status`, `page_about_seo_title`, `page_about_seo_meta_description`, `page_team_members_title`, `page_team_members_seo_title`, `page_team_members_seo_meta_description`, `page_testimonials_title`, `page_testimonials_seo_title`, `page_testimonials_seo_meta_description`, `page_pricing_title`, `page_pricing_seo_title`, `page_pricing_seo_meta_description`, `page_faq_title`, `page_faq_seo_title`, `page_faq_seo_meta_description`, `page_services_title`, `page_services_seo_title`, `page_services_seo_meta_description`, `page_portfolios_title`, `page_portfolios_seo_title`, `page_portfolios_seo_meta_description`, `page_blog_title`, `page_blog_seo_title`, `page_blog_seo_meta_description`, `page_contact_title`, `page_contact_send_mail_heading`, `page_contact_send_mail_subheading`, `page_contact_info_heading`, `page_contact_info_subheading`, `page_contact_info_text`, `page_contact_info_phone_title`, `page_contact_info_phone_value`, `page_contact_info_email_title`, `page_contact_info_email_value`, `page_contact_info_address_title`, `page_contact_info_address_value`, `page_contact_seo_title`, `page_contact_seo_meta_description`, `page_terms_title`, `page_terms_content`, `page_terms_seo_title`, `page_terms_seo_meta_description`, `page_privacy_title`, `page_privacy_content`, `page_privacy_seo_title`, `page_privacy_seo_meta_description`, `page_search_seo_title`, `page_search_seo_meta_description`, `page_tag_seo_title`, `page_tag_seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -821,28 +821,28 @@ INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_st
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tokens`
+-- Cấu trúc bảng cho bảng `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Cấu trúc bảng cho bảng `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tokenable_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tokenable_id` bigint UNSIGNED DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `token` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `abilities` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `expires_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -852,28 +852,28 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `portfolios`
+-- Cấu trúc bảng cho bảng `portfolios`
 --
 
 CREATE TABLE `portfolios` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `client` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `client` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `portfolios`
+-- Đang đổ dữ liệu cho bảng `portfolios`
 --
 
 INSERT INTO `portfolios` (`id`, `name`, `slug`, `description`, `date`, `client`, `website`, `location`, `photo`, `banner`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -884,25 +884,25 @@ INSERT INTO `portfolios` (`id`, `name`, `slug`, `description`, `date`, `client`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Cấu trúc bảng cho bảng `posts`
 --
 
 CREATE TABLE `posts` (
   `id` bigint UNSIGNED NOT NULL,
   `post_category_id` int DEFAULT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tags` text COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tags` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `posts`
+-- Đang đổ dữ liệu cho bảng `posts`
 --
 
 INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `photo`, `tags`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -920,21 +920,21 @@ INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post_categories`
+-- Cấu trúc bảng cho bảng `post_categories`
 --
 
 CREATE TABLE `post_categories` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `post_categories`
+-- Đang đổ dữ liệu cho bảng `post_categories`
 --
 
 INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -947,23 +947,23 @@ INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_desc
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pricing_plans`
+-- Cấu trúc bảng cho bảng `pricing_plans`
 --
 
 CREATE TABLE `pricing_plans` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `price` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `period` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `period` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pricing_plans`
+-- Đang đổ dữ liệu cho bảng `pricing_plans`
 --
 
 INSERT INTO `pricing_plans` (`id`, `name`, `price`, `period`, `button_text`, `button_url`, `photo`, `created_at`, `updated_at`) VALUES
@@ -974,19 +974,19 @@ INSERT INTO `pricing_plans` (`id`, `name`, `price`, `period`, `button_text`, `bu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pricing_plan_options`
+-- Cấu trúc bảng cho bảng `pricing_plan_options`
 --
 
 CREATE TABLE `pricing_plan_options` (
   `id` bigint UNSIGNED NOT NULL,
   `pricing_plan_id` int DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pricing_plan_options`
+-- Đang đổ dữ liệu cho bảng `pricing_plan_options`
 --
 
 INSERT INTO `pricing_plan_options` (`id`, `pricing_plan_id`, `name`, `created_at`, `updated_at`) VALUES
@@ -1006,28 +1006,28 @@ INSERT INTO `pricing_plan_options` (`id`, `pricing_plan_id`, `name`, `created_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `services`
+-- Cấu trúc bảng cho bảng `services`
 --
 
 CREATE TABLE `services` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `short_description` text COLLATE utf8mb4_unicode_ci,
-  `description` text COLLATE utf8mb4_unicode_ci,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `banner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pdf` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `short_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `banner` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pdf` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `services`
+-- Đang đổ dữ liệu cho bảng `services`
 --
 
 INSERT INTO `services` (`id`, `name`, `slug`, `short_description`, `description`, `icon`, `phone`, `photo`, `banner`, `pdf`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -1043,20 +1043,20 @@ INSERT INTO `services` (`id`, `name`, `slug`, `short_description`, `description`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `service_faqs`
+-- Cấu trúc bảng cho bảng `service_faqs`
 --
 
 CREATE TABLE `service_faqs` (
   `id` bigint UNSIGNED NOT NULL,
   `service_id` int DEFAULT NULL,
-  `question` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `answer` text COLLATE utf8mb4_unicode_ci,
+  `question` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `service_faqs`
+-- Đang đổ dữ liệu cho bảng `service_faqs`
 --
 
 INSERT INTO `service_faqs` (`id`, `service_id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
@@ -1110,109 +1110,109 @@ INSERT INTO `service_faqs` (`id`, `service_id`, `question`, `answer`, `created_a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Cấu trúc bảng cho bảng `settings`
 --
 
 CREATE TABLE `settings` (
   `id` bigint UNSIGNED NOT NULL,
-  `logo` text COLLATE utf8mb4_unicode_ci,
-  `logo_sticky` text COLLATE utf8mb4_unicode_ci,
-  `favicon` text COLLATE utf8mb4_unicode_ci,
-  `home_show` text COLLATE utf8mb4_unicode_ci,
-  `image_404` text COLLATE utf8mb4_unicode_ci,
-  `banner` text COLLATE utf8mb4_unicode_ci,
-  `login_page_photo` text COLLATE utf8mb4_unicode_ci,
-  `facebook` text COLLATE utf8mb4_unicode_ci,
-  `twitter` text COLLATE utf8mb4_unicode_ci,
-  `linkedin` text COLLATE utf8mb4_unicode_ci,
-  `instagram` text COLLATE utf8mb4_unicode_ci,
-  `youtube` text COLLATE utf8mb4_unicode_ci,
-  `pinterest` text COLLATE utf8mb4_unicode_ci,
-  `top_bar_email` text COLLATE utf8mb4_unicode_ci,
-  `top_bar_address` text COLLATE utf8mb4_unicode_ci,
-  `top_bar_phone` text COLLATE utf8mb4_unicode_ci,
-  `map` text COLLATE utf8mb4_unicode_ci,
-  `footer_email` text COLLATE utf8mb4_unicode_ci,
-  `footer_phone` text COLLATE utf8mb4_unicode_ci,
-  `footer_address` text COLLATE utf8mb4_unicode_ci,
-  `footer_copyright` text COLLATE utf8mb4_unicode_ci,
-  `footer_text` text COLLATE utf8mb4_unicode_ci,
-  `footer_links_heading` text COLLATE utf8mb4_unicode_ci,
-  `footer_subscriber_heading` text COLLATE utf8mb4_unicode_ci,
-  `footer_subscriber_text` text COLLATE utf8mb4_unicode_ci,
-  `sticky_header` text COLLATE utf8mb4_unicode_ci,
-  `preloader` text COLLATE utf8mb4_unicode_ci,
-  `layout_direction` text COLLATE utf8mb4_unicode_ci,
-  `theme_color` text COLLATE utf8mb4_unicode_ci,
-  `currency_symbol` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_message` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_text` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_text_color` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_bg_color` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_text_color` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_button_bg_color` text COLLATE utf8mb4_unicode_ci,
-  `cookie_consent_status` text COLLATE utf8mb4_unicode_ci,
-  `tawk_live_chat_property_id` text COLLATE utf8mb4_unicode_ci,
-  `tawk_live_chat_status` text COLLATE utf8mb4_unicode_ci,
-  `google_analytic_id` text COLLATE utf8mb4_unicode_ci,
-  `google_analytic_status` text COLLATE utf8mb4_unicode_ci,
-  `google_recaptcha_site_key` text COLLATE utf8mb4_unicode_ci,
-  `google_recaptcha_status` text COLLATE utf8mb4_unicode_ci,
-  `home_seo_title` text COLLATE utf8mb4_unicode_ci,
-  `home_seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `logo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `logo_sticky` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `favicon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `home_show` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `image_404` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `banner` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `login_page_photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `facebook` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `twitter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `linkedin` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `instagram` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `youtube` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `pinterest` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `top_bar_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `top_bar_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `top_bar_phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `map` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_phone` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_address` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_copyright` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_links_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_subscriber_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `footer_subscriber_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `sticky_header` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `preloader` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `layout_direction` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `theme_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `currency_symbol` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_text_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_bg_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_button_text_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_button_bg_color` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `cookie_consent_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `tawk_live_chat_property_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `tawk_live_chat_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `google_analytic_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `google_analytic_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `google_recaptcha_site_key` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `google_recaptcha_status` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `home_seo_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `home_seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Đang đổ dữ liệu cho bảng `settings`
 --
 
 INSERT INTO `settings` (`id`, `logo`, `logo_sticky`, `favicon`, `home_show`, `image_404`, `banner`, `login_page_photo`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `top_bar_email`, `top_bar_address`, `top_bar_phone`, `map`, `footer_email`, `footer_phone`, `footer_address`, `footer_copyright`, `footer_text`, `footer_links_heading`, `footer_subscriber_heading`, `footer_subscriber_text`, `sticky_header`, `preloader`, `layout_direction`, `theme_color`, `currency_symbol`, `cookie_consent_message`, `cookie_consent_button_text`, `cookie_consent_text_color`, `cookie_consent_bg_color`, `cookie_consent_button_text_color`, `cookie_consent_button_bg_color`, `cookie_consent_status`, `tawk_live_chat_property_id`, `tawk_live_chat_status`, `google_analytic_id`, `google_analytic_status`, `google_recaptcha_site_key`, `google_recaptcha_status`, `home_seo_title`, `home_seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1704942796.jpg', 'https://www.facebook.com/tran.an.435757?locale=vi_VN', '#', NULL, '#', NULL, '#', 'vnstech@company.com', '102 Trung Hòa, Cầu Giấy, Hà Nội', '0999999999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4123273337323!2d105.79768027399132!3d21.016181580629993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5ecf2ea2ff%3A0xb2da2bcdd94a2cbc!2zMTAyIFAuVHJ1bmcgSMOyYSwgVHJ1bmcgSG_DoCwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWkgMTAwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1740134420486!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'vnstech@company.com', '0999999999', '102 Trung Hòa, Cầu Giấy, Hà Nội', 'Copyright © 2024, vns tech', 'Chào mừng đến với Vns Tech, nơi cung cấp giải pháp công nghệ hàng đầu Việt Nam', 'Khám phá', 'Bản tin', 'Đăng kí bản tin của chúng tôi để nhận tin tức mới nhất', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'Trang web này sử dụng cookie để trải nghiệm lướt web của bạn tốt hơn', 'ĐỒNG Ý', 'F8FFED', '000000', '000000', 'FFFFFF', 'Show', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2025-02-21 03:42:14');
+(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1740191305.jpg', 'https://www.facebook.com/tran.an.435757?locale=vi_VN', '#', NULL, '#', NULL, '#', 'vnstech@company.com', '102 Trung Hòa, Cầu Giấy, Hà Nội', '0999999999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4123273337323!2d105.79768027399132!3d21.016181580629993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5ecf2ea2ff%3A0xb2da2bcdd94a2cbc!2zMTAyIFAuVHJ1bmcgSMOyYSwgVHJ1bmcgSG_DoCwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWkgMTAwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1740134420486!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'vnstech@company.com', '0999999999', '102 Trung Hòa, Cầu Giấy, Hà Nội', 'Copyright © 2024, vns tech', 'Chào mừng đến với Vns Tech, nơi cung cấp giải pháp công nghệ hàng đầu Việt Nam', 'Khám phá', 'Bản tin', 'Đăng kí bản tin của chúng tôi để nhận tin tức mới nhất', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'Trang web này sử dụng cookie để trải nghiệm lướt web của bạn tốt hơn', 'ĐỒNG Ý', 'F8FFED', '000000', '000000', 'FFFFFF', 'Show', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2025-02-21 19:28:25');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sliders`
+-- Cấu trúc bảng cho bảng `sliders`
 --
 
 CREATE TABLE `sliders` (
   `id` bigint UNSIGNED NOT NULL,
-  `text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_text` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `button_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sliders`
+-- Đang đổ dữ liệu cho bảng `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `text`, `photo`, `button_text`, `button_url`, `created_at`, `updated_at`) VALUES
-(4, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1699468031.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2023-11-08 12:27:11', '2025-02-21 02:15:20'),
-(5, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1699468038.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2023-11-08 12:27:18', '2025-02-21 02:13:34'),
-(7, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740129411.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-21 01:46:14', '2025-02-21 02:16:51');
+(4, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1740191765.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2023-11-08 12:27:11', '2025-02-21 19:36:05'),
+(5, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1740191708.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2023-11-08 12:27:18', '2025-02-21 19:35:08'),
+(7, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740191756.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-21 01:46:14', '2025-02-21 19:35:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subscribers`
+-- Cấu trúc bảng cho bảng `subscribers`
 --
 
 CREATE TABLE `subscribers` (
   `id` bigint UNSIGNED NOT NULL,
-  `email` text COLLATE utf8mb4_unicode_ci,
-  `token` text COLLATE utf8mb4_unicode_ci,
+  `email` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `token` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `status` int DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `subscribers`
+-- Đang đổ dữ liệu cho bảng `subscribers`
 --
 
 INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `updated_at`) VALUES
@@ -1226,34 +1226,34 @@ INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team_members`
+-- Cấu trúc bảng cho bảng `team_members`
 --
 
 CREATE TABLE `team_members` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tagline` text COLLATE utf8mb4_unicode_ci,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `linkedin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `youtube` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pinterest` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `experience_text` text COLLATE utf8mb4_unicode_ci,
-  `seo_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `seo_meta_description` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tagline` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `linkedin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pinterest` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experience_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `seo_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `seo_meta_description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `team_members`
+-- Đang đổ dữ liệu cho bảng `team_members`
 --
 
 INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `tagline`, `photo`, `email`, `phone`, `website`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `experience_text`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -1266,20 +1266,20 @@ INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `tagline`, `pho
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team_member_experiences`
+-- Cấu trúc bảng cho bảng `team_member_experiences`
 --
 
 CREATE TABLE `team_member_experiences` (
   `id` bigint UNSIGNED NOT NULL,
   `team_member_id` int DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `percentage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `percentage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `team_member_experiences`
+-- Đang đổ dữ liệu cho bảng `team_member_experiences`
 --
 
 INSERT INTO `team_member_experiences` (`id`, `team_member_id`, `name`, `percentage`, `created_at`, `updated_at`) VALUES
@@ -1296,22 +1296,22 @@ INSERT INTO `team_member_experiences` (`id`, `team_member_id`, `name`, `percenta
 -- --------------------------------------------------------
 
 --
--- Table structure for table `testimonials`
+-- Cấu trúc bảng cho bảng `testimonials`
 --
 
 CREATE TABLE `testimonials` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `rating` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `comment` text COLLATE utf8mb4_unicode_ci,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `designation` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `testimonials`
+-- Đang đổ dữ liệu cho bảng `testimonials`
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `designation`, `rating`, `photo`, `comment`, `created_at`, `updated_at`) VALUES
@@ -1323,23 +1323,23 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `rating`, `photo`, `com
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `state` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `city` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `zip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '0' COMMENT '0=pending, 1=active, 2=suspended',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '0' COMMENT '0=pending, 1=active, 2=suspended',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1347,41 +1347,41 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video_one_items`
+-- Cấu trúc bảng cho bảng `video_one_items`
 --
 
 CREATE TABLE `video_one_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text COLLATE utf8mb4_unicode_ci,
-  `photo` text COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `video_one_items`
+-- Đang đổ dữ liệu cho bảng `video_one_items`
 --
 
 INSERT INTO `video_one_items` (`id`, `heading`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1704852598.jpg', NULL, '2025-02-21 01:53:15');
+(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1740190384.jpg', NULL, '2025-02-21 19:13:04');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video_two_items`
+-- Cấu trúc bảng cho bảng `video_two_items`
 --
 
 CREATE TABLE `video_two_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `youtube_video_id` text COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `youtube_video_id` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `video_two_items`
+-- Đang đổ dữ liệu cho bảng `video_two_items`
 --
 
 INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`, `updated_at`) VALUES
@@ -1390,50 +1390,50 @@ INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `welcome_one_items`
+-- Cấu trúc bảng cho bảng `welcome_one_items`
 --
 
 CREATE TABLE `welcome_one_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `button_text` text COLLATE utf8mb4_unicode_ci,
-  `button_url` text COLLATE utf8mb4_unicode_ci,
-  `experience_year` text COLLATE utf8mb4_unicode_ci,
-  `person_name` text COLLATE utf8mb4_unicode_ci,
-  `person_designation` text COLLATE utf8mb4_unicode_ci,
-  `person_photo` text COLLATE utf8mb4_unicode_ci,
-  `photo1` text COLLATE utf8mb4_unicode_ci,
-  `photo2` text COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `button_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `experience_year` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `person_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `person_designation` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `person_photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `welcome_one_items`
+-- Đang đổ dữ liệu cho bảng `welcome_one_items`
 --
 
 INSERT INTO `welcome_one_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `person_name`, `person_designation`, `person_photo`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
-(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1704848548.jpg', 'welcome_one_photo1_1704823739.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2025-02-21 01:41:53');
+(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1740190579.jpg', 'welcome_one_photo1_1740190521.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2025-02-21 19:16:19');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `welcome_one_item_elements`
+-- Cấu trúc bảng cho bảng `welcome_one_item_elements`
 --
 
 CREATE TABLE `welcome_one_item_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `icon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci,
+  `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `welcome_one_item_elements`
+-- Đang đổ dữ liệu cho bảng `welcome_one_item_elements`
 --
 
 INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -1443,25 +1443,25 @@ INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `welcome_two_items`
+-- Cấu trúc bảng cho bảng `welcome_two_items`
 --
 
 CREATE TABLE `welcome_two_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `button_text` text COLLATE utf8mb4_unicode_ci,
-  `button_url` text COLLATE utf8mb4_unicode_ci,
-  `experience_year` text COLLATE utf8mb4_unicode_ci,
-  `photo1` text COLLATE utf8mb4_unicode_ci,
-  `photo2` text COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `button_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `button_url` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `experience_year` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `welcome_two_items`
+-- Đang đổ dữ liệu cho bảng `welcome_two_items`
 --
 
 INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
@@ -1470,19 +1470,19 @@ INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `welcome_two_item_elements`
+-- Cấu trúc bảng cho bảng `welcome_two_item_elements`
 --
 
 CREATE TABLE `welcome_two_item_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `text` text COLLATE utf8mb4_unicode_ci,
+  `heading` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `welcome_two_item_elements`
+-- Đang đổ dữ liệu cho bảng `welcome_two_item_elements`
 --
 
 INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -1492,19 +1492,19 @@ INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `welcome_two_item_skills`
+-- Cấu trúc bảng cho bảng `welcome_two_item_skills`
 --
 
 CREATE TABLE `welcome_two_item_skills` (
   `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `percentage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `percentage` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `welcome_two_item_skills`
+-- Đang đổ dữ liệu cho bảng `welcome_two_item_skills`
 --
 
 INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`, `updated_at`) VALUES
@@ -1514,42 +1514,42 @@ INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `why_choose_one_items`
+-- Cấu trúc bảng cho bảng `why_choose_one_items`
 --
 
 CREATE TABLE `why_choose_one_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `text` text COLLATE utf8mb4_unicode_ci,
-  `photo` text COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `why_choose_one_items`
+-- Đang đổ dữ liệu cho bảng `why_choose_one_items`
 --
 
 INSERT INTO `why_choose_one_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1704886453.jpg', NULL, '2025-02-21 02:12:13');
+(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1740190213.jpg', NULL, '2025-02-21 19:10:13');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `why_choose_one_item_elements`
+-- Cấu trúc bảng cho bảng `why_choose_one_item_elements`
 --
 
 CREATE TABLE `why_choose_one_item_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `icon` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
+  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `why_choose_one_item_elements`
+-- Đang đổ dữ liệu cho bảng `why_choose_one_item_elements`
 --
 
 INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at`, `updated_at`) VALUES
@@ -1559,22 +1559,22 @@ INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `why_choose_two_items`
+-- Cấu trúc bảng cho bảng `why_choose_two_items`
 --
 
 CREATE TABLE `why_choose_two_items` (
   `id` bigint UNSIGNED NOT NULL,
-  `heading` text COLLATE utf8mb4_unicode_ci,
-  `subheading` text COLLATE utf8mb4_unicode_ci,
-  `photo_over_text` text COLLATE utf8mb4_unicode_ci,
-  `photo_over_heading` text COLLATE utf8mb4_unicode_ci,
-  `photo` text COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `subheading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo_over_text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo_over_heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `photo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `why_choose_two_items`
+-- Đang đổ dữ liệu cho bảng `why_choose_two_items`
 --
 
 INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_text`, `photo_over_heading`, `photo`, `created_at`, `updated_at`) VALUES
@@ -1583,19 +1583,19 @@ INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `why_choose_two_item_elements`
+-- Cấu trúc bảng cho bảng `why_choose_two_item_elements`
 --
 
 CREATE TABLE `why_choose_two_item_elements` (
   `id` bigint UNSIGNED NOT NULL,
-  `icon` text COLLATE utf8mb4_unicode_ci,
-  `heading` text COLLATE utf8mb4_unicode_ci,
+  `icon` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `heading` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `why_choose_two_item_elements`
+-- Đang đổ dữ liệu cho bảng `why_choose_two_item_elements`
 --
 
 INSERT INTO `why_choose_two_item_elements` (`id`, `icon`, `heading`, `created_at`, `updated_at`) VALUES
@@ -1605,169 +1605,169 @@ INSERT INTO `why_choose_two_item_elements` (`id`, `icon`, `heading`, `created_at
 (4, 'flaticon-teaching', 'Đội ngũ kỹ thuật chuyên nghiệp', '2024-01-10 06:02:59', '2025-02-21 02:15:40');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Indexes for table `call_to_actions`
+-- Chỉ mục cho bảng `call_to_actions`
 --
 ALTER TABLE `call_to_actions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `clients`
+-- Chỉ mục cho bảng `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `custom_pages`
+-- Chỉ mục cho bảng `custom_pages`
 --
 ALTER TABLE `custom_pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Chỉ mục cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `faqs`
+-- Chỉ mục cho bảng `faqs`
 --
 ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feature_one_items`
+-- Chỉ mục cho bảng `feature_one_items`
 --
 ALTER TABLE `feature_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feature_one_item_elements`
+-- Chỉ mục cho bảng `feature_one_item_elements`
 --
 ALTER TABLE `feature_one_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feature_two_items`
+-- Chỉ mục cho bảng `feature_two_items`
 --
 ALTER TABLE `feature_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feature_two_item_elements`
+-- Chỉ mục cho bảng `feature_two_item_elements`
 --
 ALTER TABLE `feature_two_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `flat_icons`
+-- Chỉ mục cho bảng `flat_icons`
 --
 ALTER TABLE `flat_icons`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fun_facts`
+-- Chỉ mục cho bảng `fun_facts`
 --
 ALTER TABLE `fun_facts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `fun_fact_elements`
+-- Chỉ mục cho bảng `fun_fact_elements`
 --
 ALTER TABLE `fun_fact_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_contact_photos`
+-- Chỉ mục cho bảng `home_contact_photos`
 --
 ALTER TABLE `home_contact_photos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_four_page_items`
+-- Chỉ mục cho bảng `home_four_page_items`
 --
 ALTER TABLE `home_four_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_one_page_items`
+-- Chỉ mục cho bảng `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_three_page_items`
+-- Chỉ mục cho bảng `home_three_page_items`
 --
 ALTER TABLE `home_three_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_two_page_items`
+-- Chỉ mục cho bảng `home_two_page_items`
 --
 ALTER TABLE `home_two_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `languages`
+-- Chỉ mục cho bảng `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `marquees`
+-- Chỉ mục cho bảng `marquees`
 --
 ALTER TABLE `marquees`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menus`
+-- Chỉ mục cho bảng `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `offers`
+-- Chỉ mục cho bảng `offers`
 --
 ALTER TABLE `offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `offer_elements`
+-- Chỉ mục cho bảng `offer_elements`
 --
 ALTER TABLE `offer_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `other_page_items`
+-- Chỉ mục cho bảng `other_page_items`
 --
 ALTER TABLE `other_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_reset_tokens`
+-- Chỉ mục cho bảng `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Chỉ mục cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -1775,462 +1775,462 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `portfolios`
+-- Chỉ mục cho bảng `portfolios`
 --
 ALTER TABLE `portfolios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `posts`
+-- Chỉ mục cho bảng `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `post_categories`
+-- Chỉ mục cho bảng `post_categories`
 --
 ALTER TABLE `post_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pricing_plans`
+-- Chỉ mục cho bảng `pricing_plans`
 --
 ALTER TABLE `pricing_plans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pricing_plan_options`
+-- Chỉ mục cho bảng `pricing_plan_options`
 --
 ALTER TABLE `pricing_plan_options`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `services`
+-- Chỉ mục cho bảng `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `service_faqs`
+-- Chỉ mục cho bảng `service_faqs`
 --
 ALTER TABLE `service_faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `settings`
+-- Chỉ mục cho bảng `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `sliders`
+-- Chỉ mục cho bảng `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `subscribers`
+-- Chỉ mục cho bảng `subscribers`
 --
 ALTER TABLE `subscribers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `team_members`
+-- Chỉ mục cho bảng `team_members`
 --
 ALTER TABLE `team_members`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `team_member_experiences`
+-- Chỉ mục cho bảng `team_member_experiences`
 --
 ALTER TABLE `team_member_experiences`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `testimonials`
+-- Chỉ mục cho bảng `testimonials`
 --
 ALTER TABLE `testimonials`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `video_one_items`
+-- Chỉ mục cho bảng `video_one_items`
 --
 ALTER TABLE `video_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `video_two_items`
+-- Chỉ mục cho bảng `video_two_items`
 --
 ALTER TABLE `video_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `welcome_one_items`
+-- Chỉ mục cho bảng `welcome_one_items`
 --
 ALTER TABLE `welcome_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `welcome_one_item_elements`
+-- Chỉ mục cho bảng `welcome_one_item_elements`
 --
 ALTER TABLE `welcome_one_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `welcome_two_items`
+-- Chỉ mục cho bảng `welcome_two_items`
 --
 ALTER TABLE `welcome_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `welcome_two_item_elements`
+-- Chỉ mục cho bảng `welcome_two_item_elements`
 --
 ALTER TABLE `welcome_two_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `welcome_two_item_skills`
+-- Chỉ mục cho bảng `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `why_choose_one_items`
+-- Chỉ mục cho bảng `why_choose_one_items`
 --
 ALTER TABLE `why_choose_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `why_choose_one_item_elements`
+-- Chỉ mục cho bảng `why_choose_one_item_elements`
 --
 ALTER TABLE `why_choose_one_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `why_choose_two_items`
+-- Chỉ mục cho bảng `why_choose_two_items`
 --
 ALTER TABLE `why_choose_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `why_choose_two_item_elements`
+-- Chỉ mục cho bảng `why_choose_two_item_elements`
 --
 ALTER TABLE `why_choose_two_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `call_to_actions`
+-- AUTO_INCREMENT cho bảng `call_to_actions`
 --
 ALTER TABLE `call_to_actions`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT cho bảng `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `custom_pages`
+-- AUTO_INCREMENT cho bảng `custom_pages`
 --
 ALTER TABLE `custom_pages`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `faqs`
+-- AUTO_INCREMENT cho bảng `faqs`
 --
 ALTER TABLE `faqs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `feature_one_items`
+-- AUTO_INCREMENT cho bảng `feature_one_items`
 --
 ALTER TABLE `feature_one_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `feature_one_item_elements`
+-- AUTO_INCREMENT cho bảng `feature_one_item_elements`
 --
 ALTER TABLE `feature_one_item_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `feature_two_items`
+-- AUTO_INCREMENT cho bảng `feature_two_items`
 --
 ALTER TABLE `feature_two_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `feature_two_item_elements`
+-- AUTO_INCREMENT cho bảng `feature_two_item_elements`
 --
 ALTER TABLE `feature_two_item_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `flat_icons`
+-- AUTO_INCREMENT cho bảng `flat_icons`
 --
 ALTER TABLE `flat_icons`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `fun_facts`
+-- AUTO_INCREMENT cho bảng `fun_facts`
 --
 ALTER TABLE `fun_facts`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `fun_fact_elements`
+-- AUTO_INCREMENT cho bảng `fun_fact_elements`
 --
 ALTER TABLE `fun_fact_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `home_contact_photos`
+-- AUTO_INCREMENT cho bảng `home_contact_photos`
 --
 ALTER TABLE `home_contact_photos`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `home_four_page_items`
+-- AUTO_INCREMENT cho bảng `home_four_page_items`
 --
 ALTER TABLE `home_four_page_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `home_one_page_items`
+-- AUTO_INCREMENT cho bảng `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `home_three_page_items`
+-- AUTO_INCREMENT cho bảng `home_three_page_items`
 --
 ALTER TABLE `home_three_page_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `home_two_page_items`
+-- AUTO_INCREMENT cho bảng `home_two_page_items`
 --
 ALTER TABLE `home_two_page_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `languages`
+-- AUTO_INCREMENT cho bảng `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `marquees`
+-- AUTO_INCREMENT cho bảng `marquees`
 --
 ALTER TABLE `marquees`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `menus`
+-- AUTO_INCREMENT cho bảng `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT for table `offers`
+-- AUTO_INCREMENT cho bảng `offers`
 --
 ALTER TABLE `offers`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `offer_elements`
+-- AUTO_INCREMENT cho bảng `offer_elements`
 --
 ALTER TABLE `offer_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `other_page_items`
+-- AUTO_INCREMENT cho bảng `other_page_items`
 --
 ALTER TABLE `other_page_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `portfolios`
+-- AUTO_INCREMENT cho bảng `portfolios`
 --
 ALTER TABLE `portfolios`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `post_categories`
+-- AUTO_INCREMENT cho bảng `post_categories`
 --
 ALTER TABLE `post_categories`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `pricing_plans`
+-- AUTO_INCREMENT cho bảng `pricing_plans`
 --
 ALTER TABLE `pricing_plans`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pricing_plan_options`
+-- AUTO_INCREMENT cho bảng `pricing_plan_options`
 --
 ALTER TABLE `pricing_plan_options`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `services`
+-- AUTO_INCREMENT cho bảng `services`
 --
 ALTER TABLE `services`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `service_faqs`
+-- AUTO_INCREMENT cho bảng `service_faqs`
 --
 ALTER TABLE `service_faqs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT for table `settings`
+-- AUTO_INCREMENT cho bảng `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `sliders`
+-- AUTO_INCREMENT cho bảng `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `subscribers`
+-- AUTO_INCREMENT cho bảng `subscribers`
 --
 ALTER TABLE `subscribers`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `team_members`
+-- AUTO_INCREMENT cho bảng `team_members`
 --
 ALTER TABLE `team_members`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `team_member_experiences`
+-- AUTO_INCREMENT cho bảng `team_member_experiences`
 --
 ALTER TABLE `team_member_experiences`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `testimonials`
+-- AUTO_INCREMENT cho bảng `testimonials`
 --
 ALTER TABLE `testimonials`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `video_one_items`
+-- AUTO_INCREMENT cho bảng `video_one_items`
 --
 ALTER TABLE `video_one_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `video_two_items`
+-- AUTO_INCREMENT cho bảng `video_two_items`
 --
 ALTER TABLE `video_two_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `welcome_one_items`
+-- AUTO_INCREMENT cho bảng `welcome_one_items`
 --
 ALTER TABLE `welcome_one_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `welcome_one_item_elements`
+-- AUTO_INCREMENT cho bảng `welcome_one_item_elements`
 --
 ALTER TABLE `welcome_one_item_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `welcome_two_items`
+-- AUTO_INCREMENT cho bảng `welcome_two_items`
 --
 ALTER TABLE `welcome_two_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `welcome_two_item_elements`
+-- AUTO_INCREMENT cho bảng `welcome_two_item_elements`
 --
 ALTER TABLE `welcome_two_item_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `welcome_two_item_skills`
+-- AUTO_INCREMENT cho bảng `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `why_choose_one_items`
+-- AUTO_INCREMENT cho bảng `why_choose_one_items`
 --
 ALTER TABLE `why_choose_one_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `why_choose_one_item_elements`
+-- AUTO_INCREMENT cho bảng `why_choose_one_item_elements`
 --
 ALTER TABLE `why_choose_one_item_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `why_choose_two_items`
+-- AUTO_INCREMENT cho bảng `why_choose_two_items`
 --
 ALTER TABLE `why_choose_two_items`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `why_choose_two_item_elements`
+-- AUTO_INCREMENT cho bảng `why_choose_two_item_elements`
 --
 ALTER TABLE `why_choose_two_item_elements`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

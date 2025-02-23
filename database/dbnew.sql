@@ -1,12 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Feb 22, 2025 at 03:01 AM
+-- Generation Time: Feb 23, 2025 at 03:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `desix`
+-- Database: `vnstech_vnsindex`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -40,7 +39,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `created_at`, `updated_at`) VALUES
@@ -49,7 +48,7 @@ INSERT INTO `admins` (`id`, `name`, `email`, `photo`, `password`, `token`, `crea
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `call_to_actions`
+-- Table structure for table `call_to_actions`
 --
 
 CREATE TABLE `call_to_actions` (
@@ -63,16 +62,16 @@ CREATE TABLE `call_to_actions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `call_to_actions`
+-- Dumping data for table `call_to_actions`
 --
 
 INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Nhận tư vấn MIỄN PHÍ\r\nCho bạn', 'flaticon-phone-call', '0563988575', 'vnstech@company.com', NULL, '2025-02-21 03:28:20');
+(1, 'Get your FREE\r\nBusiness Consultation', 'flaticon-phone-call', '0563988575', 'support@company.com', NULL, '2024-01-10 03:27:14');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `clients`
+-- Table structure for table `clients`
 --
 
 CREATE TABLE `clients` (
@@ -84,28 +83,19 @@ CREATE TABLE `clients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `clients`
+-- Dumping data for table `clients`
 --
+
 INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
-
-
-	(1, 'client_1740189611.png', '#', '2024-01-13 11:09:02', '2025-02-21 19:00:11'),
-	(2, 'client_1740189695.png', NULL, '2024-01-13 11:09:31', '2025-02-21 19:01:35'),
-	(3, 'client_1740189975.png', NULL, '2024-01-13 11:09:40', '2025-02-21 19:06:16'),
-	(4, 'client_1740189774.png', NULL, '2024-01-13 11:09:46', '2025-02-21 19:02:54'),
-	(5, 'client_1740130414.png', NULL, '2024-01-13 11:09:53', '2025-02-21 02:33:34'),
-	(7, 'client_1740189869.png', NULL, '2025-02-21 02:36:45', '2025-02-21 19:04:29'),
-	(8, 'client_1740189523.png', NULL, '2025-02-21 02:40:59', '2025-02-21 18:58:43'),
-
-(12, 'client_1740189560.png', NULL, '2024-01-13 11:09:31', '2025-02-21 18:59:20'),
-(13, 'client_1740130859.png', NULL, '2025-02-21 02:40:59', '2025-02-21 02:40:59'),
-(15, 'client_1740189423.png', NULL, '2024-01-13 11:09:53', '2025-02-21 18:57:03'),
-(16, 'client_1740189423.png', NULL, '2024-01-13 11:09:53', '2025-02-21 18:57:03');
+(2, 'client_1740322424.jpg', NULL, '2024-01-13 04:09:31', '2025-02-23 07:53:44'),
+(7, 'client_1740322300.jpg', NULL, '2025-02-20 19:36:45', '2025-02-23 07:51:40'),
+(8, 'client_1740322147.jpg', NULL, '2025-02-20 19:40:59', '2025-02-23 07:49:07'),
+(17, 'client_1740322473.jpg', NULL, '2025-02-23 07:54:33', '2025-02-23 07:54:33');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `custom_pages`
+-- Table structure for table `custom_pages`
 --
 
 CREATE TABLE `custom_pages` (
@@ -120,7 +110,7 @@ CREATE TABLE `custom_pages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `custom_pages`
+-- Dumping data for table `custom_pages`
 --
 
 INSERT INTO `custom_pages` (`id`, `name`, `slug`, `content`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -130,7 +120,7 @@ INSERT INTO `custom_pages` (`id`, `name`, `slug`, `content`, `seo_title`, `seo_m
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -146,7 +136,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `faqs`
+-- Table structure for table `faqs`
 --
 
 CREATE TABLE `faqs` (
@@ -158,7 +148,7 @@ CREATE TABLE `faqs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `faqs`
+-- Dumping data for table `faqs`
 --
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
@@ -171,7 +161,7 @@ INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feature_one_items`
+-- Table structure for table `feature_one_items`
 --
 
 CREATE TABLE `feature_one_items` (
@@ -183,7 +173,7 @@ CREATE TABLE `feature_one_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `feature_one_items`
+-- Dumping data for table `feature_one_items`
 --
 
 INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_at`) VALUES
@@ -192,7 +182,7 @@ INSERT INTO `feature_one_items` (`id`, `text`, `photo`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feature_one_item_elements`
+-- Table structure for table `feature_one_item_elements`
 --
 
 CREATE TABLE `feature_one_item_elements` (
@@ -205,7 +195,7 @@ CREATE TABLE `feature_one_item_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `feature_one_item_elements`
+-- Dumping data for table `feature_one_item_elements`
 --
 
 INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -216,9 +206,9 @@ INSERT INTO `feature_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feature_two_items`
+-- Table structure for table `feature_two_items`
 --
- 
+
 CREATE TABLE `feature_two_items` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `heading` text DEFAULT NULL,
@@ -230,7 +220,7 @@ CREATE TABLE `feature_two_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `feature_two_items`
+-- Dumping data for table `feature_two_items`
 --
 
 INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
@@ -239,7 +229,7 @@ INSERT INTO `feature_two_items` (`id`, `heading`, `subheading`, `text`, `photo`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `feature_two_item_elements`
+-- Table structure for table `feature_two_item_elements`
 --
 
 CREATE TABLE `feature_two_item_elements` (
@@ -250,7 +240,7 @@ CREATE TABLE `feature_two_item_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `feature_two_item_elements`
+-- Dumping data for table `feature_two_item_elements`
 --
 
 INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -261,7 +251,7 @@ INSERT INTO `feature_two_item_elements` (`id`, `name`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `flat_icons`
+-- Table structure for table `flat_icons`
 --
 
 CREATE TABLE `flat_icons` (
@@ -272,7 +262,7 @@ CREATE TABLE `flat_icons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `flat_icons`
+-- Dumping data for table `flat_icons`
 --
 
 INSERT INTO `flat_icons` (`id`, `icon_code`, `created_at`, `updated_at`) VALUES
@@ -304,7 +294,7 @@ INSERT INTO `flat_icons` (`id`, `icon_code`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `fun_facts`
+-- Table structure for table `fun_facts`
 --
 
 CREATE TABLE `fun_facts` (
@@ -317,7 +307,7 @@ CREATE TABLE `fun_facts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `fun_facts`
+-- Dumping data for table `fun_facts`
 --
 
 INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -326,7 +316,7 @@ INSERT INTO `fun_facts` (`id`, `subheading`, `heading`, `text`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `fun_fact_elements`
+-- Table structure for table `fun_fact_elements`
 --
 
 CREATE TABLE `fun_fact_elements` (
@@ -339,7 +329,7 @@ CREATE TABLE `fun_fact_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `fun_fact_elements`
+-- Dumping data for table `fun_fact_elements`
 --
 
 INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `updated_at`) VALUES
@@ -350,7 +340,7 @@ INSERT INTO `fun_fact_elements` (`id`, `icon`, `number`, `name`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `home_contact_photos`
+-- Table structure for table `home_contact_photos`
 --
 
 CREATE TABLE `home_contact_photos` (
@@ -364,16 +354,16 @@ CREATE TABLE `home_contact_photos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `home_contact_photos`
+-- Dumping data for table `home_contact_photos`
 --
 
 INSERT INTO `home_contact_photos` (`id`, `home_1_contact_photo`, `home_2_contact_photo`, `home_3_contact_photo`, `home_4_contact_photo`, `created_at`, `updated_at`) VALUES
-(1, 'home_1_contact_1740191169.png', 'home_2_contact_1740191005.png', 'home_3_contact_1740191005.png', 'home_4_contact_1740191005.png', NULL, '2025-02-21 19:26:09');
+(1, 'home_1_contact_1705210297.png', 'home_2_contact_1705210297.png', 'home_3_contact_1705210297.png', 'home_4_contact_1705210297.png', NULL, '2024-01-13 23:31:37');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `home_four_page_items`
+-- Table structure for table `home_four_page_items`
 --
 
 CREATE TABLE `home_four_page_items` (
@@ -411,7 +401,7 @@ CREATE TABLE `home_four_page_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `home_four_page_items`
+-- Dumping data for table `home_four_page_items`
 --
 
 INSERT INTO `home_four_page_items` (`id`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `marquee_status`, `welcome_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `why_choose_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `team_member_heading`, `team_member_subheading`, `team_member_how_many`, `team_member_status`, `client_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `map_status`, `created_at`, `updated_at`) VALUES
@@ -420,7 +410,7 @@ INSERT INTO `home_four_page_items` (`id`, `service_heading`, `service_subheading
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `home_one_page_items`
+-- Table structure for table `home_one_page_items`
 --
 
 CREATE TABLE `home_one_page_items` (
@@ -458,16 +448,16 @@ CREATE TABLE `home_one_page_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `home_one_page_items`
+-- Dumping data for table `home_one_page_items`
 --
 
 INSERT INTO `home_one_page_items` (`id`, `service_on_slider_how_many`, `service_on_slider_status`, `welcome_status`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `video_one_status`, `fun_fact_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `video_two_status`, `feature_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `why_choose_status`, `client_status`, `created_at`, `updated_at`) VALUES
-(1, '5', 'Show', 'Show', 'Sản phẩm và dịch vụ chất lượng cao mà chúng tôi đứng sau', 'DỊCH VỤ CHÚNG TÔI CUNG CẤP', '3', 'Show', 'Show', 'Show', 'Dự án gần đây của chúng tôi', 'DỰ ÁN CỦA CHÚNG TÔI', '5', 'Show', 'Hãy hợp tác với nhau', 'LIÊN HỆ', 'Show', 'Bài viết và tin tức mới nhất', 'TỪ BÀI VIẾT', '3', 'Show', 'Show', 'Show', 'Khách hàng chúng tôi nói gì?', 'PHẢN HỒI CỦA CHÚNG TÔI', 'Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi', 'Show', 'Show', 'Show', NULL, '2025-02-21 03:33:48');
+(1, '5', 'Show', 'Show', 'High quality products and services \r\nthat we stand behind', 'SERVICES WE ARE OFFERING', '3', 'Show', 'Show', 'Show', 'Our Recent Work', 'OUR PORTFOLIO', '5', 'Show', 'Let\'s work together', 'GET IN TOUCH', 'Show', 'Checkout latest news updates & articles', 'FROM THE BLOG', '3', 'Show', 'Show', 'Show', 'What they’re talking?', 'OUR FEEDBACKS', 'Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean solldin, lorem is simply free text quis bibendum.', 'Show', 'Show', 'Show', NULL, '2024-01-16 09:03:46');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `home_three_page_items`
+-- Table structure for table `home_three_page_items`
 --
 
 CREATE TABLE `home_three_page_items` (
@@ -497,7 +487,7 @@ CREATE TABLE `home_three_page_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `home_three_page_items`
+-- Dumping data for table `home_three_page_items`
 --
 
 INSERT INTO `home_three_page_items` (`id`, `service_how_many`, `service_status`, `welcome_status`, `offer_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_text`, `portfolio_status`, `video_status`, `feature_status`, `call_to_action_status`, `client_status`, `team_member_heading`, `team_member_subheading`, `team_member_how_many`, `team_member_status`, `contact_heading`, `contact_subheading`, `contact_status`, `created_at`, `updated_at`) VALUES
@@ -506,7 +496,7 @@ INSERT INTO `home_three_page_items` (`id`, `service_how_many`, `service_status`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `home_two_page_items`
+-- Table structure for table `home_two_page_items`
 --
 
 CREATE TABLE `home_two_page_items` (
@@ -544,7 +534,7 @@ CREATE TABLE `home_two_page_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `home_two_page_items`
+-- Dumping data for table `home_two_page_items`
 --
 
 INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `marquee_status`, `welcome_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `why_choose_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `team_member_heading`, `team_member_subheading`, `team_member_how_many`, `team_member_status`, `client_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `map_status`, `created_at`, `updated_at`) VALUES
@@ -553,7 +543,7 @@ INSERT INTO `home_two_page_items` (`id`, `service_heading`, `service_subheading`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `languages`
+-- Table structure for table `languages`
 --
 
 CREATE TABLE `languages` (
@@ -567,7 +557,7 @@ CREATE TABLE `languages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `languages`
+-- Dumping data for table `languages`
 --
 
 INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_at`, `updated_at`) VALUES
@@ -579,7 +569,7 @@ INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `marquees`
+-- Table structure for table `marquees`
 --
 
 CREATE TABLE `marquees` (
@@ -590,7 +580,7 @@ CREATE TABLE `marquees` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `marquees`
+-- Dumping data for table `marquees`
 --
 
 INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
@@ -603,7 +593,7 @@ INSERT INTO `marquees` (`id`, `item`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menus`
+-- Table structure for table `menus`
 --
 
 CREATE TABLE `menus` (
@@ -615,7 +605,7 @@ CREATE TABLE `menus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `menus`
+-- Dumping data for table `menus`
 --
 
 INSERT INTO `menus` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
@@ -632,7 +622,7 @@ INSERT INTO `menus` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -642,7 +632,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -701,7 +691,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `offers`
+-- Table structure for table `offers`
 --
 
 CREATE TABLE `offers` (
@@ -718,7 +708,7 @@ CREATE TABLE `offers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `offers`
+-- Dumping data for table `offers`
 --
 
 INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
@@ -727,7 +717,7 @@ INSERT INTO `offers` (`id`, `subheading`, `heading`, `text`, `icon`, `tagline`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `offer_elements`
+-- Table structure for table `offer_elements`
 --
 
 CREATE TABLE `offer_elements` (
@@ -738,7 +728,7 @@ CREATE TABLE `offer_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `offer_elements`
+-- Dumping data for table `offer_elements`
 --
 
 INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
@@ -749,7 +739,7 @@ INSERT INTO `offer_elements` (`id`, `item`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `other_page_items`
+-- Table structure for table `other_page_items`
 --
 
 CREATE TABLE `other_page_items` (
@@ -819,7 +809,7 @@ CREATE TABLE `other_page_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `other_page_items`
+-- Dumping data for table `other_page_items`
 --
 
 INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_status`, `page_about_service_heading`, `page_about_service_subheading`, `page_about_service_text`, `page_about_service_how_many`, `page_about_service_status`, `page_about_team_members_heading`, `page_about_team_members_subheading`, `page_about_team_members_how_many`, `page_about_team_members_status`, `page_about_seo_title`, `page_about_seo_meta_description`, `page_team_members_title`, `page_team_members_seo_title`, `page_team_members_seo_meta_description`, `page_testimonials_title`, `page_testimonials_seo_title`, `page_testimonials_seo_meta_description`, `page_pricing_title`, `page_pricing_seo_title`, `page_pricing_seo_meta_description`, `page_faq_title`, `page_faq_seo_title`, `page_faq_seo_meta_description`, `page_services_title`, `page_services_seo_title`, `page_services_seo_meta_description`, `page_portfolios_title`, `page_portfolios_seo_title`, `page_portfolios_seo_meta_description`, `page_blog_title`, `page_blog_seo_title`, `page_blog_seo_meta_description`, `page_contact_title`, `page_contact_send_mail_heading`, `page_contact_send_mail_subheading`, `page_contact_info_heading`, `page_contact_info_subheading`, `page_contact_info_text`, `page_contact_info_phone_title`, `page_contact_info_phone_value`, `page_contact_info_email_title`, `page_contact_info_email_value`, `page_contact_info_address_title`, `page_contact_info_address_value`, `page_contact_seo_title`, `page_contact_seo_meta_description`, `page_terms_title`, `page_terms_content`, `page_terms_seo_title`, `page_terms_seo_meta_description`, `page_privacy_title`, `page_privacy_content`, `page_privacy_seo_title`, `page_privacy_seo_meta_description`, `page_search_seo_title`, `page_search_seo_meta_description`, `page_tag_seo_title`, `page_tag_seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -828,7 +818,7 @@ INSERT INTO `other_page_items` (`id`, `page_about_title`, `page_about_welcome_st
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_reset_tokens`
+-- Table structure for table `password_reset_tokens`
 --
 
 CREATE TABLE `password_reset_tokens` (
@@ -840,7 +830,7 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -859,7 +849,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `portfolios`
+-- Table structure for table `portfolios`
 --
 
 CREATE TABLE `portfolios` (
@@ -880,7 +870,7 @@ CREATE TABLE `portfolios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `portfolios`
+-- Dumping data for table `portfolios`
 --
 
 INSERT INTO `portfolios` (`id`, `name`, `slug`, `description`, `date`, `client`, `website`, `location`, `photo`, `banner`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -891,7 +881,7 @@ INSERT INTO `portfolios` (`id`, `name`, `slug`, `description`, `date`, `client`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -909,7 +899,7 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `photo`, `tags`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -927,7 +917,7 @@ INSERT INTO `posts` (`id`, `post_category_id`, `title`, `slug`, `description`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post_categories`
+-- Table structure for table `post_categories`
 --
 
 CREATE TABLE `post_categories` (
@@ -941,7 +931,7 @@ CREATE TABLE `post_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `post_categories`
+-- Dumping data for table `post_categories`
 --
 
 INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -954,7 +944,7 @@ INSERT INTO `post_categories` (`id`, `name`, `slug`, `seo_title`, `seo_meta_desc
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `pricing_plans`
+-- Table structure for table `pricing_plans`
 --
 
 CREATE TABLE `pricing_plans` (
@@ -970,7 +960,7 @@ CREATE TABLE `pricing_plans` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `pricing_plans`
+-- Dumping data for table `pricing_plans`
 --
 
 INSERT INTO `pricing_plans` (`id`, `name`, `price`, `period`, `button_text`, `button_url`, `photo`, `created_at`, `updated_at`) VALUES
@@ -981,7 +971,7 @@ INSERT INTO `pricing_plans` (`id`, `name`, `price`, `period`, `button_text`, `bu
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `pricing_plan_options`
+-- Table structure for table `pricing_plan_options`
 --
 
 CREATE TABLE `pricing_plan_options` (
@@ -993,7 +983,7 @@ CREATE TABLE `pricing_plan_options` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `pricing_plan_options`
+-- Dumping data for table `pricing_plan_options`
 --
 
 INSERT INTO `pricing_plan_options` (`id`, `pricing_plan_id`, `name`, `created_at`, `updated_at`) VALUES
@@ -1013,7 +1003,7 @@ INSERT INTO `pricing_plan_options` (`id`, `pricing_plan_id`, `name`, `created_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `services`
+-- Table structure for table `services`
 --
 
 CREATE TABLE `services` (
@@ -1034,7 +1024,7 @@ CREATE TABLE `services` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `services`
+-- Dumping data for table `services`
 --
 
 INSERT INTO `services` (`id`, `name`, `slug`, `short_description`, `description`, `icon`, `phone`, `photo`, `banner`, `pdf`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
@@ -1050,7 +1040,7 @@ INSERT INTO `services` (`id`, `name`, `slug`, `short_description`, `description`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `service_faqs`
+-- Table structure for table `service_faqs`
 --
 
 CREATE TABLE `service_faqs` (
@@ -1063,7 +1053,7 @@ CREATE TABLE `service_faqs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `service_faqs`
+-- Dumping data for table `service_faqs`
 --
 
 INSERT INTO `service_faqs` (`id`, `service_id`, `question`, `answer`, `created_at`, `updated_at`) VALUES
@@ -1117,7 +1107,7 @@ INSERT INTO `service_faqs` (`id`, `service_id`, `question`, `answer`, `created_a
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -1172,16 +1162,16 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `logo`, `logo_sticky`, `favicon`, `home_show`, `image_404`, `banner`, `login_page_photo`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `top_bar_email`, `top_bar_address`, `top_bar_phone`, `map`, `footer_email`, `footer_phone`, `footer_address`, `footer_copyright`, `footer_text`, `footer_links_heading`, `footer_subscriber_heading`, `footer_subscriber_text`, `sticky_header`, `preloader`, `layout_direction`, `theme_color`, `currency_symbol`, `cookie_consent_message`, `cookie_consent_button_text`, `cookie_consent_text_color`, `cookie_consent_bg_color`, `cookie_consent_button_text_color`, `cookie_consent_button_bg_color`, `cookie_consent_status`, `tawk_live_chat_property_id`, `tawk_live_chat_status`, `google_analytic_id`, `google_analytic_status`, `google_recaptcha_site_key`, `google_recaptcha_status`, `home_seo_title`, `home_seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1740191305.jpg', 'https://www.facebook.com/tran.an.435757?locale=vi_VN', '#', NULL, '#', NULL, '#', 'vnstech@company.com', '102 Trung Hòa, Cầu Giấy, Hà Nội', '0999999999', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4123273337323!2d105.79768027399132!3d21.016181580629993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5ecf2ea2ff%3A0xb2da2bcdd94a2cbc!2zMTAyIFAuVHJ1bmcgSMOyYSwgVHJ1bmcgSG_DoCwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWkgMTAwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1740134420486!5m2!1svi!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'vnstech@company.com', '0999999999', '102 Trung Hòa, Cầu Giấy, Hà Nội', 'Copyright © 2024, vns tech', 'Chào mừng đến với Vns Tech, nơi cung cấp giải pháp công nghệ hàng đầu Việt Nam', 'Khám phá', 'Bản tin', 'Đăng kí bản tin của chúng tôi để nhận tin tức mới nhất', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'Trang web này sử dụng cookie để trải nghiệm lướt web của bạn tốt hơn', 'ĐỒNG Ý', 'F8FFED', '000000', '000000', 'FFFFFF', 'Show', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2025-02-21 19:28:25');
+(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1704942796.jpg', 'https://www.facebook.com/tran.an.435757?locale=vi_VN', '#', NULL, '#', NULL, '#', 'needhelp@company.com', '88 Broklyn Golden Street. New York', '+92 (8800) - 9850', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d35753.80272668888!2d-119.34303891638667!3d37.078457181068664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1704944810889!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'needhelp@company.com', '+92 (8800) -89 8630', '30 Broklyn Golden Street, USA', 'Copyright © 2024, phpscriptpoint', 'Welcome to our digital agency. We hope you will love our website and soon get some awesome services from us.', 'Explore', 'Newsletter', 'Subsrcibe our newsletter to get latest news.', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'This website uses cookies to ensure you get the best experience on our website.', 'ACCEPT', 'F8FFED', '000000', '000000', 'FFFFFF', 'Hide', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2025-02-21 02:24:04');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sliders`
+-- Table structure for table `sliders`
 --
 
 CREATE TABLE `sliders` (
@@ -1195,18 +1185,18 @@ CREATE TABLE `sliders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sliders`
+-- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `text`, `photo`, `button_text`, `button_url`, `created_at`, `updated_at`) VALUES
-(4, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1740191765.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2023-11-08 12:27:11', '2025-02-21 19:36:05'),
-(5, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1740191708.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2023-11-08 12:27:18', '2025-02-21 19:35:08'),
-(7, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740191756.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-21 01:46:14', '2025-02-21 19:35:56');
+(4, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1699468031.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2023-11-08 12:27:11', '2025-02-21 02:15:20'),
+(5, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1699468038.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2023-11-08 12:27:18', '2025-02-21 02:13:34'),
+(7, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740129411.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-21 01:46:14', '2025-02-21 02:16:51');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `subscribers`
+-- Table structure for table `subscribers`
 --
 
 CREATE TABLE `subscribers` (
@@ -1219,7 +1209,7 @@ CREATE TABLE `subscribers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `subscribers`
+-- Dumping data for table `subscribers`
 --
 
 INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `updated_at`) VALUES
@@ -1233,7 +1223,7 @@ INSERT INTO `subscribers` (`id`, `email`, `token`, `status`, `created_at`, `upda
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `team_members`
+-- Table structure for table `team_members`
 --
 
 CREATE TABLE `team_members` (
@@ -1260,21 +1250,20 @@ CREATE TABLE `team_members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `team_members`
+-- Dumping data for table `team_members`
 --
-
 
 INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `tagline`, `photo`, `email`, `phone`, `website`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `experience_text`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
 (1, 'Tăng Xuân Chiến', 'tang-xuan-chien', 'Thành viên', 'Một thành viên kinh nghiệm dày dặn trong đội ngũ phát triển của chúng tôi', 'team_member_1740123533.jpg', 'mike@gmail.com', '+012-3456-789', 'https://www.miketheboss.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Kỹ năng làm việc nhóm và phát triển dự án tốt', NULL, NULL, '2024-01-07 06:59:33', '2025-02-21 00:50:41'),
 (2, 'Phùng Quang Huy', 'phung-quang-huy', 'Thành viên', 'Mục tiêu của tôi là mang tới các giá trị tốt nhất dành cho khách hàng', 'team_member_1740123833.jpg', 'kevin@gmail.com', '+012-3456-781', 'https://www.kevintheceo.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Thành thạo trong các công cụ sử dụng, sửa lỗi nhanh chóng', NULL, NULL, '2024-01-07 07:01:56', '2025-02-21 00:43:53'),
 (3, 'Nguyễn Tiến Dũng', 'nguyen-tien-dung', 'Thành viên', 'Tôi mong muốn mình sẽ có thể đưa tới tay khách hàng những sản phẩm tốt nhất', 'team_member_1740124112.jpg', 'jason@gmail.com', '+012-3411-789', 'https://www.jasonthehradmin.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Làm việc đội nhóm tốt, thành thạo các công cụ lập trình', NULL, NULL, '2024-01-07 07:04:01', '2025-02-21 00:48:32'),
-(5, 'Trần Minh An', 'tran-minh-an', 'Thành viên', 'Đối với tôi mọi sản phẩm được tạo ra đều phải là những sản phẩm chất lượng nhất cho khách hàng của mình', 'team_member_1740123966.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Sử dụng tốt các công cụ lập trình, tốc độ xử lí nhanh', NULL, NULL, '2025-02-21 00:46:06', '2025-02-21 00:46:06'),
+(5, 'Lê Minh An', 'le-minh-an', 'Thành viên', 'Đối với tôi mọi sản phẩm được tạo ra đều phải là những sản phẩm chất lượng nhất cho khách hàng của mình', 'team_member_1740123966.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Sử dụng tốt các công cụ lập trình, tốc độ xử lí nhanh', NULL, NULL, '2025-02-21 00:46:06', '2025-02-21 00:46:06'),
 (6, 'Hà Đại Dương', 'ha-dai-duong', 'Trưởng nhóm', 'Tầm nhìn chiến lược của tôi là mong muốn sẽ đưa đội của mình phát triển mạnh mẽ hơn trong vòng 2 năm tới', 'team_member_1740124195.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Lãnh đạo đội nhóm, phân chia công việc', NULL, NULL, '2025-02-21 00:49:55', '2025-02-21 00:49:55');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `team_member_experiences`
+-- Table structure for table `team_member_experiences`
 --
 
 CREATE TABLE `team_member_experiences` (
@@ -1287,7 +1276,7 @@ CREATE TABLE `team_member_experiences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `team_member_experiences`
+-- Dumping data for table `team_member_experiences`
 --
 
 INSERT INTO `team_member_experiences` (`id`, `team_member_id`, `name`, `percentage`, `created_at`, `updated_at`) VALUES
@@ -1304,7 +1293,7 @@ INSERT INTO `team_member_experiences` (`id`, `team_member_id`, `name`, `percenta
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `testimonials`
+-- Table structure for table `testimonials`
 --
 
 CREATE TABLE `testimonials` (
@@ -1319,7 +1308,7 @@ CREATE TABLE `testimonials` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `testimonials`
+-- Dumping data for table `testimonials`
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `designation`, `rating`, `photo`, `comment`, `created_at`, `updated_at`) VALUES
@@ -1331,7 +1320,7 @@ INSERT INTO `testimonials` (`id`, `name`, `designation`, `rating`, `photo`, `com
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -1355,7 +1344,7 @@ CREATE TABLE `users` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `video_one_items`
+-- Table structure for table `video_one_items`
 --
 
 CREATE TABLE `video_one_items` (
@@ -1368,16 +1357,16 @@ CREATE TABLE `video_one_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `video_one_items`
+-- Dumping data for table `video_one_items`
 --
 
 INSERT INTO `video_one_items` (`id`, `heading`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1740190384.jpg', NULL, '2025-02-21 19:13:04');
+(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1704852598.jpg', NULL, '2025-02-21 01:53:15');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `video_two_items`
+-- Table structure for table `video_two_items`
 --
 
 CREATE TABLE `video_two_items` (
@@ -1389,7 +1378,7 @@ CREATE TABLE `video_two_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `video_two_items`
+-- Dumping data for table `video_two_items`
 --
 
 INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`, `updated_at`) VALUES
@@ -1398,7 +1387,7 @@ INSERT INTO `video_two_items` (`id`, `heading`, `youtube_video_id`, `created_at`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `welcome_one_items`
+-- Table structure for table `welcome_one_items`
 --
 
 CREATE TABLE `welcome_one_items` (
@@ -1419,16 +1408,16 @@ CREATE TABLE `welcome_one_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `welcome_one_items`
+-- Dumping data for table `welcome_one_items`
 --
 
 INSERT INTO `welcome_one_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `person_name`, `person_designation`, `person_photo`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
-(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1740190579.jpg', 'welcome_one_photo1_1740190521.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2025-02-21 19:16:19');
+(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1704848548.jpg', 'welcome_one_photo1_1704823739.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2025-02-21 01:41:53');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `welcome_one_item_elements`
+-- Table structure for table `welcome_one_item_elements`
 --
 
 CREATE TABLE `welcome_one_item_elements` (
@@ -1441,7 +1430,7 @@ CREATE TABLE `welcome_one_item_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `welcome_one_item_elements`
+-- Dumping data for table `welcome_one_item_elements`
 --
 
 INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -1451,7 +1440,7 @@ INSERT INTO `welcome_one_item_elements` (`id`, `icon`, `heading`, `text`, `creat
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `welcome_two_items`
+-- Table structure for table `welcome_two_items`
 --
 
 CREATE TABLE `welcome_two_items` (
@@ -1469,7 +1458,7 @@ CREATE TABLE `welcome_two_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `welcome_two_items`
+-- Dumping data for table `welcome_two_items`
 --
 
 INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
@@ -1478,7 +1467,7 @@ INSERT INTO `welcome_two_items` (`id`, `subheading`, `heading`, `text`, `button_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `welcome_two_item_elements`
+-- Table structure for table `welcome_two_item_elements`
 --
 
 CREATE TABLE `welcome_two_item_elements` (
@@ -1490,7 +1479,7 @@ CREATE TABLE `welcome_two_item_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `welcome_two_item_elements`
+-- Dumping data for table `welcome_two_item_elements`
 --
 
 INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, `updated_at`) VALUES
@@ -1500,7 +1489,7 @@ INSERT INTO `welcome_two_item_elements` (`id`, `heading`, `text`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `welcome_two_item_skills`
+-- Table structure for table `welcome_two_item_skills`
 --
 
 CREATE TABLE `welcome_two_item_skills` (
@@ -1512,7 +1501,7 @@ CREATE TABLE `welcome_two_item_skills` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `welcome_two_item_skills`
+-- Dumping data for table `welcome_two_item_skills`
 --
 
 INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`, `updated_at`) VALUES
@@ -1522,7 +1511,7 @@ INSERT INTO `welcome_two_item_skills` (`id`, `name`, `percentage`, `created_at`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `why_choose_one_items`
+-- Table structure for table `why_choose_one_items`
 --
 
 CREATE TABLE `why_choose_one_items` (
@@ -1536,16 +1525,16 @@ CREATE TABLE `why_choose_one_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `why_choose_one_items`
+-- Dumping data for table `why_choose_one_items`
 --
 
 INSERT INTO `why_choose_one_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1740190213.jpg', NULL, '2025-02-21 19:10:13');
+(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1704886453.jpg', NULL, '2025-02-21 02:12:13');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `why_choose_one_item_elements`
+-- Table structure for table `why_choose_one_item_elements`
 --
 
 CREATE TABLE `why_choose_one_item_elements` (
@@ -1557,7 +1546,7 @@ CREATE TABLE `why_choose_one_item_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `why_choose_one_item_elements`
+-- Dumping data for table `why_choose_one_item_elements`
 --
 
 INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at`, `updated_at`) VALUES
@@ -1567,7 +1556,7 @@ INSERT INTO `why_choose_one_item_elements` (`id`, `icon`, `heading`, `created_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `why_choose_two_items`
+-- Table structure for table `why_choose_two_items`
 --
 
 CREATE TABLE `why_choose_two_items` (
@@ -1582,7 +1571,7 @@ CREATE TABLE `why_choose_two_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `why_choose_two_items`
+-- Dumping data for table `why_choose_two_items`
 --
 
 INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_text`, `photo_over_heading`, `photo`, `created_at`, `updated_at`) VALUES
@@ -1591,7 +1580,7 @@ INSERT INTO `why_choose_two_items` (`id`, `heading`, `subheading`, `photo_over_t
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `why_choose_two_item_elements`
+-- Table structure for table `why_choose_two_item_elements`
 --
 
 CREATE TABLE `why_choose_two_item_elements` (
@@ -1603,7 +1592,7 @@ CREATE TABLE `why_choose_two_item_elements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `why_choose_two_item_elements`
+-- Dumping data for table `why_choose_two_item_elements`
 --
 
 INSERT INTO `why_choose_two_item_elements` (`id`, `icon`, `heading`, `created_at`, `updated_at`) VALUES
@@ -1613,169 +1602,169 @@ INSERT INTO `why_choose_two_item_elements` (`id`, `icon`, `heading`, `created_at
 (4, 'flaticon-teaching', 'Đội ngũ kỹ thuật chuyên nghiệp', '2024-01-10 06:02:59', '2025-02-21 02:15:40');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `call_to_actions`
+-- Indexes for table `call_to_actions`
 --
 ALTER TABLE `call_to_actions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `clients`
+-- Indexes for table `clients`
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `custom_pages`
+-- Indexes for table `custom_pages`
 --
 ALTER TABLE `custom_pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Chỉ mục cho bảng `faqs`
+-- Indexes for table `faqs`
 --
 ALTER TABLE `faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `feature_one_items`
+-- Indexes for table `feature_one_items`
 --
 ALTER TABLE `feature_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `feature_one_item_elements`
+-- Indexes for table `feature_one_item_elements`
 --
 ALTER TABLE `feature_one_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `feature_two_items`
+-- Indexes for table `feature_two_items`
 --
 ALTER TABLE `feature_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `feature_two_item_elements`
+-- Indexes for table `feature_two_item_elements`
 --
 ALTER TABLE `feature_two_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `flat_icons`
+-- Indexes for table `flat_icons`
 --
 ALTER TABLE `flat_icons`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `fun_facts`
+-- Indexes for table `fun_facts`
 --
 ALTER TABLE `fun_facts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `fun_fact_elements`
+-- Indexes for table `fun_fact_elements`
 --
 ALTER TABLE `fun_fact_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `home_contact_photos`
+-- Indexes for table `home_contact_photos`
 --
 ALTER TABLE `home_contact_photos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `home_four_page_items`
+-- Indexes for table `home_four_page_items`
 --
 ALTER TABLE `home_four_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `home_one_page_items`
+-- Indexes for table `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `home_three_page_items`
+-- Indexes for table `home_three_page_items`
 --
 ALTER TABLE `home_three_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `home_two_page_items`
+-- Indexes for table `home_two_page_items`
 --
 ALTER TABLE `home_two_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `languages`
+-- Indexes for table `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `marquees`
+-- Indexes for table `marquees`
 --
 ALTER TABLE `marquees`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `menus`
+-- Indexes for table `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `offers`
+-- Indexes for table `offers`
 --
 ALTER TABLE `offers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `offer_elements`
+-- Indexes for table `offer_elements`
 --
 ALTER TABLE `offer_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `other_page_items`
+-- Indexes for table `other_page_items`
 --
 ALTER TABLE `other_page_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_reset_tokens`
+-- Indexes for table `password_reset_tokens`
 --
 ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Chỉ mục cho bảng `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -1783,462 +1772,462 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Chỉ mục cho bảng `portfolios`
+-- Indexes for table `portfolios`
 --
 ALTER TABLE `portfolios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `posts`
+-- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `post_categories`
+-- Indexes for table `post_categories`
 --
 ALTER TABLE `post_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `pricing_plans`
+-- Indexes for table `pricing_plans`
 --
 ALTER TABLE `pricing_plans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `pricing_plan_options`
+-- Indexes for table `pricing_plan_options`
 --
 ALTER TABLE `pricing_plan_options`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `services`
+-- Indexes for table `services`
 --
 ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `service_faqs`
+-- Indexes for table `service_faqs`
 --
 ALTER TABLE `service_faqs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `sliders`
+-- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `subscribers`
+-- Indexes for table `subscribers`
 --
 ALTER TABLE `subscribers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `team_members`
+-- Indexes for table `team_members`
 --
 ALTER TABLE `team_members`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `team_member_experiences`
+-- Indexes for table `team_member_experiences`
 --
 ALTER TABLE `team_member_experiences`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `testimonials`
+-- Indexes for table `testimonials`
 --
 ALTER TABLE `testimonials`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `video_one_items`
+-- Indexes for table `video_one_items`
 --
 ALTER TABLE `video_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `video_two_items`
+-- Indexes for table `video_two_items`
 --
 ALTER TABLE `video_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `welcome_one_items`
+-- Indexes for table `welcome_one_items`
 --
 ALTER TABLE `welcome_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `welcome_one_item_elements`
+-- Indexes for table `welcome_one_item_elements`
 --
 ALTER TABLE `welcome_one_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `welcome_two_items`
+-- Indexes for table `welcome_two_items`
 --
 ALTER TABLE `welcome_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `welcome_two_item_elements`
+-- Indexes for table `welcome_two_item_elements`
 --
 ALTER TABLE `welcome_two_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `welcome_two_item_skills`
+-- Indexes for table `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `why_choose_one_items`
+-- Indexes for table `why_choose_one_items`
 --
 ALTER TABLE `why_choose_one_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `why_choose_one_item_elements`
+-- Indexes for table `why_choose_one_item_elements`
 --
 ALTER TABLE `why_choose_one_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `why_choose_two_items`
+-- Indexes for table `why_choose_two_items`
 --
 ALTER TABLE `why_choose_two_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `why_choose_two_item_elements`
+-- Indexes for table `why_choose_two_item_elements`
 --
 ALTER TABLE `why_choose_two_item_elements`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `call_to_actions`
+-- AUTO_INCREMENT for table `call_to_actions`
 --
 ALTER TABLE `call_to_actions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `clients`
+-- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT cho bảng `custom_pages`
+-- AUTO_INCREMENT for table `custom_pages`
 --
 ALTER TABLE `custom_pages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `faqs`
+-- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `feature_one_items`
+-- AUTO_INCREMENT for table `feature_one_items`
 --
 ALTER TABLE `feature_one_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `feature_one_item_elements`
+-- AUTO_INCREMENT for table `feature_one_item_elements`
 --
 ALTER TABLE `feature_one_item_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `feature_two_items`
+-- AUTO_INCREMENT for table `feature_two_items`
 --
 ALTER TABLE `feature_two_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `feature_two_item_elements`
+-- AUTO_INCREMENT for table `feature_two_item_elements`
 --
 ALTER TABLE `feature_two_item_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `flat_icons`
+-- AUTO_INCREMENT for table `flat_icons`
 --
 ALTER TABLE `flat_icons`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT cho bảng `fun_facts`
+-- AUTO_INCREMENT for table `fun_facts`
 --
 ALTER TABLE `fun_facts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `fun_fact_elements`
+-- AUTO_INCREMENT for table `fun_fact_elements`
 --
 ALTER TABLE `fun_fact_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `home_contact_photos`
+-- AUTO_INCREMENT for table `home_contact_photos`
 --
 ALTER TABLE `home_contact_photos`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `home_four_page_items`
+-- AUTO_INCREMENT for table `home_four_page_items`
 --
 ALTER TABLE `home_four_page_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `home_one_page_items`
+-- AUTO_INCREMENT for table `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `home_three_page_items`
+-- AUTO_INCREMENT for table `home_three_page_items`
 --
 ALTER TABLE `home_three_page_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `home_two_page_items`
+-- AUTO_INCREMENT for table `home_two_page_items`
 --
 ALTER TABLE `home_two_page_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `languages`
+-- AUTO_INCREMENT for table `languages`
 --
 ALTER TABLE `languages`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `marquees`
+-- AUTO_INCREMENT for table `marquees`
 --
 ALTER TABLE `marquees`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `menus`
+-- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
--- AUTO_INCREMENT cho bảng `offers`
+-- AUTO_INCREMENT for table `offers`
 --
 ALTER TABLE `offers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `offer_elements`
+-- AUTO_INCREMENT for table `offer_elements`
 --
 ALTER TABLE `offer_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `other_page_items`
+-- AUTO_INCREMENT for table `other_page_items`
 --
 ALTER TABLE `other_page_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `portfolios`
+-- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `posts`
+-- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `post_categories`
+-- AUTO_INCREMENT for table `post_categories`
 --
 ALTER TABLE `post_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `pricing_plans`
+-- AUTO_INCREMENT for table `pricing_plans`
 --
 ALTER TABLE `pricing_plans`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `pricing_plan_options`
+-- AUTO_INCREMENT for table `pricing_plan_options`
 --
 ALTER TABLE `pricing_plan_options`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `services`
+-- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `service_faqs`
+-- AUTO_INCREMENT for table `service_faqs`
 --
 ALTER TABLE `service_faqs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
--- AUTO_INCREMENT cho bảng `settings`
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `sliders`
+-- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `subscribers`
+-- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `team_members`
+-- AUTO_INCREMENT for table `team_members`
 --
 ALTER TABLE `team_members`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `team_member_experiences`
+-- AUTO_INCREMENT for table `team_member_experiences`
 --
 ALTER TABLE `team_member_experiences`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `testimonials`
+-- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `video_one_items`
+-- AUTO_INCREMENT for table `video_one_items`
 --
 ALTER TABLE `video_one_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `video_two_items`
+-- AUTO_INCREMENT for table `video_two_items`
 --
 ALTER TABLE `video_two_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `welcome_one_items`
+-- AUTO_INCREMENT for table `welcome_one_items`
 --
 ALTER TABLE `welcome_one_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `welcome_one_item_elements`
+-- AUTO_INCREMENT for table `welcome_one_item_elements`
 --
 ALTER TABLE `welcome_one_item_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `welcome_two_items`
+-- AUTO_INCREMENT for table `welcome_two_items`
 --
 ALTER TABLE `welcome_two_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `welcome_two_item_elements`
+-- AUTO_INCREMENT for table `welcome_two_item_elements`
 --
 ALTER TABLE `welcome_two_item_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `welcome_two_item_skills`
+-- AUTO_INCREMENT for table `welcome_two_item_skills`
 --
 ALTER TABLE `welcome_two_item_skills`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `why_choose_one_items`
+-- AUTO_INCREMENT for table `why_choose_one_items`
 --
 ALTER TABLE `why_choose_one_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `why_choose_one_item_elements`
+-- AUTO_INCREMENT for table `why_choose_one_item_elements`
 --
 ALTER TABLE `why_choose_one_item_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `why_choose_two_items`
+-- AUTO_INCREMENT for table `why_choose_two_items`
 --
 ALTER TABLE `why_choose_two_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `why_choose_two_item_elements`
+-- AUTO_INCREMENT for table `why_choose_two_item_elements`
 --
 ALTER TABLE `why_choose_two_item_elements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

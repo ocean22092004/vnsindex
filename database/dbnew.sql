@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Feb 23, 2025 at 03:55 PM
+-- Generation Time: Feb 23, 2025 at 07:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -66,7 +66,7 @@ CREATE TABLE `call_to_actions` (
 --
 
 INSERT INTO `call_to_actions` (`id`, `text`, `icon`, `phone`, `email`, `created_at`, `updated_at`) VALUES
-(1, 'Get your FREE\r\nBusiness Consultation', 'flaticon-phone-call', '0563988575', 'support@company.com', NULL, '2024-01-10 03:27:14');
+(1, 'Nhận MIỄN PHÍ\r\nTư vấn kinh doanh', 'flaticon-phone-call', '0563988575', 'support@company.com', NULL, '2025-02-23 11:17:16');
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,8 @@ INSERT INTO `clients` (`id`, `photo`, `url`, `created_at`, `updated_at`) VALUES
 (2, 'client_1740322424.jpg', NULL, '2024-01-13 04:09:31', '2025-02-23 07:53:44'),
 (7, 'client_1740322300.jpg', NULL, '2025-02-20 19:36:45', '2025-02-23 07:51:40'),
 (8, 'client_1740322147.jpg', NULL, '2025-02-20 19:40:59', '2025-02-23 07:49:07'),
-(17, 'client_1740322473.jpg', NULL, '2025-02-23 07:54:33', '2025-02-23 07:54:33');
+(17, 'client_1740322473.jpg', NULL, '2025-02-23 07:54:33', '2025-02-23 07:54:33'),
+(18, 'client_1740336469.jpg', NULL, '2025-02-23 11:47:49', '2025-02-23 11:47:49');
 
 -- --------------------------------------------------------
 
@@ -358,7 +359,7 @@ CREATE TABLE `home_contact_photos` (
 --
 
 INSERT INTO `home_contact_photos` (`id`, `home_1_contact_photo`, `home_2_contact_photo`, `home_3_contact_photo`, `home_4_contact_photo`, `created_at`, `updated_at`) VALUES
-(1, 'home_1_contact_1705210297.png', 'home_2_contact_1705210297.png', 'home_3_contact_1705210297.png', 'home_4_contact_1705210297.png', NULL, '2024-01-13 23:31:37');
+(1, 'home_1_contact_1740335861.jpg', 'home_2_contact_1740335914.jpg', 'home_3_contact_1740335914.jpg', 'home_4_contact_1740335914.jpg', NULL, '2025-02-23 11:38:34');
 
 -- --------------------------------------------------------
 
@@ -452,7 +453,8 @@ CREATE TABLE `home_one_page_items` (
 --
 
 INSERT INTO `home_one_page_items` (`id`, `service_on_slider_how_many`, `service_on_slider_status`, `welcome_status`, `service_heading`, `service_subheading`, `service_how_many`, `service_status`, `video_one_status`, `fun_fact_status`, `portfolio_heading`, `portfolio_subheading`, `portfolio_how_many`, `portfolio_status`, `contact_heading`, `contact_subheading`, `contact_status`, `blog_heading`, `blog_subheading`, `blog_how_many`, `blog_status`, `video_two_status`, `feature_status`, `testimonial_heading`, `testimonial_subheading`, `testimonial_text`, `testimonial_status`, `why_choose_status`, `client_status`, `created_at`, `updated_at`) VALUES
-(1, '5', 'Show', 'Show', 'High quality products and services \r\nthat we stand behind', 'SERVICES WE ARE OFFERING', '3', 'Show', 'Show', 'Show', 'Our Recent Work', 'OUR PORTFOLIO', '5', 'Show', 'Let\'s work together', 'GET IN TOUCH', 'Show', 'Checkout latest news updates & articles', 'FROM THE BLOG', '3', 'Show', 'Show', 'Show', 'What they’re talking?', 'OUR FEEDBACKS', 'Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean solldin, lorem is simply free text quis bibendum.', 'Show', 'Show', 'Show', NULL, '2024-01-16 09:03:46');
+(1, '5', 'Show', 'Show', 'Dẫn đầu trong lĩnh vực công nghệ và giải pháp số', 'Chúng tôi cung cấp các giải pháp công nghệ hiện đại, giúp doanh nghiệp tối ưu hoá quy trình và tăng trưởng bền vững.', '3', 'Show', 'Show', 'Show', 'Dự án tiêu biểu', 'Những sản phẩm và giải pháp mà chúng tôi đã thực hiện', '5', 'Show', 'Liên hệ với chúng tôi', 'Chúng tôi luôn sẵn sàng hỗ trợ bạn', 'Show', 'Những bài viết mới nhất', 'Cập nhật thông tin công nghệ và xu hướng thị trường', '3', 'Show', 'Show', 'Show', 'Khách hàng nói gì về chúng tôi?', 'Những đánh giá chân thực từ khách hàng', '“Chúng tôi rất hài lòng với dịch vụ của công ty. Giải pháp công nghệ giúp doanh nghiệp của chúng tôi phát triển mạnh mẽ hơn.”', 'Show', 'Show', 'Show', NULL, '2025-02-23 07:04:49'),
+(4, '5', 'Show', 'Show', 'Dẫn đầu trong lĩnh vực công nghệ và giải pháp số', 'Chúng tôi cung cấp các giải pháp công nghệ hiện đại, giúp doanh nghiệp tối ưu hoá quy trình và tăng trưởng bền vững.', '3', 'Show', 'Show', 'Show', 'Dự án tiêu biểu', 'Những sản phẩm và giải pháp mà chúng tôi đã thực hiện', '5', 'Show', 'Liên hệ với chúng tôi', 'Chúng tôi luôn sẵn sàng hỗ trợ bạn', 'Show', 'Những bài viết mới nhất', 'Cập nhật thông tin công nghệ và xu hướng thị trường', '3', 'Show', 'Show', 'Show', 'Khách hàng nói gì về chúng tôi?', 'Những đánh giá chân thực từ khách hàng', '“Chúng tôi rất hài lòng với dịch vụ của công ty. Giải pháp công nghệ giúp doanh nghiệp của chúng tôi phát triển mạnh mẽ hơn.”', 'Show', 'Show', 'Show', NULL, '2025-02-23 07:04:49');
 
 -- --------------------------------------------------------
 
@@ -561,10 +563,10 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `name`, `code`, `direction`, `default`, `created_at`, `updated_at`) VALUES
-(1, 'English', 'en', 'Left to Right (LTR)', 1, NULL, '2024-04-29 01:17:18'),
-(9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2024-05-01 21:51:52'),
-(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2025-02-20 21:45:12'),
-(11, 'Viet Nam', 'vi', 'Left to Right (LTR)', 0, '2025-02-20 21:24:46', '2025-02-20 21:45:05');
+(1, 'English', 'en', 'Left to Right (LTR)', 0, NULL, '2025-02-23 06:44:35'),
+(9, 'Arabic', 'ar', 'Right to Left (RTL)', 0, '2024-05-01 21:51:52', '2025-02-23 06:44:35'),
+(10, 'Hindi', 'hi', 'Left to Right (LTR)', 0, '2024-05-01 21:52:51', '2025-02-23 06:44:35'),
+(11, 'Viet Nam', 'vi', 'Left to Right (LTR)', 1, '2025-02-20 21:24:46', '2025-02-23 06:44:35');
 
 -- --------------------------------------------------------
 
@@ -1166,7 +1168,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `logo`, `logo_sticky`, `favicon`, `home_show`, `image_404`, `banner`, `login_page_photo`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `top_bar_email`, `top_bar_address`, `top_bar_phone`, `map`, `footer_email`, `footer_phone`, `footer_address`, `footer_copyright`, `footer_text`, `footer_links_heading`, `footer_subscriber_heading`, `footer_subscriber_text`, `sticky_header`, `preloader`, `layout_direction`, `theme_color`, `currency_symbol`, `cookie_consent_message`, `cookie_consent_button_text`, `cookie_consent_text_color`, `cookie_consent_bg_color`, `cookie_consent_button_text_color`, `cookie_consent_button_bg_color`, `cookie_consent_status`, `tawk_live_chat_property_id`, `tawk_live_chat_status`, `google_analytic_id`, `google_analytic_status`, `google_recaptcha_site_key`, `google_recaptcha_status`, `home_seo_title`, `home_seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'logo_1699436212.png', 'logo_sticky_1699436212.png', 'favicon_1699434586.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1704942796.jpg', 'https://www.facebook.com/tran.an.435757?locale=vi_VN', '#', NULL, '#', NULL, '#', 'needhelp@company.com', '88 Broklyn Golden Street. New York', '+92 (8800) - 9850', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d35753.80272668888!2d-119.34303891638667!3d37.078457181068664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1704944810889!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'needhelp@company.com', '+92 (8800) -89 8630', '30 Broklyn Golden Street, USA', 'Copyright © 2024, phpscriptpoint', 'Welcome to our digital agency. We hope you will love our website and soon get some awesome services from us.', 'Explore', 'Newsletter', 'Subsrcibe our newsletter to get latest news.', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'This website uses cookies to ensure you get the best experience on our website.', 'ACCEPT', 'F8FFED', '000000', '000000', 'FFFFFF', 'Hide', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', 'Desix | Multipurpose Business, Creative & Digital Agency CMS', '2023-11-06 07:25:48', '2025-02-21 02:24:04');
+(1, 'logo_1740321594.jpg', 'logo_sticky_1740321689.jpg', 'favicon_1740321500.png', 'All', '404_1705309028.jpg', 'banner_1704766456.jpg', 'login_page_photo_1704942796.jpg', '#', '#', NULL, '#', NULL, '#', 'needhelp@company.com', '102 Trung Hòa, Cầu Giấy , Hà Nội', '+92 (8800) - 9850', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d35753.80272668888!2d-119.34303891638667!3d37.078457181068664!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1704944810889!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>', 'needhelp@desix.com', '+92 (8800) -89 8630', '102 Trung Hòa, Cầu Giấy , Hà Nội', 'Copyright © 2025 Desix', 'Chào mừng bạn đến với công ty công nghệ của chúng tôi. Chúng tôi hy vọng bạn sẽ yêu thích trang web của chúng tôi và sớm nhận được một số dịch vụ tuyệt vời từ chúng tôi.', 'Explore', 'Newsletter', 'Đăng ký bản tin của chúng tôi để có được tin tức mới nhất.', 'Show', 'Hide', 'LTR', 'FEC63F', '$', 'This website uses cookies to ensure you get the best experience on our website.', 'ACCEPT', 'F8FFED', '000000', '000000', 'FFFFFF', 'Hide', '5a7c31ded7591465c7077c48', 'Hide', 'UA-84213520-6', 'Show', '6LeAoNshAAAAANRnOmjeT7o-rwyLeIqrZ-fV6K8j', 'Hide', 'Desix | Innovative Business & Tech Solutions', 'Desix | Innovative Business & Tech Solutions', '2023-11-06 07:25:48', '2025-02-23 09:02:05');
 
 -- --------------------------------------------------------
 
@@ -1189,9 +1191,9 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `text`, `photo`, `button_text`, `button_url`, `created_at`, `updated_at`) VALUES
-(4, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1699468031.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2023-11-08 12:27:11', '2025-02-21 02:15:20'),
-(5, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1699468038.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2023-11-08 12:27:18', '2025-02-21 02:13:34'),
-(7, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740129411.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-21 01:46:14', '2025-02-21 02:16:51');
+(8, 'Chiến Lược Marketing Số Giúp Doanh Nghiệp Phát Triển Bền Vững', 'slider_1740319035.jpg', 'Khám phá thêm', 'post/chien-luoc-maketing-so-giup-doanh-nghiep-phat-trien-ben-vung', '2025-02-23 06:57:15', '2025-02-23 06:57:15'),
+(9, 'Các Công Nghệ Web Phổ Biến Và Sự Lựa Chọn Phù Hợp Cho Dự Án Của Bạn', 'slider_1740319081.jpg', 'Khám phá thêm', 'post/cac-cong-nghe-web-pho-bien-va-su-lua-chon-phu-hop-cho-du-an', '2025-02-23 06:58:01', '2025-02-23 06:58:01'),
+(10, 'Xu Hướng Thiết Kế Website Trong Thời Đại Công Nghệ 4.0 Hiện Nay', 'slider_1740319119.jpg', 'Khám phá thêm', 'post/xu-huong-thiet-ke-web-trong-thoi-dai-cong-nghe', '2025-02-23 06:58:39', '2025-02-23 06:58:39');
 
 -- --------------------------------------------------------
 
@@ -1254,11 +1256,11 @@ CREATE TABLE `team_members` (
 --
 
 INSERT INTO `team_members` (`id`, `name`, `slug`, `designation`, `tagline`, `photo`, `email`, `phone`, `website`, `facebook`, `twitter`, `linkedin`, `instagram`, `youtube`, `pinterest`, `experience_text`, `seo_title`, `seo_meta_description`, `created_at`, `updated_at`) VALUES
-(1, 'Tăng Xuân Chiến', 'tang-xuan-chien', 'Thành viên', 'Một thành viên kinh nghiệm dày dặn trong đội ngũ phát triển của chúng tôi', 'team_member_1740123533.jpg', 'mike@gmail.com', '+012-3456-789', 'https://www.miketheboss.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Kỹ năng làm việc nhóm và phát triển dự án tốt', NULL, NULL, '2024-01-07 06:59:33', '2025-02-21 00:50:41'),
-(2, 'Phùng Quang Huy', 'phung-quang-huy', 'Thành viên', 'Mục tiêu của tôi là mang tới các giá trị tốt nhất dành cho khách hàng', 'team_member_1740123833.jpg', 'kevin@gmail.com', '+012-3456-781', 'https://www.kevintheceo.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Thành thạo trong các công cụ sử dụng, sửa lỗi nhanh chóng', NULL, NULL, '2024-01-07 07:01:56', '2025-02-21 00:43:53'),
-(3, 'Nguyễn Tiến Dũng', 'nguyen-tien-dung', 'Thành viên', 'Tôi mong muốn mình sẽ có thể đưa tới tay khách hàng những sản phẩm tốt nhất', 'team_member_1740124112.jpg', 'jason@gmail.com', '+012-3411-789', 'https://www.jasonthehradmin.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Làm việc đội nhóm tốt, thành thạo các công cụ lập trình', NULL, NULL, '2024-01-07 07:04:01', '2025-02-21 00:48:32'),
-(5, 'Lê Minh An', 'le-minh-an', 'Thành viên', 'Đối với tôi mọi sản phẩm được tạo ra đều phải là những sản phẩm chất lượng nhất cho khách hàng của mình', 'team_member_1740123966.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Sử dụng tốt các công cụ lập trình, tốc độ xử lí nhanh', NULL, NULL, '2025-02-21 00:46:06', '2025-02-21 00:46:06'),
-(6, 'Hà Đại Dương', 'ha-dai-duong', 'Trưởng nhóm', 'Tầm nhìn chiến lược của tôi là mong muốn sẽ đưa đội của mình phát triển mạnh mẽ hơn trong vòng 2 năm tới', 'team_member_1740124195.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Lãnh đạo đội nhóm, phân chia công việc', NULL, NULL, '2025-02-21 00:49:55', '2025-02-21 00:49:55');
+(1, 'Tăng Xuân Chiến', 'tang-xuan-chien', 'Thành viên', 'Một thành viên kinh nghiệm dày dặn trong đội ngũ phát triển của chúng tôi', 'team_member_1740336107.jpg', 'mike@gmail.com', '+012-3456-789', 'https://www.miketheboss.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Kỹ năng làm việc nhóm và phát triển dự án tốt', NULL, NULL, '2024-01-07 06:59:33', '2025-02-23 11:41:47'),
+(2, 'Phùng Quang Huy', 'phung-quang-huy', 'Thành viên', 'Mục tiêu của tôi là mang tới các giá trị tốt nhất dành cho khách hàng', 'team_member_1740336254.jpg', 'kevin@gmail.com', '+012-3456-781', 'https://www.kevintheceo.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Thành thạo trong các công cụ sử dụng, sửa lỗi nhanh chóng', NULL, NULL, '2024-01-07 07:01:56', '2025-02-23 11:44:14'),
+(3, 'Nguyễn Tiến Dũng', 'nguyen-tien-dung', 'Thành viên', 'Tôi mong muốn mình sẽ có thể đưa tới tay khách hàng những sản phẩm tốt nhất', 'team_member_1740336282.jpg', 'jason@gmail.com', '+012-3411-789', 'https://www.jasonthehradmin.com', 'https://www.facebook.com', 'https://www.twitter.com', 'https://www.linkedin.com', 'https://www.instagram.com', NULL, NULL, 'Làm việc đội nhóm tốt, thành thạo các công cụ lập trình', NULL, NULL, '2024-01-07 07:04:01', '2025-02-23 11:44:42'),
+(5, 'Lê Minh An', 'le-minh-an', 'Thành viên', 'Đối với tôi mọi sản phẩm được tạo ra đều phải là những sản phẩm chất lượng nhất cho khách hàng của mình', 'team_member_1740336399.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Sử dụng tốt các công cụ lập trình, tốc độ xử lí nhanh', NULL, NULL, '2025-02-21 00:46:06', '2025-02-23 11:46:39'),
+(6, 'Hà Đại Dương', 'ha-dai-duong', 'Trưởng nhóm', 'Tầm nhìn chiến lược của tôi là mong muốn sẽ đưa đội của mình phát triển mạnh mẽ hơn trong vòng 2 năm tới', 'team_member_1740336443.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Lãnh đạo đội nhóm, phân chia công việc', NULL, NULL, '2025-02-21 00:49:55', '2025-02-23 11:47:23');
 
 -- --------------------------------------------------------
 
@@ -1361,7 +1363,7 @@ CREATE TABLE `video_one_items` (
 --
 
 INSERT INTO `video_one_items` (`id`, `heading`, `youtube_video_id`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1704852598.jpg', NULL, '2025-02-21 01:53:15');
+(1, 'Nơi đáng tin cậy', 'EWEDUrd1i5g', 'video_one_photo_1740335076.jpg', NULL, '2025-02-23 11:24:36');
 
 -- --------------------------------------------------------
 
@@ -1412,7 +1414,7 @@ CREATE TABLE `welcome_one_items` (
 --
 
 INSERT INTO `welcome_one_items` (`id`, `subheading`, `heading`, `text`, `button_text`, `button_url`, `experience_year`, `person_name`, `person_designation`, `person_photo`, `photo1`, `photo2`, `created_at`, `updated_at`) VALUES
-(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1704848548.jpg', 'welcome_one_photo1_1704823739.jpg', 'welcome_one_photo2_1704823756.jpg', NULL, '2025-02-21 01:41:53');
+(1, 'Tìm hiểu về chúng tôi', 'Giải pháp tiếp thị số tốt nhất', 'Có nhiều cách tiếp cận khác nhau trong tiếp thị số, nhưng chúng tôi luôn đổi mới và tối ưu để mang lại hiệu quả tối đa, kết hợp công nghệ hiện đại và chiến lược tiếp cận thông minh.', 'Khám phá thêm', '#', '38+', 'Hà Đại Dương', 'Kỹ thuật Vns Tech', 'welcome_one_person_photo_1740334887.jpg', 'welcome_one_photo1_1740334907.jpg', 'welcome_one_photo2_1740334950.jpg', NULL, '2025-02-23 11:22:30');
 
 -- --------------------------------------------------------
 
@@ -1529,7 +1531,7 @@ CREATE TABLE `why_choose_one_items` (
 --
 
 INSERT INTO `why_choose_one_items` (`id`, `heading`, `subheading`, `text`, `photo`, `created_at`, `updated_at`) VALUES
-(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1704886453.jpg', NULL, '2025-02-21 02:12:13');
+(1, 'Chúng tôi giúp doanh nghiệp của bạn hoạt động dễ dàng hơn', 'Tại sao chọn chúng tôi?', 'Chúng tôi mang đến giải pháp tối ưu giúp doanh nghiệp vận hành hiệu quả hơn, tiết kiệm thời gian và chi phí. Với công nghệ tiên tiến, chúng tôi đảm bảo bạn có thể phát triển bền vững và cạnh tranh mạnh mẽ trên thị trường.', 'why_choose_one_photo_1740335187.jpg', NULL, '2025-02-23 11:26:27');
 
 -- --------------------------------------------------------
 
@@ -1942,7 +1944,7 @@ ALTER TABLE `call_to_actions`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `custom_pages`
@@ -2020,7 +2022,7 @@ ALTER TABLE `home_four_page_items`
 -- AUTO_INCREMENT for table `home_one_page_items`
 --
 ALTER TABLE `home_one_page_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `home_three_page_items`
@@ -2134,7 +2136,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `subscribers`
